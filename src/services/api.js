@@ -9,10 +9,9 @@ const api = axios.create({
   withCredentials: true,
   // crossorigin:true
   headers: {
-    Accept: "application/json",
+    "Access-Control-Allow-Origin": "http://www.couponfeed.co",
     "Content-Type": "application/json",
     "Access-Control-Allow-Credentials": true,
-    "Access-Control-Allow-Origin": "http://couponfeed.co"
   },
   
   // baseURL: 'https://cors-anywhere.herokuapp.com/https://api.couponfeed.co',
