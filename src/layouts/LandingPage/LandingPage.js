@@ -62,7 +62,7 @@ export default class LandingPage extends Component {
           Accept: "application/json",
           "Content-Type": "application/json",
           // "Access-Control-Allow-Credentials": true,
-          "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+          "Access-Control-Allow-Origin": "http://couponfeed.co"
         }
       })
       .then(responseJson => {
