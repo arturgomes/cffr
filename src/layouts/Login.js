@@ -44,18 +44,18 @@ export default class Login extends Component {
   };
 
   async componentDidMount() {
-
-    fetch("https://api.couponfeed.co/auth/success", {
-      // fetch("http://localhost:3000/login/success", {
-        method: "GET",
-        // credentials: "include",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-          "Access-Control-Allow-Origin": "http://couponfeed.co"
-        }
-      })
+    api.get('/auth/success')
+    // fetch("https://api.couponfeed.co/auth/success", {
+    //   // fetch("http://localhost:3000/login/success", {
+    //     method: "GET",
+    //     // credentials: "include",
+    //     headers: {
+    //       Accept: "application/json",
+    //       "Content-Type": "application/json",
+    //       "Access-Control-Allow-Credentials": true,
+    //       "Access-Control-Allow-Origin": "http://couponfeed.co"
+    //     }
+    //   })
         .then(response => {
           if (response.status === 200) return response.json();
           throw new Error("failed to authenticate user");
@@ -129,25 +129,6 @@ export default class Login extends Component {
     }
   };
 
-  responseFacebook = (response) => {
-    console.log(response);
-  }
-
-  responseGoogle = (response) => {
-    console.log(response);
-  }
-  componentFacebookClicked =  () => {
-    // await api.post(`/a/facebook`)
-    window.open("https://api.couponfeed.co/auth/facebook", "_self");
-    // window.open("http://localhost:3000/auth/facebook", "_self");
-    // console.log("clicked")
-  }
-  componentGoogleClicked =  () => {
-    // await api.post(`/a/facebook`)
-    window.open("https://api.couponfeed.co/auth/google", "_self");
-    // window.open("http://localhost:3000/auth/google", "_self");
-    // console.log("clicked")
-  }
 
   render() {
     // const { authenticated } = this.state;

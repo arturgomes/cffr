@@ -6,7 +6,7 @@ const api = axios.create({
   // baseURL: 'http://localhost:3000',
   baseURL: 'https://api.couponfeed.co',
   // baseURL: 'https://api.couponfeed.co/proxy',
-  // withCredentials: true,
+  withCredentials: true,
   // crossorigin:true
   headers: {
     Accept: "application/json",
