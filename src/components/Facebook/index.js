@@ -9,6 +9,25 @@ export default class LoginFacebook extends Component {
   // }
 
   
+  responseFacebook = (response) => {
+    console.log(response);
+  }
+
+  responseGoogle = (response) => {
+    console.log(response);
+  }
+  componentFacebookClicked =  () => {
+    // await api.post(`/a/facebook`)
+    window.open("https://api.couponfeed.co/auth/facebook", "_self");
+    // window.open("http://localhost:3000/auth/facebook", "_self");
+    // console.log("clicked")
+  }
+  componentGoogleClicked =  () => {
+    // await api.post(`/a/facebook`)
+    window.open("https://api.couponfeed.co/auth/google", "_self");
+    // window.open("http://localhost:3000/auth/google", "_self");
+    // console.log("clicked")
+  }
   render() {
     let facebookData;
     // this.state.authenticated ?
@@ -35,8 +54,8 @@ export default class LoginFacebook extends Component {
           {/* } */}
           <ul>
             {/* <FacebookLoginButton/> */}
-          <li onClick={this.componentFacebookClicked}>Login com Facebook</li>
-          <li onClick={this.componentGoogleClicked}>Login com Google</li>
+          <li onClick={() => {this.componentFacebookClicked()}}>Login com Facebook</li>
+          <li onClick={() => {this.componentGoogleClicked()}}>Login com Google</li>
           </ul>
         {/* <GoogleLogin
           clientId="696384323916-spmu7mjsuge1a55dh2v65dtke3jgvjb6.apps.googleusercontent.com"
