@@ -9,6 +9,7 @@ const api = axios.create({
   withCredentials: true,
   // crossorigin:true
   headers: {
+    "Accept": "application/json",
     "Access-Control-Allow-Origin": "http://www.couponfeed.co",
     "Content-Type": "application/json",
     "Access-Control-Allow-Credentials": true,

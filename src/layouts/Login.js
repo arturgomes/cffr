@@ -49,6 +49,7 @@ export default class Login extends Component {
         method: "GET",
         credentials: "include",
         headers: {
+          "Accept": "application/json",
           "Content-Type": "application/json",
           "Access-Control-Allow-Credentials": true,
           "Access-Control-Allow-Origin": "http://couponfeed.co"
