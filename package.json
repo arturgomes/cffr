@@ -1,6 +1,5 @@
 {
-  "homepage": "https://couponfeed.co",
-  "proxy" : "http://backend:5000",
+  "homepage": "https://www.couponfeed.co",
   "browserslist": {
     "development": [
       "last 1 chrome version",

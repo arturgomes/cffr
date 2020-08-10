@@ -8,13 +8,13 @@ const api = axios.create({
   // baseURL: 'https://api.couponfeed.co/proxy',
   withCredentials: true,
   // crossorigin:true
-  mode: 'no-cors',
-  headers: {
-    "Accept": "application/json",
-    "Access-Control-Allow-Origin": "http://www.couponfeed.co",
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Credentials": true,
-  },
+  // mode: 'no-cors',
+  // headers: {
+  //   "Accept": "application/json",
+  //   "Access-Control-Allow-Origin": "http://www.couponfeed.co",
+  //   "Content-Type": "application/json",
+  //   "Access-Control-Allow-Credentials": true,
+  // },
   
   // baseURL: 'https://cors-anywhere.herokuapp.com/https://api.couponfeed.co',
 });
