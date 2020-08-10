@@ -48,6 +48,7 @@ export default class Login extends Component {
     fetch("https://api.couponfeed.co/auth/success", {
         method: "GET",
         credentials: "include",
+        mode: 'no-cors',
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json",
