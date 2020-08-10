@@ -45,7 +45,6 @@ export default class Login extends Component {
 
   async componentDidMount() {
 
-      const url = "https://api.couponfeed.co/auth/success/";
       await api.get("/auth/success")
       // fetch(url, {
       //   method: "GET",
