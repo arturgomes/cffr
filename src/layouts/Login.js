@@ -48,12 +48,12 @@ export default class Login extends Component {
     fetch("https://api.couponfeed.co/auth/success", {
         method: "GET",
         credentials: "include",
-        mode: 'no-cors',
+        // mode: 'no-cors',
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json",
           "Access-Control-Allow-Credentials": true,
-          "Access-Control-Allow-Origin": "http://couponfeed.co"
+          "Access-Control-Allow-Origin": "https://www.couponfeed.co"
         }
       })
         .then(response => {
