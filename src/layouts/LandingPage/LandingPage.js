@@ -53,9 +53,7 @@ const classes = makeStyles(styles1);
 
 export default class LandingPage extends Component {
   async componentDidMount() {
-    // api.get('/auth/login/success')
     fetch("https://api.couponfeed.co/auth/success", {
-      // fetch("http://localhost:3000/login/success", {
         method: "GET",
         credentials: "include",
         headers: {
