@@ -25,6 +25,10 @@ const api = axios.create({
   // baseURL: 'https://cors-anywhere.herokuapp.com/https://api.couponfeed.co',
 });
 
+api.defaults.headers.common['Accept'] = 'application/json' ;
+api.defaults.headers.common['Content-Type'] = 'application/json' ;
+api.defaults.headers.common['Access-Control-Allow-Credentials'] = true ;
+api.defaults.headers.common['Access-Control-Allow-Origin'] = 'https://www.couponfeed.co' ;
 
 api.interceptors.request.use(async config => {
   const token = getToken();
