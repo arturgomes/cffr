@@ -68,7 +68,7 @@ export default class Login extends Component {
             authenticated: true,
             user: responseJson.user
           })
-          .catch(() => console.log("Can’t access Cresponse. Blocked by browser?"));
+          .catch(() => console.log("Can’t access response. Blocked by browser?"));
           // console.log(responseJson.token);
           const { name, id, tu } = responseJson.login;
           login(responseJson.token, name, id, tu);
