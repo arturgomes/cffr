@@ -98,20 +98,20 @@ export default class SignIn extends Component {
   
   async componentDidMount() {
     const qs = decodeURIComponent(this.props.match.params.id);
-    const response = await fetch(`https://api.couponfeed.co/feed/${qs}/f`, 
-    {
-      method: "POST",
-      credentials: "include",
-      // mode: 'no-cors',
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Credentials": true,
-        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-      }
-    }
-    )
-    // const response = await api.post(`/feed/${qs}/f`);
+    // const response = await fetch(`https://api.couponfeed.co/feed/${qs}/f`, 
+    // {
+    //   method: "POST",
+    //   credentials: "include",
+    //   // mode: 'no-cors',
+    //   headers: {
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Credentials": true,
+    //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+    //   }
+    // }
+    // )
+    const response = await api.post(`/feed/${qs}/f`);
     if (!response.error) {
       const quest = response.data.questions;
       const ope = response.data.opening;

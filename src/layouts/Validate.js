@@ -6,7 +6,7 @@ import {Redirect } from "react-router-dom";
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { login, getUser } from "../services/auth";
 
-// import api from "../services/api";
+import api from "../services/api";
 
 class Validate extends Component {
   state = {
@@ -15,20 +15,20 @@ class Validate extends Component {
   }
   
   async componentDidMount() {
-    // api.get('/auth/success')
-    fetch("https://api.couponfeed.co/auth/success", 
-    {
-      method: "GET",
-      credentials: "include",
-      // mode: 'no-cors',
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Credentials": true,
-        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-      }
-    }
-    )
+    api.get('/auth/success')
+    // fetch("https://api.couponfeed.co/auth/success", 
+    // {
+    //   method: "GET",
+    //   credentials: "include",
+    //   // mode: 'no-cors',
+    //   headers: {
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Credentials": true,
+    //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+    //   }
+    // }
+    // )
     // fetch("https://api.couponfeed.co/auth/success", {
     //   // fetch("http://localhost:3000/login/success", {
     //   method: "GET",

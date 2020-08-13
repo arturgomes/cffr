@@ -29,21 +29,21 @@ export default class UserProfile extends Component {
     uploadedFiles : [],
   }
   async componentDidMount(){
-    // await api.post(`/files/${getId()}`)
-    await fetch(`https://api.couponfeed.co/files/${getId()}`, 
-    {
-      method: "POST",
-      credentials: "include",
-      // body: { retail_id: getId() },
-      // mode: 'no-cors',
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Credentials": true,
-        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-      }
-    }
-    )
+    await api.post(`/files/${getId()}`)
+    // await fetch(`https://api.couponfeed.co/files/${getId()}`, 
+    // {
+    //   method: "POST",
+    //   credentials: "include",
+    //   // body: { retail_id: getId() },
+    //   // mode: 'no-cors',
+    //   headers: {
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Credentials": true,
+    //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+    //   }
+    // }
+    // )
       .then(response =>
           this.setState({
             uploadedFiles: response.data.map(file => ({

@@ -6,13 +6,6 @@ const api = axios.create({
   baseURL: 'https://api.couponfeed.co',
   withCredentials: true,
   
-  // tentei colocar os headers dentro do axios.create, não deu certo,
-  // headers: {
-  //   "Accept": "application/json",
-  //   "Content-Type": "application/json",
-  //   "Access-Control-Allow-Credentials": true,
-  //   "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-  // }
 });
 
 

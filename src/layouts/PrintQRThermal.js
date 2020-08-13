@@ -5,7 +5,7 @@ import { FaHome, FaFacebook, FaInstagram } from "react-icons/fa";
 import LinearProgress from '@material-ui/core/LinearProgress';
 
 import cflogo from "../assets/img/completa_monocromatica@4x.png"
-// import api from "../services/api";
+import api from "../services/api";
 
 class Demo extends Component {
 
@@ -30,7 +30,7 @@ export default class PrintQRThermal extends Component {
 
   async componentDidMount() {
     const qs = decodeURIComponent(this.props.match.params.id);
-    const response = await await fetch("https://api.couponfeed.co/shopsl",
+    const response = await fetch("https://api.couponfeed.co/shopsl",
       {
         method: "POST",
         credentials: "include",
@@ -57,19 +57,20 @@ export default class PrintQRThermal extends Component {
     else {
       this.setState({ error: "Loja não encontrada" })
     }
-    const res = await await fetch(`https://api.couponfeed.co/files/${this.state.retail_id}`, 
-    {
-      method: "POST",
-      credentials: "include",
-      // body: { shop_id: qs },
-      // mode: 'no-cors',
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Credentials": true,
-        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-      }
-    });
+    const res = await api.post(`https://api.couponfeed.co/files/${this.state.retail_id}`);
+    // const res = await await fetch(`https://api.couponfeed.co/files/${this.state.retail_id}`, 
+    // {
+    //   method: "POST",
+    //   credentials: "include",
+    //   // body: { shop_id: qs },
+    //   // mode: 'no-cors',
+    //   headers: {
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Credentials": true,
+    //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+    //   }
+    // });
     if (!res.error) {
       const { url } = res.data[0];
       console.log();

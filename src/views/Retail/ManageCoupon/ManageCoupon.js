@@ -40,22 +40,22 @@ export default class ManageCoupon extends Component {
   }
   async componentDidMount() {
     this._isMounted = true;
-    // await api
-    //   .post(`/coupons-l/${getId()}`)
-    await fetch(`https://api.couponfeed.co/coupons-l/${getId()}`, 
-    {
-      method: "POST",
-      credentials: "include",
-      // body: { retail_id: getId() },
-      // mode: 'no-cors',
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Credentials": true,
-        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-      }
-    }
-    )
+    await api
+      .post(`/coupons-l/${getId()}`)
+    // await fetch(`https://api.couponfeed.co/coupons-l/${getId()}`, 
+    // {
+    //   method: "POST",
+    //   credentials: "include",
+    //   // body: { retail_id: getId() },
+    //   // mode: 'no-cors',
+    //   headers: {
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Credentials": true,
+    //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+    //   }
+    // }
+    // )
       .then(response => {
         // console.log(response)
         this.setState({ couponList: response.data, isLoading: false  })

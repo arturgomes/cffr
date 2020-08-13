@@ -40,31 +40,31 @@ export default class Feedback extends Component {
 
     const qs = decodeURIComponent(this.props.match.params.id);
     console.log(qs);
-    await fetch(`https://api.couponfeed.co/filesc/${qs}`, 
-    {
-      method: "POST",
-      credentials: "include",
-      body: {
-        answers: {
-          nps: this.state.nps,
-          com: answer
-        }
-      },
-      // mode: 'no-cors',
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Credentials": true,
-        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-      }
-    }
-    )
-    // await api.post(`/feed/${qs}/c`, {
-    //   answers: {
-    //     nps: this.state.nps,
-    //     com: answer
+    // await fetch(`https://api.couponfeed.co/filesc/${qs}`, 
+    // {
+    //   method: "POST",
+    //   credentials: "include",
+    //   body: {
+    //     answers: {
+    //       nps: this.state.nps,
+    //       com: answer
+    //     }
+    //   },
+    //   // mode: 'no-cors',
+    //   headers: {
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Credentials": true,
+    //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
     //   }
-    // })
+    // }
+    // )
+    await api.post(`/feed/${qs}/c`, {
+      answers: {
+        nps: this.state.nps,
+        com: answer
+      }
+    })
     .then(response => this.setState({
       fid: response.data.fid
     }, () => { })).catch(error => {

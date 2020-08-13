@@ -57,33 +57,33 @@ export default class ManageShop extends Component {
   handleSubmit = async event => {
     event.preventDefault();
 
-    // await api.post(`/shops`, {
-    //   name: this.state.name,
-    //   manager: this.state.manager,
-    //   phone: this.state.phone,
-    //   retail_id: getId(),
-    //   short_url: this.getrandom()
-    // })
-    await fetch(`https://api.couponfeed.co/shops`, 
-    {
-      method: "POST",
-      credentials: "include",
-      body: {
-        name: this.state.name,
-        manager: this.state.manager,
-        phone: this.state.phone,
-        retail_id: getId(),
-        short_url: this.getrandom()
-      },
-      // mode: 'no-cors',
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Credentials": true,
-        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-      }
-    }
-    )
+    await api.post(`/shops`, {
+      name: this.state.name,
+      manager: this.state.manager,
+      phone: this.state.phone,
+      retail_id: getId(),
+      short_url: this.getrandom()
+    })
+    // await fetch(`https://api.couponfeed.co/shops`, 
+    // {
+    //   method: "POST",
+    //   credentials: "include",
+    //   body: {
+    //     name: this.state.name,
+    //     manager: this.state.manager,
+    //     phone: this.state.phone,
+    //     retail_id: getId(),
+    //     short_url: this.getrandom()
+    //   },
+    //   // mode: 'no-cors',
+    //   headers: {
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Credentials": true,
+    //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+    //   }
+    // }
+    // )
       .then(response => {
         if (response.status === 200) {
           this.setState({ done: 'true' })

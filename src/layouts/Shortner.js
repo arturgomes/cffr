@@ -6,7 +6,7 @@ import {Redirect } from "react-router-dom";
 // @material-ui/core components
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-// import api from "../services/api";
+import api from "../services/api";
 
 export default class SignIn extends Component {
   state = {
@@ -16,20 +16,7 @@ export default class SignIn extends Component {
   
   async componentDidMount() {
     const short_url = decodeURIComponent(this.props.match.params.short_url);
-    const response = await 
-    await fetch(`https://api.couponfeed.co/surl/${short_url}`, 
-      {
-        method: "POST",
-        credentials: "include",
-        // body: { shop_id: qs },
-        // mode: 'no-cors',
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-          "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-        }
-      });
+    const response = await api.post(`/surl/${short_url}`);
     if (!response.error) {
       const shop_id = response.data.id;
       console.log(shop_id);

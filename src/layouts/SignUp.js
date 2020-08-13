@@ -6,7 +6,7 @@ import BasicLayout from "../components/CouponFeed/BasicLayout";
 import RenderConclusion from "../components/CouponFeed/SignUpForm/Customer/RenderConclusion";
 import RenderForm from "../components/CouponFeed/SignUpForm/Customer/RenderForm";
 
-// import api from "../services/api"
+import api from "../services/api"
 
 
 export default class SignUp extends Component {
@@ -30,49 +30,49 @@ export default class SignUp extends Component {
   }
   handleSubmit = async event => {
     event.preventDefault();
-    await fetch("https://api.couponfeed.co/users", 
-    {
-      method: "POST",
-      credentials: "include",
-      body: {
-        name: this.state.name,
-        email: this.state.email,
-        phone: this.state.phone,
-        password: this.state.passw,
-        cpf: this.state.cpf,
-        address_street: this.state.address_street,
-        address_number: this.state.address_number,
-        address_city: this.state.address_city,
-        address_state: this.state.address_state,
-        address_zip: this.state.address_zip,
-        address_neighb: this.state.address_neighb,
-        address_comp: this.state.address_comp,
-        // address_country: this.state.address_country
-      },
-      // mode: 'no-cors',
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Credentials": true,
-        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-      }
-    }
-    )
-    // await api.post(`/users`, {
-    //   name: this.state.name,
-    //   email: this.state.email,
-    //   phone: this.state.phone,
-    //   password: this.state.passw,
-    //   cpf: this.state.cpf,
-    //   address_street: this.state.address_street,
-    //   address_number: this.state.address_number,
-    //   address_city: this.state.address_city,
-    //   address_state: this.state.address_state,
-    //   address_zip: this.state.address_zip,
-    //   address_neighb: this.state.address_neighb,
-    //   address_comp: this.state.address_comp,
-    //   // address_country: this.state.address_country
-    // })
+    // await fetch("https://api.couponfeed.co/users", 
+    // {
+    //   method: "POST",
+    //   credentials: "include",
+    //   body: {
+    //     name: this.state.name,
+    //     email: this.state.email,
+    //     phone: this.state.phone,
+    //     password: this.state.passw,
+    //     cpf: this.state.cpf,
+    //     address_street: this.state.address_street,
+    //     address_number: this.state.address_number,
+    //     address_city: this.state.address_city,
+    //     address_state: this.state.address_state,
+    //     address_zip: this.state.address_zip,
+    //     address_neighb: this.state.address_neighb,
+    //     address_comp: this.state.address_comp,
+    //     // address_country: this.state.address_country
+    //   },
+    //   // mode: 'no-cors',
+    //   headers: {
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Credentials": true,
+    //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+    //   }
+    // }
+    // )
+    await api.post(`/users`, {
+      name: this.state.name,
+      email: this.state.email,
+      phone: this.state.phone,
+      password: this.state.passw,
+      cpf: this.state.cpf,
+      address_street: this.state.address_street,
+      address_number: this.state.address_number,
+      address_city: this.state.address_city,
+      address_state: this.state.address_state,
+      address_zip: this.state.address_zip,
+      address_neighb: this.state.address_neighb,
+      address_comp: this.state.address_comp,
+      // address_country: this.state.address_country
+    })
       .then(response => { this.setState({ id: response.id }) })
       .catch(e => { this.setState({ error: e.error }) });
     this.setState({ done: true });
