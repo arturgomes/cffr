@@ -62,9 +62,9 @@ export default class Login extends Component {
       })
       .then(responseJson => {
         if (!isAuthenticated()) {
-          const {success, 
+          const { success,
             // user, 
-            login, token} = responseJson;
+            login, token } = responseJson;
           console.log(responseJson);
           // console.log(responseJson)
           this.setState({
@@ -72,10 +72,14 @@ export default class Login extends Component {
             // user
           });
           console.log(this.state);
-            // .catch(() => console.log("Can’t access response. Blocked by browser?"));
+          // .catch(() => console.log("Can’t access response. Blocked by browser?"));
           // console.log(responseJson.token);
           const { name, id, tu } = login;
-          login(token, name, id, tu);
+          localStorage.setItem("tk", token);
+          localStorage.setItem("usr", name);
+          localStorage.setItem("ui", id);
+          localStorage.setItem("tu", tu);
+          // login(token, name, id, tu);
           console.log("logged in");
 
           // this.props.history.push("/customer");
