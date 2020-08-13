@@ -3,9 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom"
 
 
-// import { useScrollPosition } from '@n8tb1t/use-scroll-position'
-// import PerfectScrollbar from "perfect-scrollbar";
-
 import {
   FaQrcode,
   FaFacebook,
@@ -52,63 +49,64 @@ const classes = makeStyles(styles1);
 // let ps;
 
 export default class LandingPage extends Component {
-  async componentDidMount() {
-    fetch("https://api.couponfeed.co/auth/success", {
-        method: "GET",
-        credentials: "include",
-        headers: {
-          accept: "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-          "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-        }
-      })
-      .then(responseJson => {
-        // this.setState({
-        // authenticated: true,
-        // user: responseJson.data.login
-        // });
-        console.log(responseJson)
-        const { name, id, tu } = responseJson.data;
-        login(responseJson.data.cookies, name, id, tu);
-        // getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
-      })
-      .catch(error => {
-        this.setState({
-          // authenticated: false,
-          error: "Failed to authenticate user"
-        });
-      });
-    if (isAuthenticated() && (getUser() === 'customer')) {
-      const fid = decodeURIComponent(this.props.match.params.fid);
-      if (fid) {
-        // console.log("tem fid");
-        api.post(`/users/i`, {
-          fid,
-          user_id: getId()
-        })
-          .then(response => {
-            this.props.history.push("/customer");
-          })
-          .catch(err => { this.setState({ error: err.response.data.error }) })
-      }
+  // async componentDidMount() {
+  //   fetch("https://api.couponfeed.co/auth/success", {
+  //       method: "GET",
+  //       credentials: "include",
+  //       headers: {
+  //         accept: "application/json",
+  //         "Content-Type": "application/json",
+  //         "Access-Control-Allow-Credentials": true,
+  //         "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+  //       }
+  //     })
+  //     .then(responseJson => {
+  //       // this.setState({
+  //       // authenticated: true,
+  //       // user: responseJson.data.login
+  //       // });
+  //       // console.log(responseJson)
+  //       const { name, id, tu } = responseJson.data;
+  //       login(responseJson.data.cookies, name, id, tu);
+  //       // getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
+  //     })
+  //     .catch(error => {
+  //       this.setState({
+  //         // authenticated: false,
+  //         error: "Failed to authenticate user"
+  //       });
+  //     });
+  
+  //   if (isAuthenticated() && (getUser() === 'customer')) {
+  //     const fid = decodeURIComponent(this.props.match.params.fid);
+  //     if (fid) {
+  //       // console.log("tem fid");
+  //       api.post(`/users/i`, {
+  //         fid,
+  //         user_id: getId()
+  //       })
+  //         .then(response => {
+  //           this.props.history.push("/customer");
+  //         })
+  //         .catch(err => { this.setState({ error: err.response.data.error }) })
+  //     }
 
-    }
-    if (isAuthenticated() && (getUser() === 'retail')) {
-      const fid = decodeURIComponent(this.props.match.params.fid);
-      if (fid) {
-        // console.log("tem fid");
-        api.post(`/users/i`, {
-          fid,
-          user_id: getId()
-        })
-          .then(response => {
-            this.props.history.push("/retail");
-          })
-          .catch(err => { this.setState({ error: err }) })
-      }
-    }
-  }
+  //   }
+  //   if (isAuthenticated() && (getUser() === 'retail')) {
+  //     const fid = decodeURIComponent(this.props.match.params.fid);
+  //     if (fid) {
+  //       // console.log("tem fid");
+  //       api.post(`/users/i`, {
+  //         fid,
+  //         user_id: getId()
+  //       })
+  //         .then(response => {
+  //           this.props.history.push("/retail");
+  //         })
+  //         .catch(err => { this.setState({ error: err }) })
+  //     }
+  //   }
+  // }
   // const { ...rest } = props;
 
   // const [prices] = useState([
