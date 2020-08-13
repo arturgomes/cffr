@@ -44,25 +44,20 @@ export default class Login extends Component {
   };
 
   async componentDidMount() {
-    api.get('/auth/success', {
+    // api.get('/auth/success', )
+    fetch("https://api.couponfeed.co/auth/success", 
+    {
+      method: "GET",
+      credentials: "include",
+      // mode: 'no-cors',
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
         "Access-Control-Allow-Credentials": true,
         "Access-Control-Allow-Origin": "https://www.couponfeed.co"
       }
-    })
-      // fetch("https://api.couponfeed.co/auth/success", {
-      //   method: "GET",
-      //   credentials: "include",
-      //   // mode: 'no-cors',
-      //   headers: {
-      //     "Accept": "application/json",
-      //     "Content-Type": "application/json",
-      //     "Access-Control-Allow-Credentials": true,
-      //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-      //   }
-      // })
+    }
+    )
       .then(response => {
         if (response.status === 200) return response.json();
         throw new Error("failed to authenticate user");

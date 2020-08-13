@@ -5,7 +5,7 @@ import { FaHome, FaFacebook, FaInstagram } from "react-icons/fa";
 import LinearProgress from '@material-ui/core/LinearProgress';
 
 import cflogo from "../assets/img/completa_monocromatica@4x.png"
-import api from "../services/api";
+// import api from "../services/api";
 
 class Demo extends Component {
 
@@ -30,7 +30,20 @@ export default class PrintQRThermal extends Component {
 
   async componentDidMount() {
     const qs = decodeURIComponent(this.props.match.params.id);
-    const response = await api.post(`/shopsl`, { shop_id: qs });
+    const response = await await fetch("https://api.couponfeed.co/shopsl",
+      {
+        method: "POST",
+        credentials: "include",
+        body: { shop_id: qs },
+        // mode: 'no-cors',
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+          "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+        }
+      }
+    );
     if (!response.error) {
       const { retail_id, name, short_url } = response.data;
       this.setState({
@@ -44,7 +57,19 @@ export default class PrintQRThermal extends Component {
     else {
       this.setState({ error: "Loja não encontrada" })
     }
-    const res = await api.post(`/files/${this.state.retail_id}`);
+    const res = await await fetch(`https://api.couponfeed.co/files/${this.state.retail_id}`, 
+    {
+      method: "POST",
+      credentials: "include",
+      // body: { shop_id: qs },
+      // mode: 'no-cors',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+      }
+    });
     if (!res.error) {
       const { url } = res.data[0];
       console.log();
@@ -94,12 +119,12 @@ export default class PrintQRThermal extends Component {
           </div>
           {/* <div className="steps"> */}
             Não conseguiu acessar o QR code? Acesse <spam>https://couponfeed.co/f/{this.state.short_url}</spam>
-            <div className="logo-container">
-              <p><img src={cflogo} alt="" style={{ width: '350px' }} /></p>
-              <p><FaHome /> https://couponfeed.co</p>
-              <p><FaFacebook /> https://fb.com/couponfeed</p>
-              <p><FaInstagram /> https://instagram.com/couponfeed</p>
-            </div>
+          <div className="logo-container">
+            <p><img src={cflogo} alt="" style={{ width: '350px' }} /></p>
+            <p><FaHome /> https://couponfeed.co</p>
+            <p><FaFacebook /> https://fb.com/couponfeed</p>
+            <p><FaInstagram /> https://instagram.com/couponfeed</p>
+          </div>
           {/* </div> */}
 
 

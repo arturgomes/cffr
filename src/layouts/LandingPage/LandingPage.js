@@ -38,8 +38,10 @@ import styles from '../../assets/jss/material-kit-react/views/componentsSections
 import styles1 from './css/styles.css'
 // import Parallax from "../../components/Parallax/Parallax.js";
 import feedback from "./images/feedback.svg";
-import { login, getId, getUser, isAuthenticated, getTu } from '../../services/auth';
-import api from '../../services/api';
+import { 
+  // login, getId, getUser, 
+  isAuthenticated, getTu } from '../../services/auth';
+// import api from '../../services/api';
 
 const useStyles = makeStyles(styles);
 const classes = makeStyles(styles1);

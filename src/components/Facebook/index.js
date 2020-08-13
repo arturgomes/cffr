@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FacebookButton from './FacebookButton';
+// import FacebookButton from './FacebookButton';
 
 export default class LoginFacebook extends Component {
   // state = {

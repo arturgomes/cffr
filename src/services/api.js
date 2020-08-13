@@ -5,8 +5,18 @@ import { getToken } from './auth';
 const api = axios.create({
   baseURL: 'https://api.couponfeed.co',
   withCredentials: true,
+  
+  // tentei colocar os headers dentro do axios.create, não deu certo,
+  // headers: {
+  //   "Accept": "application/json",
+  //   "Content-Type": "application/json",
+  //   "Access-Control-Allow-Credentials": true,
+  //   "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+  // }
 });
 
+
+// portanto, tentei colocar aqui. Também não deu certo
 api.defaults.headers.common['Accept'] = 'application/json' ;
 api.defaults.headers.common['Content-Type'] = 'application/json' ;
 api.defaults.headers.common['Access-Control-Allow-Credentials'] = true ;
@@ -14,6 +24,8 @@ api.defaults.headers.common['Access-Control-Allow-Origin'] = 'https://www.coupon
 
 api.interceptors.request.use(async config => {
   const token = getToken();
+
+  //então tentei colocar aqui e também não deu certo.
   config.headers.common['Accept'] = 'application/json' ;
   config.headers.common['Content-Type'] = 'application/json' ;
   config.headers.common['Access-Control-Allow-Credentials'] = true ;
@@ -23,4 +35,5 @@ api.interceptors.request.use(async config => {
   }
   return config;
 });
+
 export default api;

@@ -5,7 +5,7 @@ import { FaHome, FaFacebook, FaInstagram } from "react-icons/fa";
 import LinearProgress from '@material-ui/core/LinearProgress';
 
 import cflogo from "../assets/img/completa_fundo_claro@4x.png"
-import api from "../services/api";
+// import api from "../services/api";
 
 
 class Demo extends Component {
@@ -31,7 +31,20 @@ export default class PrintQR extends Component {
 
   async componentDidMount() {
     const qs = decodeURIComponent(this.props.match.params.id);
-    await api.post(`/shopsl`, { shop_id: qs })
+    await fetch("https://api.couponfeed.co/shopsl", 
+    {
+      method: "POST",
+      credentials: "include",
+      body: { shop_id: qs },
+      // mode: 'no-cors',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+      }
+    }
+    )
       .then(response => {
         const { retail_id, name, short_url } = response.data;
         this.setState({
@@ -43,8 +56,20 @@ export default class PrintQR extends Component {
       }
       )
       .catch(error => this.setState({ error: "Loja não encontrada" }))
-
-    await api.post(`/files/${this.state.retail_id}`)
+      await fetch(`https://api.couponfeed.co/files/${this.state.retail_id}`, 
+      {
+        method: "POST",
+        credentials: "include",
+        // body: { shop_id: qs },
+        // mode: 'no-cors',
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+          "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+        }
+      })
+    // await api.post(`/files/${this.state.retail_id}`)
       .then(res => {
         const { url } = res.data[0];
         this.setState({ url })

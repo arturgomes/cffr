@@ -8,7 +8,7 @@ import RenderConclusion from "../components/CouponFeed/SignUpForm/Retail/RenderC
 import RenderForm from "../components/CouponFeed/SignUpForm/Retail/RenderForm";
 
 
-import api from "../services/api"
+// import api from "../services/api"
 
 
 export default class SignUp extends Component {
@@ -33,21 +33,49 @@ export default class SignUp extends Component {
   }
   handleSubmit = async event => {
     event.preventDefault();
-    await api.post(`/retails`, {
-      name: this.state.name,
-      email: this.state.email,
-      phone: this.state.phone,
-      password: this.state.passw,
-      cnpj: this.state.cnpj,
-      address_street: this.state.address_street,
-      address_number: this.state.address_number,
-      address_city: this.state.address_city,
-      address_state: this.state.address_state,
-      address_zip: this.state.address_zip,
-      address_neighb: this.state.address_neighb,
-      address_comp: this.state.address_comp,
-      // address_country: this.state.address_country
-    })
+    await fetch("https://api.couponfeed.co/retails", 
+    {
+      method: "POST",
+      credentials: "include",
+      body: {
+        name: this.state.name,
+        email: this.state.email,
+        phone: this.state.phone,
+        password: this.state.passw,
+        cnpj: this.state.cnpj,
+        address_street: this.state.address_street,
+        address_number: this.state.address_number,
+        address_city: this.state.address_city,
+        address_state: this.state.address_state,
+        address_zip: this.state.address_zip,
+        address_neighb: this.state.address_neighb,
+        address_comp: this.state.address_comp,
+        // address_country: this.state.address_country
+      },
+      // mode: 'no-cors',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+      }
+    }
+    )
+    // await api.post(`/retails`, {
+    //   name: this.state.name,
+    //   email: this.state.email,
+    //   phone: this.state.phone,
+    //   password: this.state.passw,
+    //   cnpj: this.state.cnpj,
+    //   address_street: this.state.address_street,
+    //   address_number: this.state.address_number,
+    //   address_city: this.state.address_city,
+    //   address_state: this.state.address_state,
+    //   address_zip: this.state.address_zip,
+    //   address_neighb: this.state.address_neighb,
+    //   address_comp: this.state.address_comp,
+    //   // address_country: this.state.address_country
+    // })
       .then(response => { console.log(response);this.setState({ id: response.id, done: true  }) })
       .catch(e => { this.setState({ error: e.error }) });
     this.setState({ });
