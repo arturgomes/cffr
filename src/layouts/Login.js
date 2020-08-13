@@ -46,42 +46,42 @@ export default class Login extends Component {
   async componentDidMount() {
     // api.get('/auth/success')
     fetch("https://api.couponfeed.co/auth/success", {
-        method: "GET",
-        credentials: "include",
-        // mode: 'no-cors',
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-          "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-        }
+      method: "GET",
+      credentials: "include",
+      // mode: 'no-cors',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+      }
+    })
+      .then(response => {
+        if (response.status === 200) return response.json();
+        throw new Error("failed to authenticate user");
       })
-        .then(response => {
-          if (response.status === 200) return response.json();
-          throw new Error("failed to authenticate user");
-        })
-        .then(responseJson => {
+      .then(responseJson => {
+        if (!isAuthenticated()) {
           console.log(responseJson);
-          if (!isAuthenticated()) {
           // console.log(responseJson)
           this.setState({
-            authenticated: true,
+            authenticated: responseJson.success,
             user: responseJson.user
           })
-          .catch(() => console.log("Can’t access response. Blocked by browser?"));
+            .catch(() => console.log("Can’t access response. Blocked by browser?"));
           // console.log(responseJson.token);
           const { name, id, tu } = responseJson.login;
           login(responseJson.token, name, id, tu);
           // this.props.history.push("/customer");
           getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
         }
-        })
-        .catch(error => {
-          this.setState({
-            // authenticated: false,
-            error: "Failed to authenticate user"
-          });
+      })
+      .catch(error => {
+        this.setState({
+          // authenticated: false,
+          error: "Failed to authenticate user"
         });
+      });
   }
 
   handleSignIn = async e => {
