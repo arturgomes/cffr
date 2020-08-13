@@ -61,7 +61,7 @@ class Dashboard extends Component {
     // console.log(getUser())
     await fetch("https://api.couponfeed.co/dashboardDataC", 
     {
-      method: "post",
+      method: "POST",
       credentials: "include",
       body: { user_id: getId() },
       // mode: 'no-cors',

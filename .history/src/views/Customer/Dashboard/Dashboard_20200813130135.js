@@ -28,6 +28,7 @@ import Button from "../../../components/CustomButtons/Button.js";
 //   successColor,
 // } from "../../../assets/jss/material-dashboard-react.js"
 
+import api from "../../../services/api";
 import {
   getId, 
   // getUser
@@ -61,7 +62,7 @@ class Dashboard extends Component {
     // console.log(getUser())
     await fetch("https://api.couponfeed.co/dashboardDataC", 
     {
-      method: "post",
+      method: "POST",
       credentials: "include",
       body: { user_id: getId() },
       // mode: 'no-cors',
