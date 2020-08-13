@@ -44,11 +44,7 @@ export default class Login extends Component {
   };
 
   async componentDidMount() {
-    // api.get('/auth/success')
-    fetch("https://api.couponfeed.co/auth/success", {
-      method: "GET",
-      credentials: "include",
-      // mode: 'no-cors',
+    api.get('/auth/success', {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
@@ -56,6 +52,17 @@ export default class Login extends Component {
         "Access-Control-Allow-Origin": "https://www.couponfeed.co"
       }
     })
+      // fetch("https://api.couponfeed.co/auth/success", {
+      //   method: "GET",
+      //   credentials: "include",
+      //   // mode: 'no-cors',
+      //   headers: {
+      //     "Accept": "application/json",
+      //     "Content-Type": "application/json",
+      //     "Access-Control-Allow-Credentials": true,
+      //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+      //   }
+      // })
       .then(response => {
         if (response.status === 200) return response.json();
         throw new Error("failed to authenticate user");
@@ -65,16 +72,21 @@ export default class Login extends Component {
           const { success,
             // user, 
             login, token } = responseJson;
+          console.log(responseJson);
+          // console.log(responseJson)
           this.setState({
             authenticated: success,
             // user
           });
+          console.log(this.state);
+          // .catch(() => console.log("Can’t access response. Blocked by browser?"));
+          // console.log(responseJson.token);
           const { name, id, tu } = login;
           localStorage.setItem("tk", token);
           localStorage.setItem("usr", name);
           localStorage.setItem("ui", id);
           localStorage.setItem("tu", tu);
-          // login(token, name, id, tu);
+          login(token, name, id, tu);
           console.log("logged in");
 
           // this.props.history.push("/customer");
