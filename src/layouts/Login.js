@@ -62,13 +62,15 @@ export default class Login extends Component {
       })
       .then(responseJson => {
         if (!isAuthenticated()) {
-          const {success, user, login, token} = responseJson;
+          const {success, 
+            // user, 
+            login, token} = responseJson;
           console.log(responseJson);
           // console.log(responseJson)
           this.setState({
             authenticated: success,
-            user
-          })
+            // user
+          });
           console.log(this.state);
             // .catch(() => console.log("Can’t access response. Blocked by browser?"));
           // console.log(responseJson.token);
