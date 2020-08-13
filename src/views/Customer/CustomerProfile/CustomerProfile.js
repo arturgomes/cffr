@@ -27,7 +27,21 @@ export default class UserProfile extends Component {
     uploadedFiles : [],
   }
   async componentDidMount(){
-    await api.post(`/filesc/${getId()}`)
+    await fetch(`https://api.couponfeed.co/filesc/${getId()}`, 
+    {
+      method: "POST",
+      credentials: "include",
+      // body: { user_id: getId() },
+      // mode: 'no-cors',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+      }
+    }
+    )
+    // await api.post(`/filesc/${getId()}`)
       .then(response =>
           this.setState({
             uploadedFiles: response.data.map(file => ({

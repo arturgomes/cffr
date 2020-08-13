@@ -60,8 +60,22 @@ class Dashboard extends Component {
     // this.setState({isLoading:false})
     // console.log("tá carregando")
     // console.log(getUser())
-    await api
-      .post("/dashboardDataC", { user_id: getId() })
+    await fetch("https://api.couponfeed.co/dashboardDataC", 
+    {
+      method: "POST",
+      credentials: "include",
+      body: { user_id: getId() },
+      // mode: 'no-cors',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+      }
+    }
+    )
+    // api
+    //   .post("/dashboardDataC", { user_id: getId() })
       .then(response => {
         
         const { fb,
