@@ -2,6 +2,8 @@ import React, { Component } from "react";
 // creates a beautiful scrollbar
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 // @material-ui/core components
+import LinearProgress from '@material-ui/core/LinearProgress';
+
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import { Divider } from 'semantic-ui-react'
@@ -40,11 +42,16 @@ export default class Login extends Component {
   state = {
     user: {},
     error: null,
-    authenticated: false
+    authenticated: false,
+    isLoading: true
   };
 
   async componentDidMount() {
     // api.get('/auth/success', )
+    if (isAuthenticated()) {
+      getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
+    }
+    else {
     fetch("https://api.couponfeed.co/auth/success", 
     {
       method: "GET",
@@ -63,7 +70,7 @@ export default class Login extends Component {
         throw new Error("failed to authenticate user");
       })
       .then(responseJson => {
-        if (!isAuthenticated()) {
+      
           const { success,
             // user, 
             login, token } = responseJson;
@@ -71,6 +78,7 @@ export default class Login extends Component {
           // console.log(responseJson)
           this.setState({
             authenticated: success,
+            isLoading: success,
             // user
           });
           console.log(this.state);
@@ -86,7 +94,7 @@ export default class Login extends Component {
 
           // this.props.history.push("/customer");
           getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
-        }
+        
       })
       .catch(error => {
         this.setState({
@@ -94,6 +102,7 @@ export default class Login extends Component {
           error: "Failed to authenticate user"
         });
       });
+    }
   }
 
   handleSignIn = async e => {
@@ -145,7 +154,10 @@ export default class Login extends Component {
 
   render() {
     // const { authenticated } = this.state;
-
+    if (this.state.isLoading) {
+      return <LinearProgress />
+    }
+    else
     return (
 
       <BasicLayout>
