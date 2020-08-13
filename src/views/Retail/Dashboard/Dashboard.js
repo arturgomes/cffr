@@ -51,8 +51,22 @@ class Dashboard extends Component {
   async componentDidMount() {
     // this.setState({isLoading:false})
     // console.log("tá carregando")
-    await api
-      .post("/dashboardData", { retail_id: getId() })
+    // await api
+    //   .post("/dashboardData", { retail_id: getId() })
+      await fetch(`https://api.couponfeed.co/dashboardData`, 
+    {
+      method: "POST",
+      credentials: "include",
+      body: { retail_id: getId() },
+      // mode: 'no-cors',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+      }
+    }
+    )
       .then(response => {
         // console.log(response.data);
         const {

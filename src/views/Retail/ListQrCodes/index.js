@@ -67,8 +67,22 @@ export default class ListQrCodes extends Component {
   async componentDidMount() {
     this._isMounted = true;
 
-    await api
-      .post("/qr", { retail_id: getId() })
+    // await api
+    //   .post("/qr", { retail_id: getId() })
+      await fetch("https://api.couponfeed.co/qr", 
+      {
+        method: "POST",
+        credentials: "include",
+        body: { retail_id: getId() },
+        // mode: 'no-cors',
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+          "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+        }
+      }
+      )
       .then(response => {
         if (this._isMounted) {
           console.log(response)

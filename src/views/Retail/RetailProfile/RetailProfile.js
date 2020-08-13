@@ -29,7 +29,21 @@ export default class UserProfile extends Component {
     uploadedFiles : [],
   }
   async componentDidMount(){
-    await api.post(`/files/${getId()}`)
+    // await api.post(`/files/${getId()}`)
+    await fetch(`https://api.couponfeed.co/files/${getId()}`, 
+    {
+      method: "POST",
+      credentials: "include",
+      // body: { retail_id: getId() },
+      // mode: 'no-cors',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+      }
+    }
+    )
       .then(response =>
           this.setState({
             uploadedFiles: response.data.map(file => ({
@@ -124,7 +138,21 @@ processUpload = (uploadedFile) => {
   }
 
   handleDelete = async id => {
-    await api.delete(`/files/${id}`);
+    // await api.delete(`/files/${id}`);
+    await fetch(`https://api.couponfeed.co/files/${id}`, 
+    {
+      method: "DELETE",
+      credentials: "include",
+      body: { retail_id: getId() },
+      // mode: 'no-cors',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+      }
+    }
+    )
     this.setState({
       uploadedFiles: this.state.uploadedFiles.filter(file => file.id !== id)
     });

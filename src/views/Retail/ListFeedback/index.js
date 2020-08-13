@@ -43,8 +43,22 @@ export default class ListFeedback extends Component {
 
   async componentDidMount() {
 
-    await api
-      .post("/list", { retail_id: getId() })
+    // await api
+    //   .post("/list", { retail_id: getId() })
+    await fetch(`https://api.couponfeed.co/list`, 
+    {
+      method: "POST",
+      credentials: "include",
+      body: { retail_id: getId() },
+      // mode: 'no-cors',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+      }
+    }
+    )
       .then(response => {
         this.setState({ fb: response.data, isLoading: false });
         // console.log(response.data);
