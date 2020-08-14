@@ -52,22 +52,22 @@ export default class Login extends Component {
       getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
     }
     else {
-      // await api.get('/auth/success')
-    fetch("https://api.couponfeed.co/auth/success", 
-    {
-      method: "GET",
-      credentials: "include",
-      // mode: 'no-cors',
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Credentials": true,
-        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-      }
-    }
-    )
+      await api.get('/auth/success')
+    // fetch("https://api.couponfeed.co/auth/success", 
+    // {
+    //   method: "GET",
+    //   credentials: "include",
+    //   // mode: 'no-cors',
+    //   headers: {
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Credentials": true,
+    //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+    //   }
+    // }
+    // )
       .then(response => {
-        console.log(response);
+        // console.log(response);
         if (response.status === 200) return response.json();
         throw new Error("failed to authenticate user");
       })
@@ -76,14 +76,14 @@ export default class Login extends Component {
           const { success,
             // user, 
             login, token } = responseJson;
-          console.log(responseJson);
+          // console.log(responseJson);
           // console.log(responseJson)
           this.setState({
             authenticated: success,
             isLoading: success,
             // user
           });
-          console.log(this.state);
+          // console.log(this.state);
           // .catch(() => console.log("Can’t access response. Blocked by browser?"));
           // console.log(responseJson.token);
           const { name, id, tu } = login;
@@ -92,7 +92,7 @@ export default class Login extends Component {
           localStorage.setItem("ui", id);
           localStorage.setItem("tu", tu);
           // login(token, name, id, tu);
-          console.log("logged in");
+          // console.log("logged in");
 
           // this.props.history.push("/customer");
           getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
@@ -114,7 +114,7 @@ export default class Login extends Component {
     const { email, password } = this.state;
     if (!email || !password) {
       this.setState({ error: "Preencha e-mail e senha para continuar!" });
-      console.log(this.state.error);
+      // console.log(this.state.error);
     } else {
       await api
         .post("/sessions", { email, password })
@@ -136,7 +136,7 @@ export default class Login extends Component {
              * The request was made and the server responded with a
              * status code that falls out of the range of 2xx
              */
-            console.log(error.response.data);
+            // console.log(error.response.data);
             this.setState({ err: error.response.data });
           } else if (error.request) {
             /*
@@ -144,7 +144,7 @@ export default class Login extends Component {
              * is an instance of XMLHttpRequest in the browser and an instance
              * of http.ClientRequest in Node.js
              */
-            console.log(error.request);
+            // console.log(error.request);
           } else {
             // Something happened in setting up the request and triggered an Error
           }
