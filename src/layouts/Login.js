@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // creates a beautiful scrollbar
 import "perfect-scrollbar/css/perfect-scrollbar.css";
+import "../assets/css/login.css";
 // @material-ui/core components
 import LinearProgress from '@material-ui/core/LinearProgress';
 
@@ -25,6 +26,9 @@ import api from "../services/api";
 import { login, getUser, isAuthenticated } from "../services/auth";
 
 const useStyles = makeStyles(theme => ({
+
+
+
   root: {
     flexGrow: 1,
     overflow: 'hidden',
@@ -39,7 +43,7 @@ const useStyles = makeStyles(theme => ({
 
 export default class Login extends Component {
 
-  
+
   state = {
     user: {},
     error: null,
@@ -72,7 +76,7 @@ export default class Login extends Component {
   //       throw new Error("failed to authenticate user");
   //     })
   //     .then(responseJson => {
-      
+
   //         const { success,
   //           // user, 
   //           login, token } = responseJson;
@@ -96,7 +100,7 @@ export default class Login extends Component {
 
   //         // this.props.history.push("/customer");
   //         getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
-        
+
   //     })
   //     .catch(error => {
   //       this.setState({
@@ -106,7 +110,18 @@ export default class Login extends Component {
   //     });
   //   }
   // }
-
+  componentFacebookClicked =  () => {
+    // await api.post(`/a/facebook`)
+    window.open("https://api.couponfeed.co/auth/facebook", "_self");
+    // window.open("http://localhost:3000/auth/facebook", "_self");
+    // console.log("clicked")
+  }
+  componentGoogleClicked =  () => {
+    // await api.post(`/a/facebook`)
+    window.open("https://api.couponfeed.co/auth/google", "_self");
+    // window.open("http://localhost:3000/auth/google", "_self");
+    // console.log("clicked")
+  }
   handleSignIn = async e => {
     e.preventDefault();
     // const fid = decodeURIComponent(this.props.match.params.fid);
@@ -156,29 +171,39 @@ export default class Login extends Component {
 
   render() {
     // const { authenticated } = this.state;
-    if (this.state.isLoading) {
-      return <LinearProgress />
-    }
-    else
+    // if (this.state.isLoading) {
+    //   return <LinearProgress />
+    // }
+    // else
     return (
 
       <BasicLayout>
-        <Avatar className={useStyles.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Fazer Login
-          </Typography>
-        <LoginFacebook />
 
-        <Divider horizontal style={{ color: "#444", marginTop: '20px', marginBottom: '20px' }}><hr style={{ border: '1px solid red' }} />ou</Divider>
+        <div class="container">
+          <form noValidate
+          onSubmit={this.handleSignIn}>
+            <div class="row">
+              <h2 style="text-align:center">Login com Mídias Sociais ou manualmente</h2>
+              <div class="vl">
+                <span class="vl-innertext">ou</span>
+              </div>
 
-        <form
-          className={useStyles.form}
-          noValidate
-          onSubmit={this.handleSignIn}
-        >
-          <TextField
+              <div class="col">
+                <a onClick={() => {this.componentFacebookClicked()}}  class="fb btn">
+                  <i class="fa fa-facebook fa-fw"></i> Login com Facebook
+                </a>
+
+                <a onClick={() => {this.componentFacebookClicked()}}  class="google btn">
+                  <i class="fa fa-google fa-fw"> </i> 
+                  Login com Google </a>
+              </div>
+
+              <div class="col">
+                <div class="hide-md-lg">
+                  <p>Or sign in manually:</p>
+                </div>
+
+                <TextField
             // variant="outlined"
             margin="normal"
             required
@@ -203,11 +228,7 @@ export default class Login extends Component {
             autoComplete="current-password"
             onChange={e => this.setState({ password: e.target.value })}
           />
-          {/* <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              /> */}
-          <Button
+                <Button
             type="submit"
             fullWidth
             variant="contained"
@@ -216,20 +237,23 @@ export default class Login extends Component {
           >
             Faça login
             </Button>
-          <Grid container>
-            {/* <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                </Link>
-                </Grid> */}
-            <Grid item>
-              <Link
-                href="/signup" variant="body2">
-                {"Ainda não se cadastrou? Faça já o seu!"}
-              </Link>
-            </Grid>
-          </Grid>
-        </form>
+              </div>
+      
+            </div>
+          </form>
+              </div>
+
+              <div class="bottom-container">
+                <div class="row">
+                  <div class="col">
+                    <a href="/signup" style="color:white" class="btn">Cadastre-se</a>
+                  </div>
+                  <div class="col">
+                    {/* <a href="#" style="color:white" class="btn">Forgot password?</a> */}
+                  </div>
+                </div>
+              </div>
+
 
       </BasicLayout>
     );

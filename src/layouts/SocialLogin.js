@@ -75,7 +75,7 @@ class Validate extends Component {
   }
 
     render() {
-      if (!this.state.success){
+      if (!this.state.authenticated){
           return <CircularProgress />
       }
       else{
