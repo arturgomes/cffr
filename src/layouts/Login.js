@@ -52,20 +52,20 @@ export default class Login extends Component {
       getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
     }
     else {
-      await api.get('/auth/success')
-    // fetch("https://api.couponfeed.co/auth/success", 
-    // {
-    //   method: "GET",
-    //   credentials: "include",
-    //   // mode: 'no-cors',
-    //   headers: {
-    //     "Accept": "application/json",
-    //     "Content-Type": "application/json",
-    //     "Access-Control-Allow-Credentials": true,
-    //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-    //   }
-    // }
-    // )
+      // await api.get('/auth/success')
+    fetch("https://api.couponfeed.co/auth/success", 
+    {
+      method: "GET",
+      credentials: "include",
+      // mode: 'no-cors',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+      }
+    }
+    )
       .then(response => {
         // console.log(response);
         if (response.status === 200) return response.json();
