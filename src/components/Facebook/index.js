@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 // import FacebookButton from './FacebookButton';
-
+import {
+  FaFacebook,
+  FaGoogle,
+} from "react-icons/fa";
+import './style.css'
 export default class LoginFacebook extends Component {
   // state = {
   //   auth: false,
@@ -52,10 +56,13 @@ export default class LoginFacebook extends Component {
           onClick={this.componentClicked}
           callback={this.responseFacebook} />  */}
           {/* } */}
-          <ul>
+          <ul className="no-bullet">
             {/* <FacebookLoginButton/> */}
-          <li onClick={() => {this.componentFacebookClicked()}}>Login com Facebook</li>
-          <li onClick={() => {this.componentGoogleClicked()}}>Login com Google</li>
+          <li onClick={() => {this.componentFacebookClicked()}} class="fb" >
+            <div className="button-left"><FaFacebook/></div>
+            <div className="text-btn">Login com Facebook</div>
+            </li>
+          <li onClick={() => {this.componentGoogleClicked()}} class="google connect" >Login com Google</li>
           </ul>
         {/* <GoogleLogin
           clientId="696384323916-spmu7mjsuge1a55dh2v65dtke3jgvjb6.apps.googleusercontent.com"
