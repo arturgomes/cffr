@@ -7,7 +7,7 @@ import * as Cookies from "js-cookie";
 const Logout = ({ history }) => {
   useEffect(
     () => {
-      logout();
+      // logout();
       localStorage.removeItem("tk");
       localStorage.removeItem("usr");
       localStorage.removeItem("ui");
