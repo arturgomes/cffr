@@ -52,10 +52,14 @@ export default function AdminNavbarLinks(props) {
   };
   const handleCloseProfile = e => {
     e.preventDefault();
-    window.open("http://localhost:3000/auth/logout", "_self");
     logout();
+    // localStorage.removeItem("tk");
+    // localStorage.removeItem("usr");
+    // localStorage.removeItem("ui");
+    // localStorage.removeItem("tu");
     Cookies.remove('session') // will set "cookie_name" to "value"
     Cookies.remove('session.sig') // will set "cookie_name" to "value"
+    window.open("http://localhost:3000/auth/logout", "_self");
     window.location.href = '/'
   };
 
