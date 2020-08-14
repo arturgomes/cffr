@@ -3,11 +3,11 @@ import React, { Component } from "react";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 import "../assets/css/login.css";
 // @material-ui/core components
-import LinearProgress from '@material-ui/core/LinearProgress';
+// import LinearProgress from '@material-ui/core/LinearProgress';
 
-import { makeStyles } from "@material-ui/core/styles";
-import Avatar from "@material-ui/core/Avatar";
-import { Divider } from 'semantic-ui-react'
+// import { makeStyles } from "@material-ui/core/styles";
+// import Avatar from "@material-ui/core/Avatar";
+// import { Divider } from 'semantic-ui-react'
 // import { FaSpinner } from 'react-icons/fa';
 
 
@@ -15,31 +15,16 @@ import Button from "../components/CustomButtons/Button.js";
 
 // import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import Typography from "@material-ui/core/Typography";
-import Grid from '@material-ui/core/Grid';
+// import Link from "@material-ui/core/Link";
+// import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+// import Typography from "@material-ui/core/Typography";
+// import Grid from '@material-ui/core/Grid';
 import BasicLayout from "../components/CouponFeed/BasicLayout";
-import LoginFacebook from '../components/Facebook'
+// import LoginFacebook from '../components/Facebook'
 import api from "../services/api";
 
-import { login, getUser, isAuthenticated } from "../services/auth";
+import { login, getUser } from "../services/auth";
 
-const useStyles = makeStyles(theme => ({
-
-
-
-  root: {
-    flexGrow: 1,
-    overflow: 'hidden',
-    padding: theme.spacing(0, 3),
-  },
-  paper: {
-    maxWidth: 300,
-    margin: `${theme.spacing(1)}px auto`,
-    padding: theme.spacing(2),
-  },
-}));
 
 export default class Login extends Component {
 
@@ -179,28 +164,28 @@ export default class Login extends Component {
 
       <BasicLayout>
 
-        <div class="container">
+        <div className="container">
           <form noValidate
           onSubmit={this.handleSignIn}>
-            <div class="row">
-              <h2 style="text-align:center">Login com Mídias Sociais ou manualmente</h2>
-              <div class="vl">
-                <span class="vl-innertext">ou</span>
+            <div className="row">
+              <h2 style={{textAlign:"center"}}>Login com Mídias Sociais ou manualmente</h2>
+              <div className="vl">
+                <span className="vl-innertext">ou</span>
               </div>
 
-              <div class="col">
-                <a onClick={() => {this.componentFacebookClicked()}}  class="fb btn">
-                  <i class="fa fa-facebook fa-fw"></i> Login com Facebook
-                </a>
+              <div className="col">
+                <button onClick={() => {this.componentFacebookClicked()}}  className="fb btn">
+                  <i className="fa fa-facebook fa-fw"></i> Login com Facebook
+                </button>
 
-                <a onClick={() => {this.componentFacebookClicked()}}  class="google btn">
-                  <i class="fa fa-google fa-fw"> </i> 
-                  Login com Google </a>
+                <button onClick={() => {this.componentFacebookClicked()}}  className="google btn">
+                  <i className="fa fa-google fa-fw"> </i> 
+                  Login com Google </button>
               </div>
 
-              <div class="col">
-                <div class="hide-md-lg">
-                  <p>Or sign in manually:</p>
+              <div className="col">
+                <div className="hide-md-lg">
+                  <p>Ou fazer login manualmente:</p>
                 </div>
 
                 <TextField
@@ -233,7 +218,7 @@ export default class Login extends Component {
             fullWidth
             variant="contained"
             color="success"
-          // className={useStyles.submit}
+          // classNameName={useStyles.submit}
           >
             Faça login
             </Button>
@@ -243,13 +228,13 @@ export default class Login extends Component {
           </form>
               </div>
 
-              <div class="bottom-container">
-                <div class="row">
-                  <div class="col">
-                    <a href="/signup" style="color:white" class="btn">Cadastre-se</a>
+              <div className="bottom-container">
+                <div className="row">
+                  <div className="col">
+                    <a href="/signup" style={{color:"white"}} className="btn">Cadastre-se</a>
                   </div>
-                  <div class="col">
-                    {/* <a href="#" style="color:white" class="btn">Forgot password?</a> */}
+                  <div className="col">
+                    {/* <a href="#" style="color:white" className="btn">Forgot password?</a> */}
                   </div>
                 </div>
               </div>

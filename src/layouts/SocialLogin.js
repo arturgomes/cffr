@@ -4,9 +4,11 @@ import {Redirect } from "react-router-dom";
 
 // @material-ui/core components
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { login, getUser, isAuthenticated } from "../services/auth";
+import { 
+  // login, 
+  getUser, isAuthenticated } from "../services/auth";
 
-import api from "../services/api";
+// import api from "../services/api";
 
 class Validate extends Component {
   state = {

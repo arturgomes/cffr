@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Redirect } from "react-router-dom";
-import { logout } from "../services/auth.js"
+// import { logout } from "../services/auth.js"
 import * as Cookies from "js-cookie";
 
 
