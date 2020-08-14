@@ -51,7 +51,7 @@ export default class Login extends Component {
       getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
     }
     else {
-      await api.get('/auth/success', )
+      await api.get('/auth/success')
     // fetch("https://api.couponfeed.co/auth/success", 
     // {
     //   method: "GET",
