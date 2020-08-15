@@ -33,8 +33,8 @@ export default function BasicLayout(props) {
       <div
         style={{
           position: 'absolute',
-          left: '50%',
-          top: '50%',
+          left: '30%',
+          top: '30%',
           transform: 'translate(-50%, -40%)'
         }}
       >
