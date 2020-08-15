@@ -2,6 +2,9 @@ import React, { Component } from "react";
 // creates a beautiful scrollbar
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 import "../assets/css/login.css";
+
+import logo from "../assets/img/completa_fundo_claro@4x.png";
+
 // @material-ui/core components
 // import LinearProgress from '@material-ui/core/LinearProgress';
 
@@ -95,13 +98,13 @@ export default class Login extends Component {
   //     });
   //   }
   // }
-  componentFacebookClicked =  () => {
+  componentFacebookClicked = () => {
     // await api.post(`/a/facebook`)
     window.open("https://api.couponfeed.co/auth/facebook", "_self");
     // window.open("http://localhost:3000/auth/facebook", "_self");
     // console.log("clicked")
   }
-  componentGoogleClicked =  () => {
+  componentGoogleClicked = () => {
     // await api.post(`/a/facebook`)
     window.open("https://api.couponfeed.co/auth/google", "_self");
     // window.open("http://localhost:3000/auth/google", "_self");
@@ -162,11 +165,14 @@ export default class Login extends Component {
     // else
     return (
 
-      <BasicLayout>
+      // <BasicLayout>
+      <>
+        <Link href="/"><img src={logo} alt="" style={{ width: '300px', paddingBottom: '30px' }} /></Link>
+
 
         <div className="container">
           <form noValidate
-          onSubmit={this.handleSignIn}>
+            onSubmit={this.handleSignIn}>
             <div className="row">
               <h2 className="title" >Login com Mídias Sociais ou manualmente</h2>
               <div className="vl">
@@ -174,12 +180,12 @@ export default class Login extends Component {
               </div>
 
               <div className="col">
-                <button onClick={() => {this.componentFacebookClicked()}}  className="fb btn">
+                <button onClick={() => { this.componentFacebookClicked() }} className="fb btn">
                   <i className="fa fa-facebook fa-fw"></i> Login com Facebook
                 </button>
 
-                <button onClick={() => {this.componentFacebookClicked()}}  className="google btn">
-                  <i className="fa fa-google fa-fw"> </i> 
+                <button onClick={() => { this.componentFacebookClicked() }} className="google btn">
+                  <i className="fa fa-google fa-fw"> </i>
                   Login com Google </button>
               </div>
 
@@ -189,58 +195,61 @@ export default class Login extends Component {
                 </div>
 
                 <TextField
-            // variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Endereço de e-mail"
-            name="email"
-            autoComplete="email"
-            autoFocus
-            onChange={e => this.setState({ email: e.target.value })}
-          />
-          <TextField
-            // variant="outlined"
-            style={{ marginBottom: '30px' }}
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Senha"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-            onChange={e => this.setState({ password: e.target.value })}
-          />
+                  // variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="email"
+                  label="Endereço de e-mail"
+                  name="email"
+                  autoComplete="email"
+                  autoFocus
+                  onChange={e => this.setState({ email: e.target.value })}
+                />
+                <TextField
+                  // variant="outlined"
+                  style={{ marginBottom: '30px' }}
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="password"
+                  label="Senha"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                  onChange={e => this.setState({ password: e.target.value })}
+                />
                 <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="success"
-          // classNameName={useStyles.submit}
-          >
-            Faça login
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="success"
+                // classNameName={useStyles.submit}
+                >
+                  Faça login
             </Button>
               </div>
-      
+
             </div>
           </form>
-              </div>
+        </div>
 
-              <div className="bottom-container">
-                <div className="row">
-                  <div className="col">
-                    <a href="/signup" style={{color:"white"}} className="btn">Cadastre-se</a>
-                  </div>
-                  <div className="col">
-                    {/* <a href="#" style="color:white" className="btn">Forgot password?</a> */}
-                  </div>
-                </div>
-              </div>
+        <div className="bottom-container">
+          <div className="row">
+            <div className="col">
+              <a href="/signup" style={{ color: "white" }} className="btn">Cadastre-se</a>
+            </div>
+            <div className="col">
+              {/* <a href="#" style="color:white" className="btn">Forgot password?</a> */}
+            </div>
+          </div>
+        </div>
 
 
-      </BasicLayout>
+        <Box mt={8}>
+          <Copyright />
+        </Box>
+      </>
     );
   }
 }
