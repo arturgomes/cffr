@@ -168,7 +168,7 @@ export default class Login extends Component {
           <form noValidate
           onSubmit={this.handleSignIn}>
             <div className="row">
-              <h2 style={{textAlign:"center"}}>Login com Mídias Sociais ou manualmente</h2>
+              <h2 className="title" >Login com Mídias Sociais ou manualmente</h2>
               <div className="vl">
                 <span className="vl-innertext">ou</span>
               </div>
