@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import FacebookButton from './FacebookButton';
+// import '../../assets/css/login.css'
 import {
   FaFacebook,
   FaGoogle,
@@ -59,10 +60,10 @@ export default class LoginFacebook extends Component {
           <ul className="no-bullet">
             {/* <FacebookLoginButton/> */}
           <li onClick={() => {this.componentFacebookClicked()}} class="fb" >
-            <div className="button-left"><FaFacebook/></div>
-            <div className="text-btn">Login com Facebook</div>
+              <FaFacebook/>Login com Facebook
             </li>
-          <li onClick={() => {this.componentGoogleClicked()}} class="google connect" >Login com Google</li>
+          <li onClick={() => {this.componentGoogleClicked()}} class="google" >
+          <FaGoogle/>Login com Google</li>
           </ul>
         {/* <GoogleLogin
           clientId="696384323916-spmu7mjsuge1a55dh2v65dtke3jgvjb6.apps.googleusercontent.com"
