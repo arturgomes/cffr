@@ -1,7 +1,14 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom"
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import Copyright from "../components/CouponFeed/Copyright"
+
+
 // creates a beautiful scrollbar
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 import "../assets/css/login.css";
+// import "../assets/css/font-awesome.min.css";
 
 import logo from "../assets/img/completa_fundo_claro@4x.png";
 
@@ -175,9 +182,6 @@ export default class Login extends Component {
             onSubmit={this.handleSignIn}>
             <div className="row">
               <h2 className="title" >Login com Mídias Sociais ou manualmente</h2>
-              <div className="vl">
-                <span className="vl-innertext">ou</span>
-              </div>
 
               <div className="col">
                 <button onClick={() => { this.componentFacebookClicked() }} className="fb btn">
@@ -188,7 +192,9 @@ export default class Login extends Component {
                   <i className="fa fa-google fa-fw"> </i>
                   Login com Google </button>
               </div>
-
+              <div className="vl">
+                <span className="vl-innertext">ou</span>
+              </div>
               <div className="col">
                 <div className="hide-md-lg">
                   <p>Ou fazer login manualmente:</p>
