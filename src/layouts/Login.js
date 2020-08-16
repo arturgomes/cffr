@@ -169,7 +169,10 @@ export default class Login extends Component {
         <Typography component="h1" variant="h5">
           Fazer Login
           </Typography>
-        <LoginFacebook />
+          <div style={{ marginTop: '20px', marginBottom: '20px' }}> 
+            <LoginFacebook />
+            </div>
+       
 
         <Divider horizontal style={{ color: "#444", marginTop: '20px', marginBottom: '20px' }}><hr style={{ border: '1px solid red' }} />ou</Divider>
 
