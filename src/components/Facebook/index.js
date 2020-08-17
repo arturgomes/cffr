@@ -60,10 +60,10 @@ export default class LoginFacebook extends Component {
           <ul className="no-bullet">
             {/* <FacebookLoginButton/> */}
           <li onClick={() => {this.componentFacebookClicked()}} class="fb" >
-          <div className="button-left"><FaFacebook/></div>Login com Facebook
+          <FaFacebook/><div className="button-left">Login com Facebook</div>
             </li>
           <li onClick={() => {this.componentGoogleClicked()}} class="google" >
-          <div className="button-left"><FaGoogle/></div>Login com Google</li>
+          <FaGoogle/><div className="button-left">Login com Google</div></li>
           </ul>
         {/* <GoogleLogin
           clientId="696384323916-spmu7mjsuge1a55dh2v65dtke3jgvjb6.apps.googleusercontent.com"
