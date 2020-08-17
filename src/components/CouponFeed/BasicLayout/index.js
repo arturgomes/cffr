@@ -46,7 +46,7 @@ export default function BasicLayout(props) {
         >
           <div className={useStyles.content}>
 
-            <Link href="/"><img src={logo} alt="" style={{ width: '300px', paddingBottom: '30px' }} /></Link>
+            <Link href="https://www.couponfeed.co"><img src={logo} alt="" style={{ width: '300px', paddingBottom: '30px' }} /></Link>
 
             {props.children}
             {/* {this.renderConclusion(error)} */}
