@@ -25,9 +25,9 @@ const useStyles = makeStyles(theme => ({
     marginTop: '0px',
     // marginTop: '20px',
     marginBottom: '20px',
-    borderRadious:'50%',
-    backgroundColor:"#bbb",
-    border:"1px #444 solid"
+    borderRadious: '50%',
+    backgroundColor: "#bbb",
+    border: "1px #444 solid"
   },
   root: {
     flexGrow: 1,
@@ -106,13 +106,13 @@ export default class Login extends Component {
         </Avatar>
         <Typography component="h1" variant="h5">
           Fazer Login
-          </Typography>
+        </Typography>
         <div style={{ marginTop: '20px', marginBottom: '20px' }}>
           <LoginFacebook />
         </div>
-
-
-        <Divider horizontal className={useStyles.divider}><hr style={{ border: '1px solid red' }} />ou</Divider>
+        <Divider horizontal className={useStyles.divider}><hr style={{ border: '1px solid red' }} />
+        {/* ou */}
+        </Divider>
 
         <form
           className={useStyles.form}
