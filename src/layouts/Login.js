@@ -1,18 +1,12 @@
 import React, { Component } from "react";
 // creates a beautiful scrollbar
 import "perfect-scrollbar/css/perfect-scrollbar.css";
-// @material-ui/core components
-import LinearProgress from '@material-ui/core/LinearProgress';
-
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import { Divider } from 'semantic-ui-react'
-// import { FaSpinner } from 'react-icons/fa';
 
 
 import Button from "../components/CustomButtons/Button.js";
-
-// import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
@@ -22,9 +16,19 @@ import BasicLayout from "../components/CouponFeed/BasicLayout";
 import LoginFacebook from '../components/Facebook'
 import api from "../services/api";
 
-import { login, getUser, isAuthenticated } from "../services/auth";
+import { login, getUser } from "../services/auth";
 
 const useStyles = makeStyles(theme => ({
+  divider: {
+
+    color: "#444",
+    marginTop: '0px',
+    // marginTop: '20px',
+    marginBottom: '20px',
+    borderRadious:'50%',
+    backgroundColor:"#bbb",
+    border:"1px #444 solid"
+  },
   root: {
     flexGrow: 1,
     overflow: 'hidden',
@@ -39,7 +43,6 @@ const useStyles = makeStyles(theme => ({
 
 export default class Login extends Component {
 
-  
   state = {
     user: {},
     error: null,
@@ -47,74 +50,13 @@ export default class Login extends Component {
     isLoading: true
   };
 
-  // async componentDidMount() {
-  //   if (isAuthenticated()) {
-  //     getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
-  //   }
-  //   else {
-  //     // await api.get('/auth/success')
-  //   fetch("https://api.couponfeed.co/auth/success", 
-  //   {
-  //     method: "GET",
-  //     credentials: "include",
-  //     // mode: 'no-cors',
-  //     headers: {
-  //       "Accept": "application/json",
-  //       "Content-Type": "application/json",
-  //       "Access-Control-Allow-Credentials": true,
-  //       "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-  //     }
-  //   }
-  //   )
-  //     .then(response => {
-  //       // console.log(response);
-  //       if (response.status === 200) return response.json();
-  //       throw new Error("failed to authenticate user");
-  //     })
-  //     .then(responseJson => {
-      
-  //         const { success,
-  //           // user, 
-  //           login, token } = responseJson;
-  //         // console.log(responseJson);
-  //         // console.log(responseJson)
-  //         this.setState({
-  //           authenticated: success,
-  //           isLoading: success,
-  //           // user
-  //         });
-  //         // console.log(this.state);
-  //         // .catch(() => console.log("Can’t access response. Blocked by browser?"));
-  //         // console.log(responseJson.token);
-  //         const { name, id, tu } = login;
-  //         localStorage.setItem("tk", token);
-  //         localStorage.setItem("usr", name);
-  //         localStorage.setItem("ui", id);
-  //         localStorage.setItem("tu", tu);
-  //         // login(token, name, id, tu);
-  //         // console.log("logged in");
-
-  //         // this.props.history.push("/customer");
-  //         getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
-        
-  //     })
-  //     .catch(error => {
-  //       this.setState({
-  //         // authenticated: false,
-  //         error: "Failed to authenticate user"
-  //       });
-  //     });
-  //   }
-  // }
 
   handleSignIn = async e => {
     e.preventDefault();
-    // const fid = decodeURIComponent(this.props.match.params.fid);
 
     const { email, password } = this.state;
     if (!email || !password) {
       this.setState({ error: "Preencha e-mail e senha para continuar!" });
-      // console.log(this.state.error);
     } else {
       await api
         .post("/sessions", { email, password })
@@ -155,11 +97,7 @@ export default class Login extends Component {
 
 
   render() {
-    // const { authenticated } = this.state;
-    // if (this.state.isLoading) {
-    //   return <LinearProgress />
-    // }
-    // else
+
     return (
 
       <BasicLayout>
@@ -169,12 +107,12 @@ export default class Login extends Component {
         <Typography component="h1" variant="h5">
           Fazer Login
           </Typography>
-          <div style={{ marginTop: '20px', marginBottom: '20px' }}> 
-            <LoginFacebook />
-            </div>
-       
+        <div style={{ marginTop: '20px', marginBottom: '20px' }}>
+          <LoginFacebook />
+        </div>
 
-        <Divider horizontal style={{ color: "#444", marginTop: '20px', marginBottom: '20px' }}><hr style={{ border: '1px solid red' }} />ou</Divider>
+
+        <Divider horizontal className={useStyles.divider}><hr style={{ border: '1px solid red' }} />ou</Divider>
 
         <form
           className={useStyles.form}
