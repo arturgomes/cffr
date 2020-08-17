@@ -34,8 +34,8 @@ export default function BasicLayout(props) {
         style={{
           position: 'absolute',
           left: '50%',
-          top: '35%',
-          transform: 'translate(-50%, -40%)'
+          top: '50%',
+          transform: 'translate(-40%, -40%)'
         }}
       >
         <Grid container
