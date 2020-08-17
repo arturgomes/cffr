@@ -249,7 +249,7 @@ render(){
         brand={slogan}
         fixed
         changeColorOnScroll={{
-          height: 200,
+          height: 80,
           color: "white"
         }}
         rightLinks={<>
