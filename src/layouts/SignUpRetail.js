@@ -190,7 +190,7 @@ export default class SignUp extends Component {
           Fazer Login
         </Typography>
         <div style={{ marginTop: '20px', marginBottom: '20px' }}>
-          <LoginFacebook />
+          <LoginFacebook retail={true}/>
         </div>
         <Divider horizontal className={useStyles.divider}><hr style={{ border: '1px solid red' }} />
         {/* ou */}

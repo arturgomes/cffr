@@ -7,7 +7,12 @@ import {
 } from "react-icons/fa";
 import './style.css'
 export default class LoginFacebook extends Component {
-
+  componentFacebookRetailClicked = () => {
+    window.open("https://api.couponfeed.co/auth/facebook/retail", "_self");
+  }
+  componentGoogleRetailClicked = () => {
+    window.open("https://api.couponfeed.co/auth/google/retail", "_self");
+  }
   componentFacebookClicked = () => {
     window.open("https://api.couponfeed.co/auth/facebook", "_self");
   }
@@ -26,9 +31,20 @@ export default class LoginFacebook extends Component {
         </ul>
       </>
       )
+    let facebookDataRetail =
+      (<>
+        <ul className="no-bullet">
+          <li onClick={() => { this.componentFacebookRetailClicked() }} class="fb" >
+            <FaFacebook /><div className="button-left">Login com Facebook</div>
+          </li>
+          <li onClick={() => { this.componentGoogleRetailClicked() }} class="google" >
+            <FaGoogle /><div className="button-left">Login com Google</div></li>
+        </ul>
+      </>
+      )
     return (
       <div>
-        {facebookData}
+        {this.props.retail === true ? facebookDataRetail : facebookData }
       </div>
     )
   }
