@@ -1,14 +1,43 @@
 import React, { Component } from "react";
 import cep from 'cep-promise';
 import { formatToCEP, isCNPJ, formatToCNPJ,isCEP } from 'brazilian-values';
+import { makeStyles } from "@material-ui/core/styles";
 
-
+import Typography from "@material-ui/core/Typography";
+import Avatar from "@material-ui/core/Avatar";
+import { Divider } from 'semantic-ui-react'
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import BasicLayout from "../components/CouponFeed/BasicLayout";
+import LoginFacebook from '../components/Facebook'
+
 import RenderConclusion from "../components/CouponFeed/SignUpForm/Retail/RenderConclusion";
 import RenderForm from "../components/CouponFeed/SignUpForm/Retail/RenderForm";
 
 
 import api from "../services/api"
+
+const useStyles = makeStyles(theme => ({
+  divider: {
+
+    color: "#444",
+    marginTop: '0px',
+    // marginTop: '20px',
+    marginBottom: '20px',
+    borderRadious: '50%',
+    backgroundColor: "#bbb",
+    border: "1px #444 solid"
+  },
+  root: {
+    flexGrow: 1,
+    overflow: 'hidden',
+    padding: theme.spacing(0, 3),
+  },
+  paper: {
+    maxWidth: 300,
+    margin: `${theme.spacing(1)}px auto`,
+    padding: theme.spacing(2),
+  },
+}));
 
 
 export default class SignUp extends Component {
@@ -154,6 +183,18 @@ export default class SignUp extends Component {
     }
     else {
       return (<BasicLayout>
+        <Avatar className={useStyles.avatar}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Fazer Login
+        </Typography>
+        <div style={{ marginTop: '20px', marginBottom: '20px' }}>
+          <LoginFacebook />
+        </div>
+        <Divider horizontal className={useStyles.divider}><hr style={{ border: '1px solid red' }} />
+        {/* ou */}
+        </Divider>
         <RenderForm
           error={error}
           state={this.state}

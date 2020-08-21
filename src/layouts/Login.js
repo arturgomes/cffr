@@ -8,10 +8,10 @@ import { Divider } from 'semantic-ui-react'
 
 import Button from "../components/CustomButtons/Button.js";
 import TextField from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import Grid from '@material-ui/core/Grid';
+import Link from "@material-ui/core/Link";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import BasicLayout from "../components/CouponFeed/BasicLayout";
 import LoginFacebook from '../components/Facebook'
 import api from "../services/api";

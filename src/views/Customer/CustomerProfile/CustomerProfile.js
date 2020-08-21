@@ -12,7 +12,9 @@ import Card from "../../../components/Card/Card.js";
 import CardHeader from "../../../components/Card/CardHeader.js";
 // import CardAvatar from "components/Card/CardAvatar.js";
 import CardBody from "../../../components/Card/CardBody.js";
-// import CardFooter from "../../../components/Card/CardFooter.js";
+import CardFooter from "../../../components/Card/CardFooter.js";
+import Button from "../../../components/CustomButtons/Button.js";
+import CustomInput from "../../../components/CustomInput/CustomInput.js";
 import Upload from "../../../components/Upload"
 import FileList from "../../../components/FileList"
 
@@ -25,6 +27,7 @@ import { getId } from "../../../services/auth"
 export default class UserProfile extends Component {
   state = {
     uploadedFiles : [],
+    profile : null
   }
   async componentDidMount(){
     // await fetch(`https://api.couponfeed.co/filesc/${getId()}`, 
@@ -169,7 +172,7 @@ processUpload = (uploadedFile) => {
                 </GridContainer>
               </CardBody>
             </Card>
-            {/* <Card>
+            <Card>
               <CardHeader color="success">
                 <h4 style={{
                   color: "rgba(255,255,255,1)",
@@ -273,7 +276,7 @@ processUpload = (uploadedFile) => {
               <CardFooter>            
                 <Button fullWidth color="success">Atualizar Pefil</Button>
               </CardFooter>
-            </Card> */}
+            </Card>
           </GridItem>
           {/* <GridItem xs={12} sm={12} md={4}>
             <Card profile>

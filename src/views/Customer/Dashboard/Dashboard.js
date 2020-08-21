@@ -202,7 +202,7 @@ class Dashboard extends Component {
               <CardBody>
                 <p className={useStyles.cardCategory}>Total de Feedcoins: <span className={classes.successText}>{total_feedbacks}</span></p>
 
-                <p className={useStyles.cardCategory}>Ultimo Feedback: <span className={classes.successText}>{(last_feedback !== 'Sem feedbacks') && format(parseISO(last_feedback), "dd ' de ' MMMM  ' de '  y", { locale: pt }) || 'Sem feedbacks'}</span></p>
+                <p className={useStyles.cardCategory}>Ultimo Feedback: <span className={classes.successText}>{((last_feedback !== 'Sem feedbacks') && format(parseISO(last_feedback), "dd ' de ' MMMM  ' de '  y", { locale: pt })) || 'Sem feedbacks'}</span></p>
                 {/* <p className={useStyles.cardCategory}>Ultimo Feedback: <span className={classes.successText}>{format(parseISO(last_feedback), "dd ' de ' MMMM  ' de '  y", { locale: pt })}</span></p> */}
                 {/* <p className={useStyles.cardCategory}>Ultimo Feedback: <span className={classes.successText}>{last_feedback}</span></p> */}
                 <p className={useStyles.cardCategory}>Membro desde <span className={classes.successText}>{member_since && format(parseISO(member_since), "dd ' de ' MMMM  ' de '  y", { locale: pt })}</span></p>
