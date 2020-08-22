@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { Redirect } from "react-router-dom";
-// import { logout } from "../services/auth.js"
+import api from "../services/api.js"
 import * as Cookies from "js-cookie";
 
 
 const Logout = async ({ history }) => {
   useEffect(
     () => {
-      await api
+      const myfun = async () => {
+        await api
         .post("/auth/logout")
         .then(response => {
           // console.log(response.data);
@@ -33,7 +34,8 @@ const Logout = async ({ history }) => {
           } else {
             // Something happened in setting up the request and triggered an Error
           }
-        });
+        });}
+        myfun();
       localStorage.removeItem("tk");
       localStorage.removeItem("usr");
       localStorage.removeItem("ui");
