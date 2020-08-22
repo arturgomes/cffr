@@ -44,6 +44,7 @@ export default class LoginFacebook extends Component {
       )
     return (
       <div>
+        {console.log(this.props.retail);}
         {this.props.retail === true ? facebookDataRetail : facebookData }
       </div>
     )
