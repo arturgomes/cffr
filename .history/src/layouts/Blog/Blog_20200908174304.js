@@ -1,16 +1,23 @@
 import React, { Component } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom"
 import styled from 'styled-components';
 
 
 import {
   FaFacebook,
   FaInstagram,
+  FaWhatsapp,
+  FaChartBar,
+  FaHandsHelping
 } from "react-icons/fa";
+import { TiDocumentText } from "react-icons/ti";
 
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 //Material.ui
+import QueryBuilderOutlinedIcon from '@material-ui/icons/QueryBuilderOutlined'; //clock
+import TransferWithinAStationIcon from '@material-ui/icons/TransferWithinAStation';
 
 
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -28,6 +35,7 @@ import Button from "../../components/CustomButtons/Button.js";
 import styles from '../../assets/jss/material-kit-react/views/componentsSections/navbarsStyle'
 import styles1 from './css/styles.css'
 // import Parallax from "../../components/Parallax/Parallax.js";
+import feedback from "./images/feedback.svg";
 import {
   // login, getId, getUser, 
   isAuthenticated, getTu

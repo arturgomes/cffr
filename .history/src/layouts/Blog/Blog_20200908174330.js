@@ -7,6 +7,7 @@ import {
   FaFacebook,
   FaInstagram,
 } from "react-icons/fa";
+import { TiDocumentText } from "react-icons/ti";
 
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -28,6 +29,7 @@ import Button from "../../components/CustomButtons/Button.js";
 import styles from '../../assets/jss/material-kit-react/views/componentsSections/navbarsStyle'
 import styles1 from './css/styles.css'
 // import Parallax from "../../components/Parallax/Parallax.js";
+import feedback from "./images/feedback.svg";
 import {
   // login, getId, getUser, 
   isAuthenticated, getTu
