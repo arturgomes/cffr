@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
 import styled from 'styled-components';
 
 
@@ -72,19 +73,30 @@ const Block = styled.div`
 `;
 
 const Google = () => (
-  <Block>
+  <Card>
     <h1>Google</h1>
-    <p>This is Google. It's a search engine started by Sergey Brin and Larry Page.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a vestibulum tellus. Etiam neque metus, porttitor id ullamcorper id, accumsan non nisi. Nullam justo lacus, gravida et sagittis pellentesque, lobortis quis turpis. Aenean rhoncus vitae lacus vel tristique. Aenean id ligula sed justo euismod placerat et ut lacus. Maecenas eget egestas justo. Nam hendrerit sem risus, rutrum ullamcorper libero sodales eleifend. Vivamus ac lectus diam. Proin tempor nulla elit, eu tempus arcu cursus eleifend. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam a ultricies diam. Phasellus tempor tortor a dui molestie dictum. Duis non neque ex.</p>
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla fringilla eget dui eu sagittis. Aliquam a finibus neque, et faucibus quam. Nulla nec massa mattis, euismod ligula et, placerat ex. Donec iaculis ex ut tortor ullamcorper, vel vulputate leo pharetra. Integer sodales odio sapien, id pulvinar enim gravida vitae. In a nibh mi. Sed pulvinar quis ex nec convallis. Aenean mollis, lacus sed facilisis dictum, nulla leo tincidunt felis, sed cursus lectus justo gravida lectus. Sed mattis lobortis lectus auctor hendrerit. Integer mollis sem sed erat tincidunt, eget tincidunt nunc consequat.</p>
+    <p>Pellentesque vulputate consectetur posuere. Vivamus feugiat arcu dui, nec lacinia sem consectetur a. Phasellus ac blandit orci. Proin fringilla urna justo, et condimentum metus aliquet a. Integer lobortis enim vitae justo bibendum dignissim. Cras vehicula metus id lobortis facilisis. Vestibulum vel odio elit. Sed id nisl in risus bibendum malesuada. Suspendisse convallis ipsum in urna pharetra viverra. Proin placerat massa mollis justo auctor, ut rutrum quam finibus. Aliquam suscipit est vestibulum suscipit venenatis. Pellentesque ultricies augue vitae diam imperdiet, vel volutpat orci varius. Nulla in erat velit. Pellentesque ligula justo, faucibus malesuada massa nec, efficitur sagittis sapien.</p>
+    <p>Vestibulum justo dolor, aliquet eget blandit nec, ornare ut erat. In luctus aliquam laoreet. Etiam libero risus, semper ac turpis eget, vestibulum imperdiet neque. Aliquam hendrerit diam turpis, eget hendrerit tortor dictum in. Vestibulum vel nunc a dui porta convallis vel sit amet enim. In pulvinar ultrices justo, et placerat nisi maximus nec. Aliquam at pellentesque magna. Praesent convallis purus ut urna rhoncus, quis egestas tellus facilisis. </p>
     <p>PageRank is the search algorithm that started it all. Today it's a multibillion dollar company.</p>
-  </Block>
+  </Card>
 )
 
 const Amazon = () => (
-  <Block>
-    <h1>Amazon</h1>
+  <Card>
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Dec 7, 2017</h5>
+    {/* <div class="fakeimg" style="height:200px;">Image</div> */}
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a vestibulum tellus. Etiam neque metus, porttitor id ullamcorper id, accumsan non nisi. Nullam justo lacus, gravida et sagittis pellentesque, lobortis quis turpis. Aenean rhoncus vitae lacus vel tristique. Aenean id ligula sed justo euismod placerat et ut lacus. Maecenas eget egestas justo. Nam hendrerit sem risus, rutrum ullamcorper libero sodales eleifend. Vivamus ac lectus diam. Proin tempor nulla elit, eu tempus arcu cursus eleifend. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam a ultricies diam. Phasellus tempor tortor a dui molestie dictum. Duis non neque ex.</p>
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla fringilla eget dui eu sagittis. Aliquam a finibus neque, et faucibus quam. Nulla nec massa mattis, euismod ligula et, placerat ex. Donec iaculis ex ut tortor ullamcorper, vel vulputate leo pharetra. Integer sodales odio sapien, id pulvinar enim gravida vitae. In a nibh mi. Sed pulvinar quis ex nec convallis. Aenean mollis, lacus sed facilisis dictum, nulla leo tincidunt felis, sed cursus lectus justo gravida lectus. Sed mattis lobortis lectus auctor hendrerit. Integer mollis sem sed erat tincidunt, eget tincidunt nunc consequat.</p>
+    <p>Pellentesque vulputate consectetur posuere. Vivamus feugiat arcu dui, nec lacinia sem consectetur a. Phasellus ac blandit orci. Proin fringilla urna justo, et condimentum metus aliquet a. Integer lobortis enim vitae justo bibendum dignissim. Cras vehicula metus id lobortis facilisis. Vestibulum vel odio elit. Sed id nisl in risus bibendum malesuada. Suspendisse convallis ipsum in urna pharetra viverra. Proin placerat massa mollis justo auctor, ut rutrum quam finibus. Aliquam suscipit est vestibulum suscipit venenatis. Pellentesque ultricies augue vitae diam imperdiet, vel volutpat orci varius. Nulla in erat velit. Pellentesque ligula justo, faucibus malesuada massa nec, efficitur sagittis sapien.</p>
+    <p>Vestibulum justo dolor, aliquet eget blandit nec, ornare ut erat. In luctus aliquam laoreet. Etiam libero risus, semper ac turpis eget, vestibulum imperdiet neque. Aliquam hendrerit diam turpis, eget hendrerit tortor dictum in. Vestibulum vel nunc a dui porta convallis vel sit amet enim. In pulvinar ultrices justo, et placerat nisi maximus nec. Aliquam at pellentesque magna. Praesent convallis purus ut urna rhoncus, quis egestas tellus facilisis. </p>
+    <p>PageRank is the search algorithm that started it all. Today it's a multibillion dollar company.</p>
+    {/* <h1>Amazon</h1>
     <p>This is Amazon. It started off as an online bookstore.</p>
-    <p>Amazon is the owner of AWS, the host this tutorial is targeting.</p>
-  </Block>
+    <p>Amazon is the owner of AWS, the host this tutorial is targeting.</p> */}
+  </Card>
 )
 
 const FaceBook = () => (
