@@ -215,7 +215,6 @@ export default class Blog extends Component {
           }
         />
         <Wrap>
-          <Spacing />
           <Primary>
             <Amazon />
             <Google />
