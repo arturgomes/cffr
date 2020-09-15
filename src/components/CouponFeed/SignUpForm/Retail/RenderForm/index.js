@@ -35,8 +35,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 export default function RenderForm(props) {
-  return (<GridContainer>
-    <GridItem xs={12} sm={12} md={12}>
+  return (
+  // <GridContainer>
+  //   <GridItem xs={12} sm={12} md={12}>
       <Card>
         <CardHeader color="primary">
           <h4 className={useStyles.cardTitleWhite}>Cadastrar Lojista</h4>
@@ -48,7 +49,7 @@ export default function RenderForm(props) {
           <p>Olá, obrigado por escolher a CouponFeed. Vamos começar nossa parceria com um breve cadastro da sua empresa.
           </p>
           <p>
-            O valor mensal para ter acesso à CouponFeed é de R$29,90.
+            {/* O valor mensal para ter acesso à CouponFeed é de R$29,90. */}
           </p>
           {props.error ? <div className="divError">{props.error}</div> : ``}
           <form
@@ -282,6 +283,8 @@ export default function RenderForm(props) {
         </CardBody>
       </Card>
 
-    </GridItem>
-  </GridContainer>)
+  //   </GridItem>
+  // </GridContainer>
+  )
+
 }

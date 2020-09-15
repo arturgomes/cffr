@@ -20,7 +20,7 @@ import SocialLogin from "./layouts/SocialLogin.js";
 import SignUp from "./layouts/SignUp.js";
 import SignUpRetail from "./layouts/SignUpRetail.js";
 import LandingPage from "./layouts/LandingPage/LandingPage.js";
-import Blog from "./layouts/Blog/Blog.js";
+import Blog from "./layouts/LandingPage/Blog.js";
 
 import { isAuthenticated } from "./services/auth";
 
