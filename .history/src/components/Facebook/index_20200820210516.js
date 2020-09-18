@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 // import FacebookButton from './FacebookButton';
 // import '../../assets/css/login.css'
-import {
-  FaFacebook,
-  FaGoogle,
-} from "react-icons/fa";
+
 import './style.css'
 export default class LoginFacebook extends Component {
   componentFacebookRetailClicked = () => {

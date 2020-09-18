@@ -1,0 +1,6 @@
+🔑 Keys
+Access Key
+1cqg8-pj6pTdST78xm3ocf8PRFCDd-nqMdTzc_IV7HQ
+Secret key
+_FDTASOZIBfP872NaC5tEekd8hdMTQ-xJ5cVBuQpx9k
+Note: both your Access Key and Secret Key must remain confidential.

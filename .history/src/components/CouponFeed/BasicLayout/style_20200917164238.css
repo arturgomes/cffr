@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+
+.basicLayout {
+  position: 'absolute';
+  left: '50%';
+  top: '50%';
+  transform: 'translate(-50%, -40%)';
+}

@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+
+.basicLayout {
+  margin:50px;
+  position: 'absolute';
+  left: '50%';
+  top: '50%';
+  transform: 'translate(-50%, -50%)';
+}
+@media only screen and (max-width: 975px) {
+  .basicLayout {
+    position: 'absolute';
+    left: '50%';
+    top: '50%';
+    transform: 'translate(-50%, -40%)';
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  .basicLayout {
+    position: 'absolute';
+    left: '50%';
+    top: '50%';
+    transform: 'translate(-50%, -40%)';
+  }
+	
+}
