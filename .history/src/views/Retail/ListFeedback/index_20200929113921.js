@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { List } from "@material-ui/core";
 // import { Feed, Icon, Item } from "semantic-ui-react";
 import LinearProgress from '@material-ui/core/LinearProgress';
-import { format, parseISO } from "date-fns";
+import {format,parseISO} from "date-fns";
 import pt from 'date-fns/locale/pt';
 
 import { FeedItem } from "./FeedbackItem";
@@ -34,10 +34,10 @@ export default class ListFeedback extends Component {
   state = {
     isLoading: true,
     fb: [
-      {
-        name: null,
-        f: []
-      }
+      // {
+      //   name: null,
+      //   f: []
+      // }
     ]
   };
 
@@ -45,20 +45,20 @@ export default class ListFeedback extends Component {
 
     await api
       .post("/list", { retail_id: getId() })
-      // await fetch(`https://api.couponfeed.co/list`, 
-      // {
-      //   method: "POST",
-      //   credentials: "include",
-      //   body: { retail_id: getId() },
-      //   // mode: 'no-cors',
-      //   headers: {
-      //     "Accept": "application/json",
-      //     "Content-Type": "application/json",
-      //     "Access-Control-Allow-Credentials": true,
-      //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-      //   }
-      // }
-      // )
+    // await fetch(`https://api.couponfeed.co/list`, 
+    // {
+    //   method: "POST",
+    //   credentials: "include",
+    //   body: { retail_id: getId() },
+    //   // mode: 'no-cors',
+    //   headers: {
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Credentials": true,
+    //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+    //   }
+    // }
+    // )
       .then(response => {
         this.setState({ fb: response.data, isLoading: false });
         // console.log(response.data);
@@ -92,84 +92,43 @@ export default class ListFeedback extends Component {
     else if (nps >= 7 && nps < 9) return imparcial;
     else return descontente;
   };
-  listFeedItem = (fb) => {
+
+  render() {
     let listItems;
     let listShops;
-    listItems = Object.keys(fb).map(key => {
-      const shop = fb[key];
-      const { f, shop_name } = shop;
-      listShops = Object.keys(f).map(g => {
-        const { nps_value, date, comment_optional } = f[g];
-        let avatar = this.getAssets(nps_value);
-        let date1 = format(parseISO(date), "dd ' de ' MMMM  ' de '  y", { locale: pt })
-        //new Date(date).toLocaleDateString("pt-BR");
-        // date1 = date1.toLocaleDateString()
-        return (
-          <FeedItem
-            key={f}
-            store={shop_name}
-            nps={nps_value}
-            comment={comment_optional}
-            avatar={avatar}
-            date={date1}
-          />
-        );
+    if (isAuthenticated()) {
+      // console.log(this.state.fb);
+      listItems = Object.keys(this.state.fb).map(key => {
+        const shop = this.state.fb[key];
+        const { f, shop_name } = shop;
+        listShops = Object.keys(f).map(g => {
+          const { nps_value, date, comment_optional } = f[g];
+          let avatar = this.getAssets(nps_value);
+          let date1 = format(parseISO(date), "dd ' de ' MMMM  ' de '  y", { locale: pt })
+          //new Date(date).toLocaleDateString("pt-BR");
+          // date1 = date1.toLocaleDateString()
+          return (
+            <FeedItem
+              key={f}
+              store={shop_name}
+              nps={nps_value}
+              comment={comment_optional}
+              avatar={avatar}
+              date={date1}
+            />
+          );
+        });
+        return listShops;
       });
-      return listShops;
-    });
-  }
-  render() {
-    const fb = this.state;
-      // console.log(fb);
-
+    }
     if (this.state.isLoading) {
       return <LinearProgress />
     }
-    else if (isAuthenticated() && fb.lenght>0)  {
-        return (
-          <>
-            <GridContainer>
-              <GridItem xs={12} sm={12} md={12}>
-                <Card plain>
-                  <CardHeader color="success">
-                    <h4 style={{
-                      color: "rgba(255,255,255,1)",
-                      margin: "0",
-                      fontSize: "18px",
-                      marginTop: "0",
-                      marginBottom: "10px"
-                    }}>Listar QR Codes</h4>
-                    <p style={{
-                      color: "rgba(255,255,255,.62)",
-                      margin: "0",
-                      fontSize: "14px",
-                      marginTop: "0",
-                      marginBottom: "0"
-                    }}>Listando todos os feedbacks de {getName()}</p>
-  
-                    {/* <p className={useStyles.cardCategoryWhite}>Complete seu perfil</p> */}
-                  </CardHeader>
-                  <CardBody>
-                    <List>
-                      {/* {listItems} */}
-                      {this.listFeedItem(fb)}
-  
-                    </List>
-  
-                  </CardBody>
-                  <CardFooter>
-                  </CardFooter>
-                </Card>
-              </GridItem>
-            </GridContainer>
-          </>
-        );
-    }
-   else {
-    return (
-      <>
-        <GridContainer>
-          <GridItem xs={12} sm={12} md={12}>
+    else {
+      return (
+        <>
+          <GridContainer>
+        <GridItem xs={12} sm={12} md={12}>
             <Card plain>
               <CardHeader color="success">
                 <h4 style={{
@@ -185,17 +144,21 @@ export default class ListFeedback extends Component {
                   fontSize: "14px",
                   marginTop: "0",
                   marginBottom: "0"
-                }}>Ainda não há feedbacks para {getName()}</p>
+                }}>Listando todos os feedbacks de {getName()}</p>
 
                 {/* <p className={useStyles.cardCategoryWhite}>Complete seu perfil</p> */}
               </CardHeader>
-             
+              <CardBody>
+          <List>{listItems}</List>
+
+          </CardBody>
               <CardFooter>
               </CardFooter>
             </Card>
-          </GridItem>
-        </GridContainer>
-      </>
-    );
+        </GridItem>
+      </GridContainer>
+        </>
+      );
+    }
   }
 }

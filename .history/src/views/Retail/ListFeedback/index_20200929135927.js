@@ -120,12 +120,14 @@ export default class ListFeedback extends Component {
   }
   render() {
     const fb = this.state;
+    
       // console.log(fb);
 
     if (this.state.isLoading) {
       return <LinearProgress />
     }
-    else if (isAuthenticated() && fb.lenght>0)  {
+    else {
+      if (isAuthenticated()) {
         return (
           <>
             <GridContainer>
@@ -165,37 +167,5 @@ export default class ListFeedback extends Component {
           </>
         );
     }
-   else {
-    return (
-      <>
-        <GridContainer>
-          <GridItem xs={12} sm={12} md={12}>
-            <Card plain>
-              <CardHeader color="success">
-                <h4 style={{
-                  color: "rgba(255,255,255,1)",
-                  margin: "0",
-                  fontSize: "18px",
-                  marginTop: "0",
-                  marginBottom: "10px"
-                }}>Listar QR Codes</h4>
-                <p style={{
-                  color: "rgba(255,255,255,.62)",
-                  margin: "0",
-                  fontSize: "14px",
-                  marginTop: "0",
-                  marginBottom: "0"
-                }}>Ainda não há feedbacks para {getName()}</p>
-
-                {/* <p className={useStyles.cardCategoryWhite}>Complete seu perfil</p> */}
-              </CardHeader>
-             
-              <CardFooter>
-              </CardFooter>
-            </Card>
-          </GridItem>
-        </GridContainer>
-      </>
-    );
   }
 }
