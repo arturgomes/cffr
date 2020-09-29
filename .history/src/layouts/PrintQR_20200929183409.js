@@ -31,8 +31,8 @@ export default class PrintQR extends Component {
 
   async componentDidMount() {
     const qs = decodeURIComponent(this.props.match.params.id);
-    await api.post("https://api.couponfeed.com.br/shopsl", { shop_id: qs })
-    // await fetch("https://api.couponfeed.com.br/shopsl", 
+    await api.post("https://api.www.couponfeed.com.br/shopsl", { shop_id: qs })
+    // await fetch("https://api.www.couponfeed.com.br/shopsl", 
     // {
     //   method: "POST",
     //   credentials: "include",
@@ -42,7 +42,7 @@ export default class PrintQR extends Component {
     //     "Accept": "application/json",
     //     "Content-Type": "application/json",
     //     "Access-Control-Allow-Credentials": true,
-    //     "Access-Control-Allow-Origin": "https://www.couponfeed.com.br"
+    //     "Access-Control-Allow-Origin": "https://www.www.couponfeed.com.br"
     //   }
     // }
     // )
@@ -57,7 +57,7 @@ export default class PrintQR extends Component {
       }
       )
       .catch(error => this.setState({ error: "Loja não encontrada" }))
-      await fetch(`https://api.couponfeed.com.br/files/${this.state.retail_id}`, 
+      await fetch(`https://api.www.couponfeed.com.br/files/${this.state.retail_id}`, 
       {
         method: "POST",
         credentials: "include",
@@ -67,7 +67,7 @@ export default class PrintQR extends Component {
           "Accept": "application/json",
           "Content-Type": "application/json",
           "Access-Control-Allow-Credentials": true,
-          "Access-Control-Allow-Origin": "https://www.couponfeed.com.br"
+          "Access-Control-Allow-Origin": "https://www.www.couponfeed.com.br"
         }
       })
     // await api.post(`/files/${this.state.retail_id}`)
@@ -86,8 +86,8 @@ export default class PrintQR extends Component {
 
   render() {
     const { id } = '4141925a-e95a-44ac-9ab5-f63b5e7e1b8a';
-    const link = `https://couponfeed.com.br/feed/${id}`
-    const base_url = `https://couponfeed.com.br`
+    const link = `https://www.couponfeed.com.br/feed/${id}`
+    const base_url = `https://www.couponfeed.com.br`
 
 
     if (this.state.isLoading) {
@@ -122,7 +122,7 @@ export default class PrintQR extends Component {
             <Demo link={link} />
           </div>
           <div className="txt-container">
-            Não conseguiu acessar o QR code? Acesse https://couponfeed.com.br/f/{this.state.short_url}
+            Não conseguiu acessar o QR code? Acesse https://www.couponfeed.com.br/f/{this.state.short_url}
           </div>
           <footer>
             <section className="ft-main">

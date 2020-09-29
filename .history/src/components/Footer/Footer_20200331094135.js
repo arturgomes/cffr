@@ -43,7 +43,7 @@ export default function Footer(props) {
           <span>
             &copy; {1900 + new Date().getYear()}{" "}
             <a
-              href="https://www.couponfeed.com.br"
+              href="https://www.couponfeed.co"
               target="_blank"
               className={classes.a}
             >

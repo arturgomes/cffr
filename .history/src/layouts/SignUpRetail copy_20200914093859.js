@@ -62,7 +62,7 @@ export default class SignUp extends Component {
   }
   handleSubmit = async event => {
     event.preventDefault();
-    // await fetch("https://api.couponfeed.com.br/retails", 
+    // await fetch("https://api.couponfeed.co/retails", 
     // {
     //   method: "POST",
     //   credentials: "include",
@@ -86,7 +86,7 @@ export default class SignUp extends Component {
     //     "Accept": "application/json",
     //     "Content-Type": "application/json",
     //     "Access-Control-Allow-Credentials": true,
-    //     "Access-Control-Allow-Origin": "https://www.couponfeed.com.br"
+    //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
     //   }
     // }
     // )
