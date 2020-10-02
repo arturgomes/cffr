@@ -1,11 +1,11 @@
 import React, { Component } from "react";
+import { makeStyles } from '@material-ui/core/styles';
 import { List } from "@material-ui/core";
 // import { Feed, Icon, Item } from "semantic-ui-react";
 import LinearProgress from '@material-ui/core/LinearProgress';
-import {format,parseISO} from "date-fns";
-import pt from 'date-fns/locale/pt';
 
 import { FeedItem } from "./FeedbackItem";
+import { ListFeed} from "./ListFeed";
 // import '../../App.css';
 import contente from "../../../assets/img/contente@4x.png";
 import descontente from "../../../assets/img/descontente@4x.png";
@@ -28,6 +28,15 @@ import {
 // import Dashboard from './dashboard/dashboard'
 // import Main from './DemoPages/Main';
 // import styles from "../../../assets/jss/material-dashboard-react/layouts/adminStyle.js";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
+}));
+
 
 export default class ListFeedback extends Component {
 
@@ -94,33 +103,8 @@ export default class ListFeedback extends Component {
   };
 
   render() {
-    let listItems;
-    let listShops;
-    if (isAuthenticated()) {
-      // console.log(this.state.fb);
-      listItems = Object.keys(this.state.fb).map(key => {
-        const shop = this.state.fb[key];
-        const { f, shop_name } = shop;
-        listShops = Object.keys(f).map(g => {
-          const { nps_value, date, comment_optional } = f[g];
-          let avatar = this.getAssets(nps_value);
-          let date1 = format(parseISO(date), "dd ' de ' MMMM  ' de '  y", { locale: pt })
-          //new Date(date).toLocaleDateString("pt-BR");
-          // date1 = date1.toLocaleDateString()
-          return (
-            <FeedItem
-              key={f}
-              store={shop_name}
-              nps={nps_value}
-              comment={comment_optional}
-              avatar={avatar}
-              date={date1}
-            />
-          );
-        });
-        return listShops;
-      });
-    }
+    const classes = useStyles();
+
     if (this.state.isLoading) {
       return <LinearProgress />
     }
@@ -149,7 +133,9 @@ export default class ListFeedback extends Component {
                 {/* <p className={useStyles.cardCategoryWhite}>Complete seu perfil</p> */}
               </CardHeader>
               <CardBody>
-          <List>{listItems}</List>
+
+          {/* <List className={classes.root}>{listItems}</List> */}
+          <ListFeedback/>
 
           </CardBody>
               <CardFooter>

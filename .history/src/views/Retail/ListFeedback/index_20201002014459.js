@@ -6,6 +6,7 @@ import {format,parseISO} from "date-fns";
 import pt from 'date-fns/locale/pt';
 
 import { FeedItem } from "./FeedbackItem";
+import { FeedItem } from "./FeedbackItem";
 // import '../../App.css';
 import contente from "../../../assets/img/contente@4x.png";
 import descontente from "../../../assets/img/descontente@4x.png";
