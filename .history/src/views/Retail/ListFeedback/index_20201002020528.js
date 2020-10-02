@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { makeStyles } from '@material-ui/core/styles';
 import { List } from "@material-ui/core";
 // import { Feed, Icon, Item } from "semantic-ui-react";
 import LinearProgress from '@material-ui/core/LinearProgress';
@@ -18,7 +17,7 @@ import GridContainer from "../../../components/Grid/GridContainer.js";
 // import CustomInput from "../components/CustomInput/CustomInput.js";
 import Card from "../../../components/Card/Card.js";
 import CardHeader from "../../../components/Card/CardHeader.js";
-// import CardFooter from "../../../components/Card/CardFooter.js";
+import CardFooter from "../../../components/Card/CardFooter.js";
 import CardBody from "../../../components/Card/CardBody.js";
 import {
   isAuthenticated,
@@ -30,13 +29,6 @@ import {
 // import Main from './DemoPages/Main';
 // import styles from "../../../assets/jss/material-dashboard-react/layouts/adminStyle.js";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
 export default class ListFeedback extends Component {
 
   state = {
@@ -102,8 +94,6 @@ export default class ListFeedback extends Component {
   };
 
   render() {
-  const classes = useStyles();
-
     let listItems;
     let listShops;
     if (isAuthenticated()) {
@@ -147,7 +137,7 @@ export default class ListFeedback extends Component {
                   fontSize: "18px",
                   marginTop: "0",
                   marginBottom: "10px"
-                }}>Últimos Feedbacks</h4>
+                }}>Listar QR Codes</h4>
                 <p style={{
                   color: "rgba(255,255,255,.62)",
                   margin: "0",
@@ -159,7 +149,7 @@ export default class ListFeedback extends Component {
                 {/* <p className={useStyles.cardCategoryWhite}>Complete seu perfil</p> */}
               </CardHeader>
               <CardBody>
-          <List className={classes.root}>{listItems}</List>
+          <List>{listItems}</List>
 
           </CardBody>
               {/* <CardFooter>

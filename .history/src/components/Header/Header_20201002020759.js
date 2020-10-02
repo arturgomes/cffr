@@ -61,9 +61,8 @@ export default function Header(props) {
     [classes.fixed]: fixed
   });
   const brandComponent = <img width="200" src={brand} alt="alternative" />
-  // <Button className={classes.title}></Button>;
   return (
-    <AppBar className={appBarClasses} style={{height:"800px"}}>
+    <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
         {leftLinks !== undefined ? brandComponent : null}
         <div className={classes.flex}>
@@ -72,8 +71,8 @@ export default function Header(props) {
               {leftLinks}
             </Hidden>
           ) : (
-              brandComponent
-            )}
+            brandComponent
+          )}
         </div>
         <Hidden smDown implementation="css">
           {rightLinks}
@@ -94,8 +93,7 @@ export default function Header(props) {
           anchor={"right"}
           open={mobileOpen}
           classes={{
-            // root:{backgroundColor:"#fff"},
-            paper: classes.white
+            paper: classes.drawerPaper
           }}
           onClose={handleDrawerToggle}
         >
