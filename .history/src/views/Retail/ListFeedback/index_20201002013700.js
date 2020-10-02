@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { makeStyles } from '@material-ui/core/styles';
 import { List } from "@material-ui/core";
 // import { Feed, Icon, Item } from "semantic-ui-react";
 import LinearProgress from '@material-ui/core/LinearProgress';
@@ -7,7 +6,7 @@ import {format,parseISO} from "date-fns";
 import pt from 'date-fns/locale/pt';
 
 import { FeedItem } from "./FeedbackItem";
-import { ListFeed} from "./ListFeed";
+import { ListFeed} from "./ListFeedback";
 // import '../../App.css';
 import contente from "../../../assets/img/contente@4x.png";
 import descontente from "../../../assets/img/descontente@4x.png";
@@ -136,7 +135,7 @@ export default class ListFeedback extends Component {
               </CardHeader>
               <CardBody>
 
-          {/* <List className={classes.root}>{listItems}</List> */}
+          <List className={classes.root}>{listItems}</List>
           <ListFeedback/>
 
           </CardBody>

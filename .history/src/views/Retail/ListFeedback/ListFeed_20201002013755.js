@@ -1,8 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {format,parseISO} from "date-fns";
-import pt from 'date-fns/locale/pt';
-
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -47,7 +44,7 @@ export default function ListFeed() {
       });
       return listShops;
     });
-  // }
+  }
 
   return (
     <List className={classes.root}>
