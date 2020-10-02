@@ -95,7 +95,33 @@ export default class ListFeedback extends Component {
   };
 
   render() {
-    
+    let listItems;
+    let listShops;
+    if (isAuthenticated()) {
+      // console.log(this.state.fb);
+      listItems = Object.keys(this.state.fb).map(key => {
+        const shop = this.state.fb[key];
+        const { f, shop_name } = shop;
+        listShops = Object.keys(f).map(g => {
+          const { nps_value, date, comment_optional } = f[g];
+          let avatar = this.getAssets(nps_value);
+          let date1 = format(parseISO(date), "dd ' de ' MMMM  ' de '  y", { locale: pt })
+          //new Date(date).toLocaleDateString("pt-BR");
+          // date1 = date1.toLocaleDateString()
+          return (
+            <FeedItem
+              key={f}
+              store={shop_name}
+              nps={nps_value}
+              comment={comment_optional}
+              avatar={avatar}
+              date={date1}
+            />
+          );
+        });
+        return listShops;
+      });
+    }
     if (this.state.isLoading) {
       return <LinearProgress />
     }
@@ -126,7 +152,7 @@ export default class ListFeedback extends Component {
               </CardHeader>
               <CardBody>
 
-          <List className={classes.root}>{listItems}</List>
+          <List>{listItems}</List>
 
           </CardBody>
               <CardFooter>

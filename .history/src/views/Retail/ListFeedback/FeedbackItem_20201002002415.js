@@ -35,8 +35,20 @@ export const FeedItem = ({ nps, store, comment, avatar, date }) => {
           <Avatar style={classes.avatar} alt="Remy Sharp" src={avatar} />
         </ListItemAvatar>
         <ListItemText
-          primary={comment === "" ? "Sem comentários" : comment}
-          secondary={ `NPS: ${nps} - ${date}` }
+          primary={date}
+          secondary={
+            <React.Fragment>
+              {comment === "" ? "Sem comentários" : comment}
+              <Typography
+                component="p"
+                variant="body2"
+                // className={classes.inline}
+                color="textPrimary"
+              >
+                NPS: {nps}
+              </Typography>
+            </React.Fragment>
+          }
         />
       </ListItem>
       {/* <Divider variant="inset" component="li" /> */}
