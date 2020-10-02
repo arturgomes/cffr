@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { List } from "@material-ui/core";
 // import { Feed, Icon, Item } from "semantic-ui-react";
 import LinearProgress from '@material-ui/core/LinearProgress';
-import { format, parseISO } from "date-fns";
+import {format,parseISO} from "date-fns";
 import pt from 'date-fns/locale/pt';
 
 import { FeedItem } from "./FeedbackItem";
@@ -36,14 +36,14 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
-  cardHeaderh4: {
+  cardHeaderh4:{
     color: "rgba(255,255,255,1)",
     margin: "0",
     fontSize: "18px",
     marginTop: "0",
     marginBottom: "10px"
   },
-  cardHeaderp: {
+  cardHeaderp:{
     color: "rgba(255,255,255,.62)",
     margin: "0",
     fontSize: "14px",
@@ -67,20 +67,20 @@ export default class ListFeedback extends Component {
 
     await api
       .post("/list", { retail_id: getId() })
-      // await fetch(`https://api.couponfeed.co/list`, 
-      // {
-      //   method: "POST",
-      //   credentials: "include",
-      //   body: { retail_id: getId() },
-      //   // mode: 'no-cors',
-      //   headers: {
-      //     "Accept": "application/json",
-      //     "Content-Type": "application/json",
-      //     "Access-Control-Allow-Credentials": true,
-      //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-      //   }
-      // }
-      // )
+    // await fetch(`https://api.couponfeed.co/list`, 
+    // {
+    //   method: "POST",
+    //   credentials: "include",
+    //   body: { retail_id: getId() },
+    //   // mode: 'no-cors',
+    //   headers: {
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Credentials": true,
+    //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
+    //   }
+    // }
+    // )
       .then(response => {
         this.setState({ fb: response.data, isLoading: false });
         // console.log(response.data);
@@ -116,7 +116,7 @@ export default class ListFeedback extends Component {
   };
 
   render() {
-    const classes = useStyles();
+  const classes = useStyles();
 
     let listItems;
     let listShops;
@@ -152,20 +152,21 @@ export default class ListFeedback extends Component {
       return (
         <>
           <GridContainer>
-            <GridItem xs={12} sm={12} md={12}>
-              <Card plain>
-                <CardHeader color="success">
-                  <h4 className={classes.cardHeaderh4}> Últimos Feedbacks</h4>
-                  <p className={classes.cardHeaderp}> Listando todos os feedbacks de {getName()}</p>
-                </CardHeader>
-                <CardBody>
-                  <List >{listItems}</List>
-                </CardBody>
-                {/* <CardFooter>
+        <GridItem xs={12} sm={12} md={12}>
+            <Card plain>
+              <CardHeader color="success">
+                <h4 className={ classes.cardHeaderh4 }> Últimos Feedbacks</h4>
+                <p className={ classes.cardHeaderp }> Listando todos os feedbacks de {getName()}</p>
+              </CardHeader>
+              <CardBody>
+          <List className={classes.root}>{listItems}</List>
+
+          </CardBody>
+              {/* <CardFooter>
               </CardFooter> */}
-              </Card>
-            </GridItem>
-          </GridContainer>
+            </Card>
+        </GridItem>
+      </GridContainer>
         </>
       );
     }

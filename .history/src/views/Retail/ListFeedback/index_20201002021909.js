@@ -159,7 +159,7 @@ export default class ListFeedback extends Component {
                   <p className={classes.cardHeaderp}> Listando todos os feedbacks de {getName()}</p>
                 </CardHeader>
                 <CardBody>
-                  <List >{listItems}</List>
+                  <List className={classes.root}>{listItems}</List>
                 </CardBody>
                 {/* <CardFooter>
               </CardFooter> */}
