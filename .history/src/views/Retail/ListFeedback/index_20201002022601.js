@@ -17,7 +17,6 @@ import GridContainer from "../../../components/Grid/GridContainer.js";
 // import CustomInput from "../components/CustomInput/CustomInput.js";
 import Card from "../../../components/Card/Card.js";
 import CardHeader from "../../../components/Card/CardHeader.js";
-import CardFooter from "../../../components/Card/CardFooter.js";
 import CardBody from "../../../components/Card/CardBody.js";
 import {
   isAuthenticated,
@@ -137,7 +136,7 @@ export default class ListFeedback extends Component {
                   fontSize: "18px",
                   marginTop: "0",
                   marginBottom: "10px"
-                }}>Listar QR Codes</h4>
+                }}>Últimos Feedbacks</h4>
                 <p style={{
                   color: "rgba(255,255,255,.62)",
                   margin: "0",
@@ -152,8 +151,8 @@ export default class ListFeedback extends Component {
           <List>{listItems}</List>
 
           </CardBody>
-              <CardFooter>
-              </CardFooter>
+              {/* <CardFooter>
+              </CardFooter> */}
             </Card>
         </GridItem>
       </GridContainer>

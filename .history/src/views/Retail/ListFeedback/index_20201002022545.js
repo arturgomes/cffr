@@ -137,7 +137,7 @@ export default class ListFeedback extends Component {
                   fontSize: "18px",
                   marginTop: "0",
                   marginBottom: "10px"
-                }}>Listar QR Codes</h4>
+                }}>Últimos Feedbacks</h4>
                 <p style={{
                   color: "rgba(255,255,255,.62)",
                   margin: "0",
@@ -152,8 +152,8 @@ export default class ListFeedback extends Component {
           <List>{listItems}</List>
 
           </CardBody>
-              <CardFooter>
-              </CardFooter>
+              {/* <CardFooter>
+              </CardFooter> */}
             </Card>
         </GridItem>
       </GridContainer>

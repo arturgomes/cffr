@@ -29,6 +29,13 @@ import {
 // import Main from './DemoPages/Main';
 // import styles from "../../../assets/jss/material-dashboard-react/layouts/adminStyle.js";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
+}));
 export default class ListFeedback extends Component {
 
   state = {
@@ -137,7 +144,7 @@ export default class ListFeedback extends Component {
                   fontSize: "18px",
                   marginTop: "0",
                   marginBottom: "10px"
-                }}>Listar QR Codes</h4>
+                }}>Últimos Feedbacks</h4>
                 <p style={{
                   color: "rgba(255,255,255,.62)",
                   margin: "0",
@@ -152,8 +159,8 @@ export default class ListFeedback extends Component {
           <List>{listItems}</List>
 
           </CardBody>
-              <CardFooter>
-              </CardFooter>
+              {/* <CardFooter>
+              </CardFooter> */}
             </Card>
         </GridItem>
       </GridContainer>
