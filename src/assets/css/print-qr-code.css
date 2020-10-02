@@ -103,6 +103,7 @@ a:hover {
   flex-direction: row;
   flex-wrap: wrap;
   width:100%;
+  padding-top:15px;
 }
 .ft-main-item {
   /* width:100%; */

@@ -60,7 +60,7 @@ export default function ListStores(props) {
               
               props.list.map(item => [`${item.name}`, `${item.manager}`, `${item.phone}`, 
                     <><Button onClick={() => openInNewTab(`/print-qr/${item.id}`)}><IoMdPrint/></Button>
-                      {/* <Button onClick={() => openInNewTab(`/print-thermal/${item.id}`)}><RiEBike2Line/></Button> */}
+                      <Button onClick={() => openInNewTab(`/print-thermal/${item.id}`)}><RiEBike2Line/></Button>
                       {/* <Button onClick={() => openInNewTab(`/print-qr/${item.id}`)}><MdDeleteForever/></Button> */}
                     </>])
             }
