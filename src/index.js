@@ -61,7 +61,7 @@ document.head.appendChild(styleLink);
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/" exact component={LandingPage} />
+      <Route path="/lp" exact component={LandingPage} />
       <Route path="/test" exact component={LayoutLogin} />
       <Route path="/blog" exact component={Blog} />
       <Route path="/logout" exact component={Logout} />

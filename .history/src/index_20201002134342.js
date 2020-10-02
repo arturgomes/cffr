@@ -3,9 +3,6 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import ReactDOM from "react-dom";
 
-import "./layouts/LandingPage/assets/css/bootstrap.min.css";
-import "./layouts/LandingPage/assets/scss/paper-kit.scss?v=1.2.0";
-import "./layouts/LandingPage/assets/demo/demo.css?v=1.2.0";
 // import "./index.css";
 // import App from "./App";
 import * as Sentry from "@sentry/browser";
@@ -19,10 +16,13 @@ import Shortner from "./layouts/Shortner.js";
 import Feedback from "./layouts/Feedback.js";
 import Logout from "./layouts/Logout.js";
 import Login from "./layouts/Login.js";
+import RLogin from "./layouts/RLogin.js";
 import SocialLogin from "./layouts/SocialLogin.js";
 import SignUp from "./layouts/SignUp.js";
+import LayoutLogin from "./layouts/LayoutLogin.js";
 import SignUpRetail from "./layouts/SignUpRetail.js";
 import LandingPage from "./layouts/LandingPage/LandingPage.js";
+import Blog from "./layouts/LandingPage/Blog.js";
 
 import { isAuthenticated } from "./services/auth";
 
@@ -61,9 +61,12 @@ document.head.appendChild(styleLink);
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/" exact component={LandingPage} />
+      <Route path="/lp" exact component={LandingPage} />
+      <Route path="/test" exact component={LayoutLogin} />
+      <Route path="/blog" exact component={Blog} />
       <Route path="/logout" exact component={Logout} />
       <Route path="/login" exact component={Login} />
+      <Route path="/rlogin" exact component={RLogin} />
       <Route path="/social" exact component={SocialLogin} />
       <Route path="/login/:fid" component={Login} />
       
