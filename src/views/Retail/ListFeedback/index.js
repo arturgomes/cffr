@@ -120,7 +120,17 @@ export default class ListFeedback extends Component {
         });
         return listShops;
       });
+<<<<<<< HEAD
     }
+=======
+      return listShops;
+    });
+  }
+  render() {
+    const fb = this.state;
+    // console.log(fb);
+
+>>>>>>> parent of ca72c51... quick commit
     if (this.state.isLoading) {
       return <LinearProgress />
     }
