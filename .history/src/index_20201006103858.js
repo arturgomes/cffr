@@ -29,7 +29,11 @@ import { isAuthenticated } from "./services/auth";
 
 // require('dotenv').config()
 
-
+const Blog = ({ component: Component, ...rest }) => (<Redirect
+  to={{
+    pathname: "https://blog.couponfeed.com.br",
+  }}
+/>)
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
@@ -61,10 +65,9 @@ document.head.appendChild(styleLink);
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/" exact render={() => (window.location = "http://blog.couponfeed.com.br")} />
       <Route path="/lp" exact component={LandingPage} />
       <Route path="/test" exact component={LayoutLogin} />
-      {/* <Route path="/blog" exact component={Blog} /> */}
+      <Route path="/blog" exact component={Blog} />
       <Route path="/logout" exact component={Logout} />
       <Route path="/login" exact component={Login} />
       <Route path="/rlogin" exact component={RLogin} />
