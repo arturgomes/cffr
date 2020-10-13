@@ -1,0 +1,191 @@
+
+.content_container{
+  padding: 10px;
+  margin: inherit;
+  list-style: none;
+justify-content: space-between;  
+-ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  background-color:#fff;
+}
+.nowrap  { 
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+.wrap    { 
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}  
+
+.fourcol{
+  float: left;
+  width: 25%; 
+  padding: 60px; 
+}
+
+.threecol3{
+  padding-right: 10px;
+  margin: 30px 0 30px 0 ;
+  float: left;
+  width: 33%; 
+  /* padding: 20px;  */
+  margin-left:20px;
+  /* background-color: #344; */
+}
+.last3{
+  margin-right:20px;
+}
+.spacer{
+  height: 20px;
+}
+.social_network{
+  padding:10px 0 10px 0;
+  justify-content: space-between;
+}
+.social_network a{
+  margin: 10px;
+}
+
+.threecol h4{
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:#1DB954
+}
+.threecol a, .threecol p{
+  color:#fff;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.zoom_photo{
+	display:block;
+	overflow:hidden;
+}
+
+@media (min-width: 768px) {
+	
+	/* General Styles */
+	.p-heading {
+		width: 85%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	/* end of general styles */
+
+
+	/* Header */
+	
+	/* Header */
+	.header {
+		padding: 0 40px 0 40px;
+	}
+	.header .header-content {
+		padding-top: 10.5rem;
+	}
+
+	.header h1 {
+		font-size: 3rem;
+		line-height: 3.5rem;
+	}
+	/* end of header */
+
+
+	/* Customers */
+	.slider-1 {
+		padding-top: 3rem;
+		padding-bottom: 2.875rem;
+	}
+
+	.slider-1 .slider-container {
+		padding-right: 3.5rem;
+		padding-left: 3.5rem;
+	}
+	/* end of customers */
+
+
+	/* Video */
+	.basic-3 p {
+		width: 85%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	/* end of video */
+
+
+	/* Testimonials */
+	.slider-2 .slider-container {
+		width: 70%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.slider-2 .swiper-container {
+		width: 85%;
+	}
+
+	.slider-2 .swiper-button-prev {
+		left: 1rem;
+		width: 1.375rem;
+		background-size: 1.375rem 2.125rem;
+	}
+	
+	.slider-2 .swiper-button-next {
+		right: 1rem;
+		width: 1.375rem;
+		background-size: 1.375rem 2.125rem;
+	}
+	/* end of testimonials */
+
+
+	/* About */
+	.basic-4 .team-member {
+		display: inline-block;
+		width: 12.5rem;
+		margin-right: 2rem;
+		margin-left: 2rem;
+		vertical-align: top;
+	}
+	/* end of about */
+
+
+	/* Contact */
+	.form-2 .list-unstyled li {
+		display: inline-block;
+		margin-right: 0.5rem;
+		margin-left: 0.5rem;
+	}
+
+	.form-2 .list-unstyled .address {
+		display: block;
+	}
+	/* end of contact */
+
+
+	/* Extra Pages */
+	.ex-header {
+		padding-top: 11rem;
+		padding-bottom: 9rem;
+	}
+
+	.ex-basic-2 .text-container.dark {
+		padding: 2.5rem 3rem 2rem 3rem;
+	}
+
+	.ex-basic-2 .text-container.column {
+		width: 90%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	/* end of extra pages */
+}

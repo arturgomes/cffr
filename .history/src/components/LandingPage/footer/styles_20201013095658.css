@@ -1,0 +1,41 @@
+
+.footer_container{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content: space-between;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  background-color:#555;
+}
+.nowrap  { 
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+.wrap    { 
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}  
+
+.footer{
+  width: 100%;
+  padding: 30px;
+}
+.fourcol{
+  width:24.05%;
+  margin:10px;
+}
+.fourcol h4, .fourcol a, .fourcol p{
+  color:#fff;
+}
+.footer_copy{
+  width:50%
+  justify-content: center;
+  align-items: center;
+}
