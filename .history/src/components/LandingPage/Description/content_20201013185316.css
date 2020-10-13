@@ -69,7 +69,7 @@
 	overflow:hidden;
 }
 
-@media screen and (max-width: 550px) { /*breakpoint*/
+@media media and (max-width: 550px) { /*breakpoint*/
   .content_container {
     flex-direction: column;
   }
@@ -77,11 +77,11 @@
     width: 100%;
   }
 }
-@media screen and (min-width: 1400px) { /*breakpoint*/
+@media media and (min-width: 1400px) { /*breakpoint*/
   .content_container {
-    max-width:1440px;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
   }
-  
+  .content_container {
+    width: 20%;
+  }
 }

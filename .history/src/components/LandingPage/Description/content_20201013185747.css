@@ -79,7 +79,7 @@
 }
 @media screen and (min-width: 1400px) { /*breakpoint*/
   .content_container {
-    max-width:1440px;
+    width:70%;
     align-items: center;
     justify-content: center;
   }

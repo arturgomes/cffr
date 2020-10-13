@@ -27,6 +27,7 @@ export default class Description extends Component {
           {/* end call_to_action_white_wrapper */}
           {/* begin section_wrapper */}
         <div className="call_to_action_white_wrapper">
+        <div className="call_to_action_white">
 
           <div className="content_container wrap">
             <div className="threecol3 ">
@@ -51,6 +52,7 @@ export default class Description extends Component {
                 {/* <a href="#" className="button_blue">Discover More</a> */}
               </div>
             </div>
+          </div>
           </div>
 
           </div>
