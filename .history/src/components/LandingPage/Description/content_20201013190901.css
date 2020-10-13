@@ -77,10 +77,9 @@
     width: 100%;
   }
 }
-@media screen and (min-width: 1600px) { /*breakpoint*/
+@media screen and (min-width: 1400px) { /*breakpoint*/
   .content_container {
-    margin-left:15%;
-    margin-right:15%;
+    width:70%;
     align-items: center;
     justify-content: center;
     align-content: center;
