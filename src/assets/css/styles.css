@@ -801,7 +801,9 @@ input[type='checkbox'] {
 
 .header .header-content {
 	/* padding-top: -8rem; */
-	margin-top:-6rem;
+	margin: 0 50px 0 50px;
+
+	margin-top:-10rem;
 	/* padding-bottom: 4rem; */
 	text-align: center;
 }

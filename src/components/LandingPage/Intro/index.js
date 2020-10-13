@@ -25,12 +25,13 @@ export default class Intro extends Component {
 
           <div className="container">
             <div className="row">
-              <div className="col-lg-8">
+              <div className="col-lg-6">
                 <div className="text-container">
-                  <h1><span className="turquoise">Dê Feedbacks</span> <br />Concorra a prêmios
+                  <h1>Ouça e <span className="turquoise">Encante</span><br/> os Seus Clientes
                   </h1>
-                  <p className="p-large">Quem não gosta de um desconto ou brinde? A CouponFeed veio para auxiliar
-                  o varejista na coleta de feedbacks das experiências de seu cliente. E em troca, o
+                  <p className="p-large">A CouponFeed veio para auxiliar
+                  o varejista na coleta de feedbacks das experiências de seu cliente. E juntos vamos além: estabelecemos um canal direto de comunicação com os seus clientes lhe permitindo <span>fechar o loop</span> após seus feedbacks. </p>
+                  <p className="p-large"> E em troca, fidelize seu cliente com o
                   cliente acumula pontos que podem ser convertidos em descontos em produtos e também
                                 participa de promoções exclusivas.</p>
 
@@ -70,7 +71,7 @@ export default class Intro extends Component {
                 {/* </div> */}
               </div>
               <div className="iHide">
-                <div className="col-lg-4">
+                <div className="col-lg-6">
                   {/* <div className="image-container"> */}
                     <img src={feedback} alt="alternative" />
                   {/* </div> */}

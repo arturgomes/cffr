@@ -22,29 +22,6 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   return (
     <List className={classes.list}>
-      {/* <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          buttonText="Components"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={Apps}
-          dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
-              All components
-            </Link>,
-            <a
-              href="https://creativetimofficial.github.io/material-kit-react/#/documentation?ref=mkr-navbar"
-              target="_blank"
-              className={classes.dropdownLink}
-            >
-              Documentation
-            </a>
-          ]}
-        />
-      </ListItem> */}
       <ListItem className={classes.listItem}>
         <Button
           onClick={() => componentOpenBlog()}
@@ -52,7 +29,6 @@ export default function HeaderLinks(props) {
           target="_blank"
           className={classes.navLink}
         >
-          {/* <CloudDownload className={classes.icons} />  */}
           Blog
         </Button>
       </ListItem>
@@ -65,7 +41,6 @@ export default function HeaderLinks(props) {
           rel="noopener"
           className={classes.navLink}
         >
-          {/* <CloudDownload className={classes.icons} />  */}
           Preços
         </Button>
       </ListItem>
@@ -77,17 +52,14 @@ export default function HeaderLinks(props) {
 
           className={classes.navLink}
         >
-          {/* <CloudDownload className={classes.icons} />  */}
           Área do Cliente
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
           href="/rsignup"
-          // color="transparent"
           target="_blank"
           color="success"
-          // round
           className="btn-solid-lg2"
         >
           Quero Vender Mais

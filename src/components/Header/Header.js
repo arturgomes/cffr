@@ -61,11 +61,7 @@ export default function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed
   });
-  const brandComponent = (<Link
-    to="/"
-  >
-    <img width="200" src={brand} alt="alternative" />
-  </Link>)
+  const brandComponent = (<Link to="/" > <img width="200" src={brand} alt="alternative" /> </Link>)
 
 
   return (
