@@ -36,7 +36,7 @@ export default class Intro extends Component {
                                 participa de promoções exclusivas.</p>
 
 
-                  <Link className="btn-solid-lg" href="/rsignup">Experimente Agora</Link >
+                  <Link className="btn-solid-lg" href="/pricing">Experimente Agora</Link >
                 </div>
                 {/* <div className="row"> */}
                 {/* <div className="iWant"> */}
