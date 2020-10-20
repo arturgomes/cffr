@@ -26,7 +26,7 @@ export default class Contact extends Component {
                   fields={[
                     {
                       name: "EMAIL",
-                      placeholder: "Seu melhor email *",
+                      placeholder: "Seu melhor email",
                       type: "email",
                       required: true,
                     },

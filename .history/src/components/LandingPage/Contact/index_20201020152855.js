@@ -2,13 +2,12 @@ import React, { Component } from "react";
 //Material.ui
 import Mailchimp from "react-mailchimp-form";
 
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "../../../assets/css/fontawesome-all.css";
-// import "../../../assets/css/fontawesome.css";
-// import "../../../assets/css/swiper.css";
-// import "../../../assets/css/magnific-popup.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../../../assets/css/fontawesome-all.css";
+import "../../../assets/css/fontawesome.css";
+import "../../../assets/css/swiper.css";
+import "../../../assets/css/magnific-popup.css";
 import "../../../assets/css/styles.css";
-import "./contact.css";
 
 export default class Contact extends Component {
   render() {
@@ -17,7 +16,7 @@ export default class Contact extends Component {
         <div id="contact" className="form-2">
           <div className="container">
             <div className="row">
-              <div className="col-lg-6">
+              <div className="col-lg-12">
                 <h2>Inscreva-se para ficar por dentro das nossas novidades</h2>
 
                 <Mailchimp
@@ -26,7 +25,7 @@ export default class Contact extends Component {
                   fields={[
                     {
                       name: "EMAIL",
-                      placeholder: "Seu melhor email *",
+                      placeholder: "Seu melhor email",
                       type: "email",
                       required: true,
                     },
@@ -47,7 +46,7 @@ export default class Contact extends Component {
                     button: "Embarque conosco!",
                   }}
                   // Add a personalized class
-                  className="contact-form"
+                  className="<YOUR_CLASSNAME>"
                 />
                 {/* <MailchimpSubscribe url="https://couponfeed.us18.list-manage.com/subscribe/post?u=0b2a962ce3335ba1337997015&amp;id=617a7720ad" /> */}
               </div>

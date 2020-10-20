@@ -126,6 +126,8 @@
     "react-hamburgers": "^1.0.0",
     "react-icons": "^3.9.0",
     "react-infinite-calendar": "^2.3.1",
+    "react-mailchimp-form": "^1.0.2",
+    "react-mailchimp-subscribe": "^2.1.0",
     "react-map-gl": "^4.0.5",
     "react-masked-text": "^0.4.1",
     "react-metismenu": "^1.4.0",

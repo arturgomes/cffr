@@ -17,7 +17,7 @@ export default class Contact extends Component {
         <div id="contact" className="form-2">
           <div className="container">
             <div className="row">
-              <div className="col-lg-6">
+              {/* <div className="col-lg-12"> */}
                 <h2>Inscreva-se para ficar por dentro das nossas novidades</h2>
 
                 <Mailchimp
@@ -26,7 +26,7 @@ export default class Contact extends Component {
                   fields={[
                     {
                       name: "EMAIL",
-                      placeholder: "Seu melhor email *",
+                      placeholder: "Seu melhor email",
                       type: "email",
                       required: true,
                     },
