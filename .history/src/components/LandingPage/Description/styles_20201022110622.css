@@ -55,9 +55,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .description_container_wrap {
-    margin-top: 180px;
-  }
   /* For mobile phones: */
   .description_container_wrap .description_header h4 {
     margin: 10%;

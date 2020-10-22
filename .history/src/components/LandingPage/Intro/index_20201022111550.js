@@ -43,7 +43,7 @@ export default class Intro extends Component {
                       promoções exclusivas.
                     </p>
 
-                    <Link className="cta_green_button" href="/pricing">
+                    <Link className="btn-solid-lg" href="/pricing">
                       Experimente Agora
                     </Link>
                   </div>

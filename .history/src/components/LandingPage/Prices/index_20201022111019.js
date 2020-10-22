@@ -10,7 +10,7 @@ import PriceFeatures from "./PriceFeatures";
 //
 function PriceContainer(props) {
   return (
-    <div className="price_container_r">
+    <div className="price_container_wrapper">
       <div className="price_block border_top">
         {props.recommend === true ? (
           <div className="recommend bg_green">Recomendado</div>
