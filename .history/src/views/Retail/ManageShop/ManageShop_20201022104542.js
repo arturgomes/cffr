@@ -14,7 +14,7 @@ import NewStoreForm from "./NewStoreForm.js";
 import ListStores from "./ListStores.js";
 
 import CustomTabs from "../../../components/CustomTabs/CustomTabs.js";
-import "./style.css";
+import `./styles.css`
 import api from "../../../services/api";
 import { logout, getId, getName } from "../../../services/auth";
 // import avatar from "assets/img/faces/marc.jpg";
