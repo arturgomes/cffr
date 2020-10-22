@@ -217,20 +217,15 @@ export default class ManageShop extends Component {
         <>
           <GridContainer>
             <GridItem xs={12} sm={12} md={12}>
-              <div>
-                <div className="shop_container_wrap">
-                  <NewStoreForm
-                    state={this.state}
-                    submit={this.handleSubmit}
-                    handleNameInput={this.handleNameInput}
-                    handlePhoneInput={this.handlePhoneInput}
-                    handleManagerInput={this.handleManagerInput}
-                  />
-                </div>
-
-                <div className="shop_container_wrap">
-                  <ListStores list={this.state.list} name={getName()} />
-                </div>
+              <div className="shop_container_wrap">
+                <NewStoreForm
+                  state={this.state}
+                  submit={this.handleSubmit}
+                  handleNameInput={this.handleNameInput}
+                  handlePhoneInput={this.handlePhoneInput}
+                  handleManagerInput={this.handleManagerInput}
+                />
+                <ListStores list={this.state.list} name={getName()} />
               </div>
 
               {/* <CustomTabs
