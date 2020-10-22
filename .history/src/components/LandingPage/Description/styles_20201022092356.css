@@ -1,0 +1,13 @@
+.description_container_wrap {
+}
+.description_container_wrap .description_header {
+  color: #454545;
+}
+
+.description_container_wrap .description_header h3 {
+  font-size: 36px;
+}
+.description_container_wrap .description_header h4 {
+  font-size: 18px;
+  font-style: italic;
+}

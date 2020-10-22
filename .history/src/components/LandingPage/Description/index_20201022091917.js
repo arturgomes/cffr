@@ -2,11 +2,10 @@ import React from "react";
 import desc1 from "../../../assets/images/desc1.png";
 import desc2 from "../../../assets/images/desc2.png";
 import desc3 from "../../../assets/images/desc3.png";
-import "./styles.css";
 
 export default function Description() {
   return (
-    <div className="container description_container_wrap">
+    <div className="description_container_wrap">
       <div className="description_header">
         <h3>Por que escolher a CouponFeed?</h3>
         <h4>
@@ -43,7 +42,7 @@ export default function Description() {
             </p>
           </div>
         </div>
-        <div className="threecol3">
+        <div className="threecol3 last3">
           <div className="service_img">
             <img src={desc3} alt="pic" />
           </div>

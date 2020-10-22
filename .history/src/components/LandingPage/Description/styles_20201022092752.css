@@ -1,0 +1,19 @@
+.description_container_wrap {
+  /* margin: inherit; */
+}
+.description_container_wrap .description_header {
+  color: #454545;
+}
+
+.description_container_wrap .description_header h3 {
+  font-size: 36px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.description_container_wrap .description_header h4 {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 200;
+  text-align: center;
+}

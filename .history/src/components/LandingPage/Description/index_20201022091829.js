@@ -2,11 +2,10 @@ import React from "react";
 import desc1 from "../../../assets/images/desc1.png";
 import desc2 from "../../../assets/images/desc2.png";
 import desc3 from "../../../assets/images/desc3.png";
-import "./styles.css";
 
 export default function Description() {
   return (
-    <div className="container description_container_wrap">
+    <div className="description_container_wrap">
       <div className="description_header">
         <h3>Por que escolher a CouponFeed?</h3>
         <h4>
@@ -18,9 +17,7 @@ export default function Description() {
       </div>
       <div className="description_content">
         <div className="threecol3 ">
-          <div className="service_img">
-            <img src={desc1} alt="pic" />
-          </div>
+          <img src={desc1} alt="pic" />
           <div className="services_box">
             <h3>Sem Totens ou Tablets!</h3>
             <p>
@@ -32,9 +29,7 @@ export default function Description() {
           </div>
         </div>
         <div className="threecol3">
-          <div className="service_img">
-            <img src={desc2} alt="pic" />
-          </div>
+          <img src={desc2} alt="pic" />
           <div className="services_box">
             <h3>Respostas instantâneas</h3>
             <p>
@@ -43,10 +38,8 @@ export default function Description() {
             </p>
           </div>
         </div>
-        <div className="threecol3">
-          <div className="service_img">
-            <img src={desc3} alt="pic" />
-          </div>
+        <div className="threecol3 last3">
+          <img src={desc3} alt="pic" />
           <div className="services_box">
             <h3>NPS e Fechamento de Loop</h3>
             <p>

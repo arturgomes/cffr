@@ -43,7 +43,7 @@ export default function Description() {
             </p>
           </div>
         </div>
-        <div className="threecol3">
+        <div className="threecol3 last3">
           <div className="service_img">
             <img src={desc3} alt="pic" />
           </div>

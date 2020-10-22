@@ -1,0 +1,52 @@
+.description_container_wrap {
+  /* margin: inherit; */
+}
+.description_container_wrap .description_header {
+  color: #454545;
+}
+
+.description_container_wrap .description_header h3 {
+  font-size: 36px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.description_container_wrap .description_header h4 {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 24px;
+  color: #656565;
+  text-align: center;
+  margin-bottom: 40px;
+  margin: 0 30px;
+}
+.description_content {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.description_content .threecol3 {
+  margin: 10px;
+  width: 30%;
+  background-color: #eee;
+}
+.description_content .threecol3 .service_img img {
+  width: 100%;
+}
+.description_content .threecol3 .services_box {
+  margin: 10px;
+  /* margin: 10px; */
+}
+.description_content .threecol3 .services_box h3 {
+  text-align: center;
+
+  margin: 10px 0;
+  font-weight: 400;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.description_content .threecol3 .services_box p {
+  margin-top: 10px;
+}
