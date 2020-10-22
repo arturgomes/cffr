@@ -1,0 +1,64 @@
+.call_to_action_white_wrapper {
+  margin: 0 auto !important;
+  width: 90%;
+  padding: 0 5%;
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.call_to_action_white,
+.call_to_action_grey,
+.call_to_action_dark {
+  margin: 0 auto !important;
+  position: relative;
+  z-index: 10;
+  padding: 90px 0 0 0;
+  width: 100%;
+  max-width: 720px;
+  text-align: center;
+}
+.call_to_action_white h3,
+.call_to_action_white h4,
+.call_to_action_grey h3,
+.call_to_action_grey h4,
+.call_to_action_dark h3,
+.call_to_action_dark h4 {
+  margin: 0;
+  padding: 0;
+}
+.call_to_action_white h3,
+.call_to_action_grey h3,
+.call_to_action_dark h3 {
+  margin: 0;
+  display: block;
+  clear: both;
+  font-size: 36px;
+  line-height: 48px;
+  text-align: center;
+  font-weight: 300;
+}
+.call_to_action_white h3,
+.call_to_action_grey h3 {
+  color: #454545;
+}
+.call_to_action_dark h3 {
+  color: #ddd;
+}
+.call_to_action_white h4,
+.call_to_action_grey h4,
+.call_to_action_dark h4 {
+  margin: 0;
+  display: block;
+  clear: both;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  font-weight: 300;
+  color: #eee;
+  font-style: italic;
+}
+.call_to_action_white h4,
+.call_to_action_grey h4 {
+  color: #656565;
+}

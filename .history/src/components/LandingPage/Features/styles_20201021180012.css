@@ -1,0 +1,25 @@
+.container {
+}
+.container .two_col {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.container .two_col .img_col {
+  margin: 20px;
+  width: 40%;
+}
+.l_image {
+}
+
+.container .two_col .text_col {
+  width: 60%;
+  margin: 20px;
+}
+
+.container .two_col .text_col h4 {
+  color: #243e63;
+  font-size: 48px;
+  font-weight: 900;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

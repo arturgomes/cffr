@@ -1,0 +1,12 @@
+.container {
+}
+.two_col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.img_col {
+  width: 40%;
+}
+.l_image {
+}
