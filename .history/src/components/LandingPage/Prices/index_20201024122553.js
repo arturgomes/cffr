@@ -24,32 +24,17 @@ function PriceContainer(props) {
               <h4>{`R$ ${props.price}`}</h4>
               <span className="montly">por mês</span>
             </>
-          ) : (props.moreinfo ? (
-            <>
-              <h4>Sob Consulta</h4>
-              <span className="montly hidden">por mês</span>
-            </>
-          ):(
+          ) : (
             <>
               <h4>GRATIS</h4>
               <span className="montly hidden">por mês</span>
             </>
-          ))}
+          )}
         </div>
         <div className="price_button_wrapper">
-        {props.moreinfo ? (
-            <>
-            <a href="/contact" className="price_button pb_green">
-            Solicite uma proposta
-          </a>
-            </>
-          ):(
-            <>
-            <a href={props.url} className="price_button pb_green">
+          <a href={props.url} className="price_button pb_green">
             Assine Já
           </a>
-            </>
-          )}         
         </div>
         {props.features}
         <div className="price_desc bg_abnb">{props.purpose}</div>
@@ -97,20 +82,19 @@ export default class Prices extends Component {
               <>
                 <div className="price_container wrap">
                   <PriceContainer
-                    plan="Plano Básico"
+                    plan="Plano Bronze"
                     features={<PriceFeatures nfeedbacks={50} nqr={1} contact={false}/>}
                     url="rsignup/bronze"
                     purpose="Para começar a introduzir a cultura de customer experience na empresa"
                   />
                   <PriceContainer
-                    plan="Plano Intermediário"
+                    plan="Plano Prata"
                     price={99}
                     recommend={true}
                     features={
                       <PriceFeatures
-                        contact={true}
                         nfeedbacks={200}
-                        nqr={3}
+                        nqr={1}
                         dashboard={true}
                       />
                     }
@@ -118,23 +102,22 @@ export default class Prices extends Component {
                     purpose="Para lojas únicas ou franquias poderem aumentar a retenção dos clientes"
                   />
                   <PriceContainer
-                    plan="Plano Top"
+                    plan="Plano Ouro"
                     price={249}
                     features={
                       <PriceFeatures
                         nfeedbacks={1000}
-                        contact={true}
-                        nqr={5}
+                        nqr={3}
                         dashboard={true}
                       />
                     }
                     url="rsignup/gold"
-                    purpose="Para estabelecimentos com filiais próximas, permitindo avaliar a qualidade do atendimento em cada um dos estabelecimentos."
+                    purpose="Para estabelecimentos com filiais próximas, permitindo avaliar a opinião dos clientes em cada um dos estabelecimentos."
                   />
                   <PriceContainer
-                    plan="Plano Plus"
-                    moreinfo
-                    features={<PriceFeatures dashboard={true} pers={true} contact={true}/>}
+                    plan="Plano Diamante"
+                    price={399}
+                    features={<PriceFeatures dashboard={true} pers={true} />}
                     url="rsignup/diamond"
                     purpose="Para Shoppings, Lojas ou Supermercados que desejam avaliar diferentes aspectos do negócio."
                   />

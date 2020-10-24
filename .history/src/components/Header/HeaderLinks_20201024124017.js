@@ -1,6 +1,7 @@
 /*eslint-disable*/
 import React from "react";
 // react components for routing our app without refresh
+import Link from 'react-router-dom'
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -19,17 +20,12 @@ export default function HeaderLinks(props) {
   const componentOpenBlog = () => {
     window.open("https://blog.couponfeed.com.br", "_self");
   }
-  const componentOpenPricing = () => {
-    window.open("https://www.couponfeed.com.br/pricing", "_self");
-  }
-  const componentOpenLogin = () => {
-    window.open("https://www.couponfeed.com.br/login", "_self");
-  }
   const classes = useStyles();
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <Button
+          component={Link}
           onClick={() => componentOpenBlog()}
           color="transparent"
           target="_blank"
@@ -41,7 +37,9 @@ export default function HeaderLinks(props) {
 
       <ListItem className={classes.listItem}>
         <Button
-          onClick={() => componentOpenPricing()}
+          href="/pricing"
+          component={Link}
+
           color="transparent"
           target="_blank"
           rel="noopener"
@@ -52,7 +50,7 @@ export default function HeaderLinks(props) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          onClick={() => componentOpenLogin()}
+          href="/login"
           color="transparent"
           target="_blank"
 
@@ -63,7 +61,9 @@ export default function HeaderLinks(props) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          onClick={() => componentOpenPricing()}
+          href="/pricing"
+          component={Link}
+
           target="_blank"
           color="success"
           className="btn-solid-lg2"

@@ -110,7 +110,7 @@ export default class Prices extends Component {
                       <PriceFeatures
                         contact={true}
                         nfeedbacks={200}
-                        nqr={3}
+                        nqr={1}
                         dashboard={true}
                       />
                     }
@@ -124,12 +124,12 @@ export default class Prices extends Component {
                       <PriceFeatures
                         nfeedbacks={1000}
                         contact={true}
-                        nqr={5}
+                        nqr={3}
                         dashboard={true}
                       />
                     }
                     url="rsignup/gold"
-                    purpose="Para estabelecimentos com filiais próximas, permitindo avaliar a qualidade do atendimento em cada um dos estabelecimentos."
+                    purpose="Para estabelecimentos com filiais próximas, permitindo avaliar a opinião dos clientes em cada um dos estabelecimentos."
                   />
                   <PriceContainer
                     plan="Plano Plus"

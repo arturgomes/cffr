@@ -22,9 +22,6 @@ export default function HeaderLinks(props) {
   const componentOpenPricing = () => {
     window.open("https://www.couponfeed.com.br/pricing", "_self");
   }
-  const componentOpenLogin = () => {
-    window.open("https://www.couponfeed.com.br/login", "_self");
-  }
   const classes = useStyles();
   return (
     <List className={classes.list}>
@@ -41,7 +38,8 @@ export default function HeaderLinks(props) {
 
       <ListItem className={classes.listItem}>
         <Button
-          onClick={() => componentOpenPricing()}
+                    onClick={() => componentOpenPricing()}
+
           color="transparent"
           target="_blank"
           rel="noopener"
@@ -52,7 +50,7 @@ export default function HeaderLinks(props) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          onClick={() => componentOpenLogin()}
+          href="/login"
           color="transparent"
           target="_blank"
 
@@ -63,7 +61,7 @@ export default function HeaderLinks(props) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          onClick={() => componentOpenPricing()}
+          href="/pricing"
           target="_blank"
           color="success"
           className="btn-solid-lg2"

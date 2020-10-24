@@ -129,7 +129,7 @@ export default class Prices extends Component {
                       />
                     }
                     url="rsignup/gold"
-                    purpose="Para estabelecimentos com filiais próximas, permitindo avaliar a qualidade do atendimento em cada um dos estabelecimentos."
+                    purpose="Para estabelecimentos com filiais próximas, permitindo avaliar a opinião dos clientes em cada um dos estabelecimentos."
                   />
                   <PriceContainer
                     plan="Plano Plus"
