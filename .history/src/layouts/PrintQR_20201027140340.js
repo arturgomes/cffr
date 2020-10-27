@@ -31,7 +31,7 @@ export default class PrintQR extends Component {
 
   async componentDidMount() {
     const qs = decodeURIComponent(this.props.match.params.id);
-    await api.post("/shopsl", { shop_id: qs })
+    await api.post("https://api.couponfeed.com.br/shopsl", { shop_id: qs })
     // await fetch("https://api.couponfeed.com.br/shopsl", 
     // {
     //   method: "POST",
@@ -57,18 +57,19 @@ export default class PrintQR extends Component {
       }
       )
       .catch(error => this.setState({ error: "Loja não encontrada" }))
-      await api.post(`/files/${this.state.retail_id}`, 
-      // {
-      //   method: "POST",
-      //   credentials: "include",
-      //   headers: {
-      //     "Accept": "application/json",
-      //     "Content-Type": "application/json",
-      //     "Access-Control-Allow-Credentials": true,
-      //     "Access-Control-Allow-Origin": "https://www.couponfeed.com.br"
-      //   }
-      // }
-      )
+      await fetch(`https://api.couponfeed.com.br/files/${this.state.retail_id}`, 
+      {
+        method: "POST",
+        credentials: "include",
+        // body: { shop_id: qs },
+        // mode: 'no-cors',
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+          "Access-Control-Allow-Origin": "https://www.couponfeed.com.br"
+        }
+      })
     // await api.post(`/files/${this.state.retail_id}`)
       .then(res => {
         const { url } = res.data[0];

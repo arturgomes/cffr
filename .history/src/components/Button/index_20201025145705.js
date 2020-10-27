@@ -6,19 +6,19 @@ import ButtonGG from './ButtonGG';
 import './style.css'
 export default class LoginSocial extends Component {
   componentFacebookRetailClicked = () => {
-    window.open("https://api.couponfeed.co/auth/facebook/retail", "_self");
+    window.open("https://api.couponfeed.com.br/auth/facebook/retail", "_self");
   }
   componentGoogleRetailClicked = () => {
-    window.open("https://api.couponfeed.co/auth/google/retail", "_self");
+    window.open("https://api.couponfeed.com.br/auth/google/retail", "_self");
   }
   componentFacebookClicked = () => {
-    window.open("https://api.couponfeed.co/auth/facebook", "_self");
+    window.open("https://api.couponfeed.com.br/auth/facebook", "_self");
   }
   componentGoogleClicked = () => {
-    window.open("https://api.couponfeed.co/auth/google", "_self");
+    window.open("https://api.couponfeed.com.br/auth/google", "_self");
   }
   render() {
-    let facebookData =
+    const facebookData =
       (<>
         {/* <ul className="no-bullet"> */}
         <ButtonFB 
@@ -33,14 +33,15 @@ export default class LoginSocial extends Component {
         {/* </ul> */}
       </>
       )
-    let facebookDataRetail =
+    const facebookDataRetail =
       (<>
       
         {/* <ul className="no-bullet"> */}
         <ButtonFB 
             click={() => { this.componentFacebookRetailClicked() }}
             caption={this.props.title}
-          /><ButtonGG
+          />
+          <ButtonGG
           click={() => { this.componentGoogleRetailClicked() }}
           caption={this.props.title}
         />

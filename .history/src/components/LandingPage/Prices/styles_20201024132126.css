@@ -182,15 +182,11 @@
 #pricing_ctn .price_head h4 span {
   font-size: 18px;
 }
-
-#pricing_ctn .price_head .hidden {
-  visibility: hidden;
-}
-#pricing_ctn .price_head .montly {
+#pricing_ctn .price_head .montly span {
   font-size: 13px;
   /* line-height: 19px; */
   font-weight: 100;
-  color: #aaa;
+  color: #cccccc;
 }
 .white {
   color: #fff;
@@ -335,15 +331,6 @@ span.right {
   float: left;
 }
 
-#pricing_ctn .call_to_action_white_wrapper .call_to_action_white .left_fade {
-  margin-top: 40px;
-  font-size: 64px;
-  font-weight: 700;
-}
-#pricing_ctn .call_to_action_white_wrapper .call_to_action_white .right_fade {
-  margin-top: 40px;
-  font-size: 18px;
-}
 @media only screen and (max-width: 768px) {
   .pricing_ctn {
     width: 100%;

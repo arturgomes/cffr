@@ -18,9 +18,8 @@ export default class LoginSocial extends Component {
     window.open("https://api.couponfeed.com.br/auth/google", "_self");
   }
   render() {
-    let facebookData =
+    const facebookData =
       (<>
-        {/* <ul className="no-bullet"> */}
         <ButtonFB 
             click={() => { this.componentFacebookClicked() }}
             caption={this.props.title}
@@ -28,24 +27,18 @@ export default class LoginSocial extends Component {
           click={() => { this.componentGoogleClicked() }}
           caption={this.props.title}
         />
-          
-          
-        {/* </ul> */}
       </>
       )
-    let facebookDataRetail =
+    const facebookDataRetail =
       (<>
-      
-        {/* <ul className="no-bullet"> */}
         <ButtonFB 
             click={() => { this.componentFacebookRetailClicked() }}
             caption={this.props.title}
-          /><ButtonGG
+          />
+          <ButtonGG
           click={() => { this.componentGoogleRetailClicked() }}
           caption={this.props.title}
         />
-        
-        {/* </ul> */}
       </>
       )
     return (
