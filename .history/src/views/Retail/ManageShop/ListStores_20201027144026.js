@@ -5,7 +5,6 @@ import React from "react";
 import { AiOutlinePrinter, AiOutlineDelete } from "react-icons/ai";
 // import { RiEBike2Line } from "react-icons/ri";
 // import { FaEdit } from "react-icons/fa";
-import api from "../../../services/api";
 
 import GridItem from "../../../components/Grid/GridItem.js";
 import GridContainer from "../../../components/Grid/GridContainer.js";
@@ -75,7 +74,7 @@ export default function ListStores(props) {
               
               props.list.map(item => [`${item.name}`, `${item.manager}`, `${item.phone}`, 
                     <Button onClick={() => openInNewTab(`/print-qr/${item.id}`)}><AiOutlinePrinter/></Button>,
-                    <Button onClick={() => handleShopDelete(item.id)}><AiOutlineDelete/></Button>,
+                    <Button onClick={() => props.shopDelete(`${item.id}`)}><AiOutlineDelete/></Button>,
 
                   ])
             }

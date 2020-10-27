@@ -75,7 +75,7 @@ export default function ListStores(props) {
               
               props.list.map(item => [`${item.name}`, `${item.manager}`, `${item.phone}`, 
                     <Button onClick={() => openInNewTab(`/print-qr/${item.id}`)}><AiOutlinePrinter/></Button>,
-                    <Button onClick={() => handleShopDelete(item.id)}><AiOutlineDelete/></Button>,
+                    <Button onClick={() => props.shopDelete(`${item.id}`)}><AiOutlineDelete/></Button>,
 
                   ])
             }
