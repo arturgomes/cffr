@@ -80,7 +80,7 @@ export default class ManageShop extends Component {
         this.setState({
           list: response.data,
         });
-        console.log(this.state.list)
+        console.log(list)
       })
       .catch((error) => {
         // console.log(error);
