@@ -14,33 +14,15 @@ import Table from "../../../components/Table/Table.js";
 import Card from "../../../components/Card/Card.js";
 import CardBody from "../../../components/Card/CardBody.js";
 import Button from "../../../components/CustomButtons/Button.js";
-import {getId, getName } from "../../../services/auth";
 
 function openInNewTab(url) {
   var win = window.open(url, '_blank');
   win.focus();
 }
 
-export default function ListStores() {
-
-  const [deleteShop, setDeleteShop] = useState(false);
-  const [shops, setShops] = useState([]);
-  // const [qrlist, setQrlist] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const s = await api.post(`/allshosps`,{retail_id:getId()})
-      // const q = await api.post("/qr", { retail_id: getId() })
-      s.status === 200 && setShops(s.data);
-      // q.status === 200 && setQrlist(s.data);
-      setDeleteShop(false);
-    }
-    fetchData();
-  }, [deleteShop]//[categoria, passeios]
-  )
-
+export default function ListStores(props) {
   const handleShopDelete = async s =>{
-    setDeleteShop(true);
-    // console.log(s)
+    console.log(s)
     await api
       .post(`/shops/d`, { shop_id: s })
       .then((response) => {
@@ -73,7 +55,7 @@ export default function ListStores() {
             marginTop: "0",
             marginBottom: "0"
           }}>
-            Aqui estão as lojas da {getName()}
+            Aqui estão as lojas da {props.name}
             </p>
           {/* </CardHeader> */}
           <CardBody>
@@ -91,7 +73,7 @@ export default function ListStores() {
                 
               // ]
               
-              shops.map(item => [`${item.name}`, `${item.manager}`, `${item.phone}`, 
+              props.list.map(item => [`${item.name}`, `${item.manager}`, `${item.phone}`, 
                     <Button onClick={() => openInNewTab(`/print-qr/${item.id}`)}><AiOutlinePrinter/></Button>,
                     <Button onClick={() => handleShopDelete(item.id)}><AiOutlineDelete/></Button>,
 

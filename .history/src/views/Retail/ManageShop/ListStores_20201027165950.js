@@ -25,13 +25,13 @@ export default function ListStores() {
 
   const [deleteShop, setDeleteShop] = useState(false);
   const [shops, setShops] = useState([]);
-  // const [qrlist, setQrlist] = useState([]);
+  const [qrlist, setQrlist] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const s = await api.post(`/allshosps`,{retail_id:getId()})
-      // const q = await api.post("/qr", { retail_id: getId() })
+      const q = await api.post("/qr", { retail_id: getId() })
       s.status === 200 && setShops(s.data);
-      // q.status === 200 && setQrlist(s.data);
+      q.status === 200 && setQrlist(s.data);
       setDeleteShop(false);
     }
     fetchData();

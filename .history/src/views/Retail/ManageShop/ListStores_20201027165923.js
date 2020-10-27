@@ -21,17 +21,17 @@ function openInNewTab(url) {
   win.focus();
 }
 
-export default function ListStores() {
+export default function ListStores(props) {
 
   const [deleteShop, setDeleteShop] = useState(false);
   const [shops, setShops] = useState([]);
-  // const [qrlist, setQrlist] = useState([]);
+  const [qrlist, setQrlist] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const s = await api.post(`/allshosps`,{retail_id:getId()})
-      // const q = await api.post("/qr", { retail_id: getId() })
+      const q = await api.post("/qr", { retail_id: getId() })
       s.status === 200 && setShops(s.data);
-      // q.status === 200 && setQrlist(s.data);
+      q.status === 200 && setQrlist(s.data);
       setDeleteShop(false);
     }
     fetchData();
@@ -91,7 +91,7 @@ export default function ListStores() {
                 
               // ]
               
-              shops.map(item => [`${item.name}`, `${item.manager}`, `${item.phone}`, 
+              props.list.map(item => [`${item.name}`, `${item.manager}`, `${item.phone}`, 
                     <Button onClick={() => openInNewTab(`/print-qr/${item.id}`)}><AiOutlinePrinter/></Button>,
                     <Button onClick={() => handleShopDelete(item.id)}><AiOutlineDelete/></Button>,
 
