@@ -211,9 +211,11 @@ export default class ManageShop extends Component {
                 </div>
 
                 <div className="shop_container_wrap">
-                  <ListStores list={this.state.list} name={getName()} />
+                  <ListStores list={this.state.list} shopDelete={this.handleShopDelete} name={getName()} />
                 </div>
               </div>
+
+              
             </GridItem>
           </GridContainer>
         </>

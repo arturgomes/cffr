@@ -214,6 +214,8 @@ export default class ManageShop extends Component {
                   <ListStores list={this.state.list} name={getName()} />
                 </div>
               </div>
+
+              
             </GridItem>
           </GridContainer>
         </>
