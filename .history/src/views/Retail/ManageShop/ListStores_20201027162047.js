@@ -29,8 +29,8 @@ export default function ListStores(props) {
         
       })
       .catch((error) => {
-        console.log(error);
-        // this.setState({ error: error });
+        // console.log(error);
+        this.setState({ error: error });
       });
 
   }

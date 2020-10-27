@@ -20,17 +20,19 @@ function openInNewTab(url) {
 }
 
 export default function ListStores(props) {
-  const handleShopDelete = async s =>{
+  async function handleShopDelete(s){
     console.log(s)
     await api
       .post(`/shops/d`, { shop_id: s })
       .then((response) => {
-        console.log(response);
-        
+        // console.log(response);
+        this.setState({
+          list: response.data,
+        });
       })
       .catch((error) => {
-        console.log(error);
-        // this.setState({ error: error });
+        // console.log(error);
+        this.setState({ error: error });
       });
 
   }
