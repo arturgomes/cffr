@@ -208,21 +208,6 @@ export default class ManageShop extends Component {
 
     // console.log(this.state.list);
   }
-  handleShopDelete = async s =>{
-    await api
-      .post(`/shops/d`, { retail_id: s })
-      .then((response) => {
-        // console.log(response);
-        this.setState({
-          list: response.data,
-        });
-      })
-      .catch((error) => {
-        // console.log(error);
-        this.setState({ error: error });
-      });
-
-  }
   render() {
     // const { error } = this.state;
     if (this.state.isLoading) {
@@ -244,7 +229,7 @@ export default class ManageShop extends Component {
                 </div>
 
                 <div className="shop_container_wrap">
-                  <ListStores list={this.state.list} shopDelete={this.handleShopDelete} name={getName()} />
+                  <ListStores list={this.state.list} name={getName()} />
                 </div>
               </div>
 

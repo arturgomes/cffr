@@ -208,9 +208,9 @@ export default class ManageShop extends Component {
 
     // console.log(this.state.list);
   }
-  handleShopDelete = async s =>{
+  handleShopDelete = s =>{
     await api
-      .post(`/shops/d`, { retail_id: s })
+      .post(`/allshops`, { retail_id: getId() })
       .then((response) => {
         // console.log(response);
         this.setState({

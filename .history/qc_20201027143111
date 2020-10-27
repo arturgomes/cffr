@@ -1,0 +1,12 @@
+git add .
+if [ ! (($1)) ]; then
+    echo "No arguments provided"
+    exit 1
+fi
+if [ -z $1]; 
+  then git commit -m "quick commit";
+
+  else git commit -m "quick commit"
+
+fi
+git push

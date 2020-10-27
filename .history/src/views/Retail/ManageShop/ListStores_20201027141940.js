@@ -2,7 +2,7 @@ import React from "react";
 // @material-ui/core components
 // core components
 
-import { AiOutlinePrinter, AiOutlineDelete } from "react-icons/ai";
+import { IoMdPrint } from "react-icons/io";
 // import { RiEBike2Line } from "react-icons/ri";
 // import { FaEdit } from "react-icons/fa";
 
@@ -59,10 +59,9 @@ export default function ListStores(props) {
               // ]
               
               props.list.map(item => [`${item.name}`, `${item.manager}`, `${item.phone}`, 
-                    <Button onClick={() => openInNewTab(`/print-qr/${item.id}`)}><AiOutlinePrinter/></Button>,
-                    <Button onClick={() => props.shopDelete(`${item.id}`)}><AiOutlineDelete/></Button>,
-
-                  ])
+                    <>
+                    <Button onClick={() => openInNewTab(`/print-qr/${item.id}`)}><IoMdPrint/></Button>
+                    </>])
             }
             />
           </CardBody>
