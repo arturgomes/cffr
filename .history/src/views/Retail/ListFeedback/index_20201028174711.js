@@ -119,7 +119,7 @@ export default class ListFeedback extends Component {
                 {/* <p className={useStyles.cardCategoryWhite}>Complete seu perfil</p> */}
               </CardHeader>
               <CardBody>
-          {/* <List>{listItems}</List> */}
+          <List>{listItems}</List>
 
           </CardBody>
               {/* <CardFooter>

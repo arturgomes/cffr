@@ -70,6 +70,7 @@ export default class ListFeedback extends Component {
     let listItems;
     let listShops;
     if (isAuthenticated()) {
+      // console.log(this.state.fb);
       listItems = Object.keys(this.state.fb).map(key => {
         const shop = this.state.fb[key];
         const { f, shop_name } = shop;
@@ -119,7 +120,7 @@ export default class ListFeedback extends Component {
                 {/* <p className={useStyles.cardCategoryWhite}>Complete seu perfil</p> */}
               </CardHeader>
               <CardBody>
-          {/* <List>{listItems}</List> */}
+          <List>{listItems}</List>
 
           </CardBody>
               {/* <CardFooter>
