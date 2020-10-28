@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from 'react'
+import React  from 'react';
 // import { makeStyles } from "@material-ui/core/styles";
 // import { TextField, } from "@material-ui/core";
 import {format,parseISO} from "date-fns";
 import pt from 'date-fns/locale/pt';
 import { AiOutlinePrinter, AiOutlineDelete } from "react-icons/ai";
-import api from "../../../services/api";
 
+// import Button from "../../../components/CustomButtons/Button.js";
 import Card from "../../../components/Card/Card.js";
 import Table from "../../../components/Table/Table.js";
+// import CardHeader from "../../../components/Card/CardHeader.js";
+// import CardFooter from "../../../components/Card/CardFooter.js";
 import CardBody from "../../../components/Card/CardBody.js";
 import GridContainer from "../../../components/Grid/GridContainer.js";
 import GridItem from "../../../components/Grid/GridItem.js";
-import Button from "../../../components/CustomButtons/Button.js";
-
+// import Button from "../../../components/CustomButtons/Button.js";
 
 // import { Container } from './styles';
 
 
 
 export default function ListCoupon(props) {
-  const [deleteShop, setDeleteShop] = useState(false);
 
   const handleShopDelete = async s =>{
     // console.log(s)

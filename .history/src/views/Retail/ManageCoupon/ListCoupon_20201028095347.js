@@ -6,13 +6,15 @@ import pt from 'date-fns/locale/pt';
 import { AiOutlinePrinter, AiOutlineDelete } from "react-icons/ai";
 import api from "../../../services/api";
 
+// import Button from "../../../components/CustomButtons/Button.js";
 import Card from "../../../components/Card/Card.js";
 import Table from "../../../components/Table/Table.js";
+// import CardHeader from "../../../components/Card/CardHeader.js";
+// import CardFooter from "../../../components/Card/CardFooter.js";
 import CardBody from "../../../components/Card/CardBody.js";
 import GridContainer from "../../../components/Grid/GridContainer.js";
 import GridItem from "../../../components/Grid/GridItem.js";
-import Button from "../../../components/CustomButtons/Button.js";
-
+// import Button from "../../../components/CustomButtons/Button.js";
 
 // import { Container } from './styles';
 

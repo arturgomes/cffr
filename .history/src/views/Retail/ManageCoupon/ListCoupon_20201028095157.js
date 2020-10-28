@@ -1,25 +1,24 @@
-import React, { useState, useEffect } from 'react'
+import React  from 'react';
 // import { makeStyles } from "@material-ui/core/styles";
 // import { TextField, } from "@material-ui/core";
 import {format,parseISO} from "date-fns";
 import pt from 'date-fns/locale/pt';
-import { AiOutlinePrinter, AiOutlineDelete } from "react-icons/ai";
-import api from "../../../services/api";
 
+// import Button from "../../../components/CustomButtons/Button.js";
 import Card from "../../../components/Card/Card.js";
 import Table from "../../../components/Table/Table.js";
+// import CardHeader from "../../../components/Card/CardHeader.js";
+// import CardFooter from "../../../components/Card/CardFooter.js";
 import CardBody from "../../../components/Card/CardBody.js";
 import GridContainer from "../../../components/Grid/GridContainer.js";
 import GridItem from "../../../components/Grid/GridItem.js";
-import Button from "../../../components/CustomButtons/Button.js";
-
+// import Button from "../../../components/CustomButtons/Button.js";
 
 // import { Container } from './styles';
 
 
 
 export default function ListCoupon(props) {
-  const [deleteShop, setDeleteShop] = useState(false);
 
   const handleShopDelete = async s =>{
     // console.log(s)
@@ -65,6 +64,14 @@ export default function ListCoupon(props) {
               tableHeaderColor="primary"
               tableHead={["Nome", "Descrição", "Desconto", "Validade","Feedcoins","Usa fidelidade?","Remover"]}
               tableData={
+              //   [
+              //   ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
+              //   ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
+              //   ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
+              //   ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
+              //   ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
+              //   ["Mason Porter", "Chile", "Gloucester", "$78,615"]
+              // ]
               props.list.map(item => [`${item.name}`, `${item.description}`, `${item.discount}`, `${format(parseISO(item.expire_date), "dd ' de ' MMMM  ' de '  y", { locale: pt })}`, `${item.feedcoins}`, `${item.loyalty? "Sim":"Não"}`,
               <Button onClick={() => handleShopDelete(item.id)}><AiOutlineDelete/></Button>,
             ])

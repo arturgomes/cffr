@@ -88,7 +88,9 @@ export default class ManageCoupon extends Component {
     event.preventDefault();
     const date = parse(this.state.expDate, 'dd/L/y', new Date());
     const result = formatISO(new Date(date));
-    await api.post('/coupons/s', {
+    // console.log(result);
+    // console.log("entrou no handleSubmit");
+    await api.post('/coupons-s', {
       name: this.state.name,
       descricao: this.state.descricao,
       discount: this.state.discount,
