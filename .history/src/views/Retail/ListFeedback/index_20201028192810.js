@@ -5,7 +5,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import {format,parseISO} from "date-fns";
 import pt from 'date-fns/locale/pt';
 
-import FeedbackTable from "./FeedbackTable.js";
+import { FeedbackTable } from "./FeedbackTable.js";
 // import '../../App.css';
 import contente from "../../../assets/img/contente@4x.png";
 import descontente from "../../../assets/img/descontente@4x.png";
@@ -120,7 +120,7 @@ export default class ListFeedback extends Component {
               </CardHeader>
               <CardBody>
           {/* <List>{listItems}</List> */}
-                <FeedbackTable data={this.state.fb}/>
+                <FeedbackTable data={fb}
           </CardBody>
               {/* <CardFooter>
               </CardFooter> */}

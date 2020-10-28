@@ -120,7 +120,7 @@ export default class ListFeedback extends Component {
               </CardHeader>
               <CardBody>
           {/* <List>{listItems}</List> */}
-                <FeedbackTable data={this.state.fb}/>
+                <FeedbackTable data={fb}/>
           </CardBody>
               {/* <CardFooter>
               </CardFooter> */}

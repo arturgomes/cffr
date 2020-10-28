@@ -1,6 +1,4 @@
 import React from 'react';
-import {format,parseISO} from "date-fns";
-import pt from 'date-fns/locale/pt';
 
 export default function FeedbackTable({data}) {
   const columns = data[0] && Object.keys(data[0]);
@@ -20,9 +18,9 @@ export default function FeedbackTable({data}) {
         {data.map(row => 
         <tr>
           <td>{format(parseISO(row.date), "dd ' de ' MMMM  ' de '  y", { locale: pt })}</td>
-          <td>row.nps</td>
-          <td>row.comment_optional</td>
-          <td>row.shop_name</td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
         // <tr>
         //   {
