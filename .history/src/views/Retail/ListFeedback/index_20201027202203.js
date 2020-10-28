@@ -41,7 +41,6 @@ export default class ListFeedback extends Component {
     await api
       .post("/list", { retail_id: getId() })
       .then(response => {
-        console.log(response.data);
         this.setState({ fb: response.data, isLoading: false });
         // console.log(response.data);
       })

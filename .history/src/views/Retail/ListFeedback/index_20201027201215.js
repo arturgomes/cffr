@@ -33,7 +33,12 @@ export default class ListFeedback extends Component {
 
   state = {
     isLoading: true,
-    fb: []
+    fb: [
+      {
+        name: null,
+        f: []
+      }
+    ]
   };
 
   async componentDidMount() {
@@ -41,7 +46,6 @@ export default class ListFeedback extends Component {
     await api
       .post("/list", { retail_id: getId() })
       .then(response => {
-        console.log(response.data);
         this.setState({ fb: response.data, isLoading: false });
         // console.log(response.data);
       })
@@ -125,8 +129,8 @@ export default class ListFeedback extends Component {
           <List>{listItems}</List>
 
           </CardBody>
-              {/* <CardFooter>
-              </CardFooter> */}
+              <CardFooter>
+              </CardFooter>
             </Card>
         </GridItem>
       </GridContainer>
