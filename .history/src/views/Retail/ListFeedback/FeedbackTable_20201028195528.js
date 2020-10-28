@@ -26,7 +26,7 @@ export default function FeedbackTable({ data }) {
         {data.map(row =>
           <tr>
             <td>
-              {formatDate(row.date)}
+              {/* {format(parseISO(new Date(row.date)), "dd ' de ' MMMM  ' de '  y", { locale: pt })} */}
 
             </td>
             <td>row.nps</td>
