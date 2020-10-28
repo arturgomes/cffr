@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { FiFileText } from "react-icons/fi";
+import { FaList } from "react-icons/fa";
 import LinearProgress from "@material-ui/core/LinearProgress";
 
 import GridItem from "../../../components/Grid/GridItem.js";
@@ -7,6 +9,7 @@ import GridContainer from "../../../components/Grid/GridContainer.js";
 import NewStoreForm from "./NewStoreForm.js";
 import ListStores from "./ListStores.js";
 
+import CustomTabs from "../../../components/CustomTabs/CustomTabs.js";
 import "./style.css";
 import api from "../../../services/api";
 import { logout, getId, getName } from "../../../services/auth";

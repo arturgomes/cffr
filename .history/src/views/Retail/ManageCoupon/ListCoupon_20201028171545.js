@@ -78,7 +78,7 @@ export default function ListCoupon(props) {
               tableHeaderColor="primary"
               tableHead={["Nome", "Descrição", "Desconto", "Validade","Feedcoins","Usa fidelidade?","Remover"]}
               tableData={
-                coupons.map(item => [`${item.name}`, `${item.description}`, `${item.discount}`, `${format(parseISO(item.expire_date), "dd ' de ' MMMM  ' de '  y", { locale: pt })}`, `${item.feedcoins}`, `${item.loyalty? "Sim":"Não"}`,
+              props.list.map(item => [`${item.name}`, `${item.description}`, `${item.discount}`, `${format(parseISO(item.expire_date), "dd ' de ' MMMM  ' de '  y", { locale: pt })}`, `${item.feedcoins}`, `${item.loyalty? "Sim":"Não"}`,
               <Button onClick={() => handleCouponDelete(item.id)}><AiOutlineDelete/></Button>,
             ])
             }

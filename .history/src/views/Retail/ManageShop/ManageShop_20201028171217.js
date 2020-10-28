@@ -1,16 +1,45 @@
 import React, { Component } from "react";
 
+// @material-ui/core components
+// import { makeStyles } from "@material-ui/core/styles";
+// import InputLabel from "@material-ui/core/InputLabel";
+// core components
+import { FiFileText } from "react-icons/fi";
+import { FaList } from "react-icons/fa";
 import LinearProgress from "@material-ui/core/LinearProgress";
 
 import GridItem from "../../../components/Grid/GridItem.js";
 import GridContainer from "../../../components/Grid/GridContainer.js";
+// import CustomInput from "../components/CustomInput/CustomInput.js";
 import NewStoreForm from "./NewStoreForm.js";
 import ListStores from "./ListStores.js";
 
+import CustomTabs from "../../../components/CustomTabs/CustomTabs.js";
 import "./style.css";
 import api from "../../../services/api";
 import { logout, getId, getName } from "../../../services/auth";
+// import avatar from "assets/img/faces/marc.jpg";
 
+// import {  website, server } from "../../../variables/general.js";
+
+// const useStyles = makeStyles(theme => ({
+//   cardCategoryWhite: {
+//     color: "rgba(255,255,255,.62)",
+//     margin: "0",
+//     fontSize: "28px",
+//     marginTop: "0",
+//     marginBottom: "0"
+//   },
+//   cardTitleWhite: {
+//     color: "#FFFFFF",
+//     marginTop: "0px",
+//     minHeight: "auto",
+//     fontWeight: "300",
+//     fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+//     marginBottom: "3px",
+//     textDecoration: "none"
+//   }
+// }));
 
 export default class ManageShop extends Component {
   state = {

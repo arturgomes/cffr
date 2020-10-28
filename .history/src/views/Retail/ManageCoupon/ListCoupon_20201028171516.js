@@ -22,12 +22,11 @@ import {getId, getName } from "../../../services/auth";
 
 export default function ListCoupon(props) {
   const [deleteCoupons, setDeleteCoupons] = useState(false);
-  const [coupons, setCoupons] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const s = await api.post(`/coupons/l/${getId()}`)
       // const q = await api.post("/qr", { retail_id: getId() })
-      s.status === 200 && setCoupons(s.data);
+      s.status === 200 && setShops(s.data);
       // q.status === 200 && setQrlist(s.data);
       setDeleteCoupons(false);
     }
@@ -78,7 +77,7 @@ export default function ListCoupon(props) {
               tableHeaderColor="primary"
               tableHead={["Nome", "Descrição", "Desconto", "Validade","Feedcoins","Usa fidelidade?","Remover"]}
               tableData={
-                coupons.map(item => [`${item.name}`, `${item.description}`, `${item.discount}`, `${format(parseISO(item.expire_date), "dd ' de ' MMMM  ' de '  y", { locale: pt })}`, `${item.feedcoins}`, `${item.loyalty? "Sim":"Não"}`,
+              props.list.map(item => [`${item.name}`, `${item.description}`, `${item.discount}`, `${format(parseISO(item.expire_date), "dd ' de ' MMMM  ' de '  y", { locale: pt })}`, `${item.feedcoins}`, `${item.loyalty? "Sim":"Não"}`,
               <Button onClick={() => handleCouponDelete(item.id)}><AiOutlineDelete/></Button>,
             ])
             }
