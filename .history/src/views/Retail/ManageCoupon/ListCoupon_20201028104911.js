@@ -24,7 +24,7 @@ export default function ListCoupon(props) {
   const handleCouponDelete = async s =>{
     // console.log(s)
     await api
-      .post(`/coupons/d`, { coupon_id: s })
+      .post(`/coupon/d`, { coupon_id: s })
       .then((response) => {
         console.log(response);
      setDeleteShop(true);
