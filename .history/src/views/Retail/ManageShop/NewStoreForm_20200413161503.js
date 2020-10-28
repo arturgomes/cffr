@@ -36,40 +36,40 @@ const useStyles = makeStyles(theme => ({
 export default function NewStoreForm(props) {
   
 
-  // if (props.state.done === 'true') {
-  //   return (<Card plain>
-  //     <CardHeader color="success">
-  //       <h4 style={{
-  //         color: "rgba(255,255,255,1)",
-  //         margin: "0",
-  //         fontSize: "18px",
-  //         marginTop: "0",
-  //         marginBottom: "10px"
-  //       }}>Cadastrar nova loja</h4>
+  if (props.state.done === 'true') {
+    return (<Card plain>
+      <CardHeader color="success">
+        <h4 style={{
+          color: "rgba(255,255,255,1)",
+          margin: "0",
+          fontSize: "18px",
+          marginTop: "0",
+          marginBottom: "10px"
+        }}>Cadastrar nova loja</h4>
        
 
-  //       {/* <p className={useStyles.cardCategoryWhite}>Complete seu perfil</p> */}
-  //     </CardHeader>
-  //     <CardFooter>
-  //     <p style={{
-  //         color: "#000",
-  //         margin: "0",
-  //         fontSize: "18px",
-  //         marginTop: "0",
-  //         marginBottom: "0"
-  //       }}>Oba! Nova loja cadastrada com sucesso!</p>
+        {/* <p className={useStyles.cardCategoryWhite}>Complete seu perfil</p> */}
+      </CardHeader>
+      <CardFooter>
+      <p style={{
+          color: "#000",
+          margin: "0",
+          fontSize: "18px",
+          marginTop: "0",
+          marginBottom: "0"
+        }}>Oba! Nova loja cadastrada com sucesso!</p>
         
-  //       {/* <Link to="/retail/shop">
-  //         <Button
-  //           fullWidth
-  //           type="submit"
-  //           color="success">
-  //           Cadastrar nova loja?</Button>
-  //       </Link> */}
-  //     </CardFooter>
-  //   </Card>)
-  // }
-  // else {
+        {/* <Link to="/retail/shop">
+          <Button
+            fullWidth
+            type="submit"
+            color="success">
+            Cadastrar nova loja?</Button>
+        </Link> */}
+      </CardFooter>
+    </Card>)
+  }
+  else {
     return (
       <>
       <GridContainer>
@@ -155,6 +155,6 @@ export default function NewStoreForm(props) {
         </GridItem>
       </GridContainer>
       </>)
-    // }
+    }
 
 }
