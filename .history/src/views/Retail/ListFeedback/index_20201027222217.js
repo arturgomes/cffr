@@ -54,7 +54,7 @@ export default function ListFeedback() {
         <input type="checkbox" value={promotor} onChange={()=>checkPromotor()}/>
       </div>
       <div className="table">
-        <FeedbackTable data={fb}/>
+<FeedbackTable data={fb}/>
       </div>
     </div>
   )

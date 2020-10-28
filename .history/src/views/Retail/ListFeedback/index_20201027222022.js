@@ -1,9 +1,11 @@
 import React, {useState,useEffect} from 'react';
 
 import api from "../../../services/api";
-import FeedbackTable from './FeedbackTable'
+
 import {
+  isAuthenticated,
   getId,
+  getName
 } from "../../../services/auth";
 
 
@@ -11,7 +13,6 @@ export default function ListFeedback() {
   const [detrator,setDetrator] = useState(false)
   const [neutro,setNeutro] = useState(false)
   const [promotor,setPromotor] = useState(false)
-  const [fb,setFb] = useState([])
 
   useEffect(()=>{
     const myfetch = async () =>{
@@ -19,15 +20,14 @@ export default function ListFeedback() {
       .post("/list", { retail_id: getId() })
       .then(response => {
         console.log(response.data);
-        setFb(response.data);
-        // this.setState({ fb: response.data, isLoading: false });
+        this.setState({ fb: response.data, isLoading: false });
         // console.log(response.data);
       })
       .catch(error => {
         // Error 😨
         if (error.response) {
           
-          // this.setState({ err: error.response.data });
+          this.setState({ err: error.response.data });
         } else if (error.request) {
          
         }
@@ -54,7 +54,7 @@ export default function ListFeedback() {
         <input type="checkbox" value={promotor} onChange={()=>checkPromotor()}/>
       </div>
       <div className="table">
-        <FeedbackTable data={fb}/>
+
       </div>
     </div>
   )

@@ -58,6 +58,14 @@ export default function NewStoreForm(props) {
           marginTop: "0",
           marginBottom: "0"
         }}>Oba! Nova loja cadastrada com sucesso!</p>
+        
+        {/* <Link to="/retail/shop">
+          <Button
+            fullWidth
+            type="submit"
+            color="success">
+            Cadastrar nova loja?</Button>
+        </Link> */}
       </CardFooter>
     </Card>)
   }

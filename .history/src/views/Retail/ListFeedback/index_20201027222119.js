@@ -1,9 +1,11 @@
 import React, {useState,useEffect} from 'react';
 
 import api from "../../../services/api";
-import FeedbackTable from './FeedbackTable'
+
 import {
+  isAuthenticated,
   getId,
+  getName
 } from "../../../services/auth";
 
 
@@ -18,7 +20,7 @@ export default function ListFeedback() {
       await api
       .post("/list", { retail_id: getId() })
       .then(response => {
-        console.log(response.data);
+        // console.log(response.data);
         setFb(response.data);
         // this.setState({ fb: response.data, isLoading: false });
         // console.log(response.data);
@@ -54,7 +56,7 @@ export default function ListFeedback() {
         <input type="checkbox" value={promotor} onChange={()=>checkPromotor()}/>
       </div>
       <div className="table">
-        <FeedbackTable data={fb}/>
+
       </div>
     </div>
   )
