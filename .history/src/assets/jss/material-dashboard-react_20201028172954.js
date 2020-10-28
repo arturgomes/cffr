@@ -77,11 +77,11 @@ const primaryColor = ["#1DB954","#1DB954","#1DB954","#1DB954"];
 
 // const primaryColor = ["#9c27b0", "#ab47bc", "#8e24aa", "#af2cc5"];
 const warningColor = ["#ffaf00", "#ffa726", "#fb8c00", "#ffa21a"];
-const dangerColor = ["#FC642D", "#ef5350", "#e53935", "#f55a4e"];
+const dangerColor = ["#F5B051", "#ef5350", "#e53935", "#f55a4e"];
 const successColor = ["#1DB954","#1DB954","#1DB954","#1DB954"];
 
 // const successColor = ["#9aca3c","#9aca3f","#8baa10","#8baa10"];
-// const successColor = ["#4caf50", "#66bb6a", "#43a047", "#5cb860"];
+const greenColor = ["#4caf50", "#66bb6a", "#43a047", "#5cb860"];
 const infoColor = ["#00acc1", "#26c6da", "#00acc1", "#00d3ee"];
 const roseColor = ["#e91e63", "#ec407a", "#d81b60", "#eb3573"];
 const grayColor = [
@@ -161,6 +161,7 @@ const dangerBoxShadow = {
     hexToRgb(dangerColor[0]) +
     ",.4)"
 };
+
 const roseBoxShadow = {
   boxShadow:
     "0 4px 20px 0 rgba(" +
@@ -191,6 +192,7 @@ const dangerCardHeader = {
     "linear-gradient(60deg, " + dangerColor[1] + ", " + dangerColor[2] + ")",
   ...dangerBoxShadow
 };
+
 const infoCardHeader = {
   background:
     "linear-gradient(60deg, " + infoColor[1] + ", " + infoColor[2] + ")",
@@ -302,6 +304,7 @@ export {
   primaryColor,
   cfColor,
   warningColor,
+  greenColor,
   dangerColor,
   successColor,
   infoColor,

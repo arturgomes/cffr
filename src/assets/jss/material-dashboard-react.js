@@ -161,14 +161,7 @@ const dangerBoxShadow = {
     hexToRgb(dangerColor[0]) +
     ",.4)"
 };
-const greenBoxShadow = {
-  boxShadow:
-    "0 4px 20px 0 rgba(" +
-    hexToRgb(blackColor) +
-    ",.14), 0 7px 10px -5px rgba(" +
-    hexToRgb(greenColor[0]) +
-    ",.4)"
-};
+
 const roseBoxShadow = {
   boxShadow:
     "0 4px 20px 0 rgba(" +
@@ -199,11 +192,7 @@ const dangerCardHeader = {
     "linear-gradient(60deg, " + dangerColor[1] + ", " + dangerColor[2] + ")",
   ...dangerBoxShadow
 };
-const greenCardHeader = {
-  background:
-    "linear-gradient(60deg, " + greenColor[1] + ", " + greenColor[2] + ")",
-  ...dangerBoxShadow
-};
+
 const infoCardHeader = {
   background:
     "linear-gradient(60deg, " + infoColor[1] + ", " + infoColor[2] + ")",
