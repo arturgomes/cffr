@@ -1,20 +1,9 @@
 import React, {useState,useEffect} from 'react';
 
-
-
-import GridItem from "../../../components/Grid/GridItem.js";
-import GridContainer from "../../../components/Grid/GridContainer.js";
-// import CustomInput from "../components/CustomInput/CustomInput.js";
-import Card from "../../../components/Card/Card.js";
-import CardHeader from "../../../components/Card/CardHeader.js";
-import CardFooter from "../../../components/Card/CardFooter.js";
-import CardBody from "../../../components/Card/CardBody.js";
-
-
 import api from "../../../services/api";
 import FeedbackTable from './FeedbackTable'
 import {
-  getId,getName
+  getId,
 } from "../../../services/auth";
 
 

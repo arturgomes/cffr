@@ -14,7 +14,7 @@ import CardBody from "../../../components/Card/CardBody.js";
 import api from "../../../services/api";
 import FeedbackTable from './FeedbackTable'
 import {
-  getId,getName
+  getId,
 } from "../../../services/auth";
 
 
