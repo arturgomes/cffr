@@ -91,6 +91,7 @@ export default class ManageShop extends Component {
       manager: event.target.value,
     });
   };
+  ß;
   handleLogout = (e) => {
     e.preventDefault();
     // console.log('apeertou')

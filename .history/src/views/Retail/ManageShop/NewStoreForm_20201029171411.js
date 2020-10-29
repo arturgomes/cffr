@@ -6,8 +6,11 @@ import Card from "../../../components/Card/Card.js";
 import CardHeader from "../../../components/Card/CardHeader.js";
 import CardFooter from "../../../components/Card/CardFooter.js";
 import CardBody from "../../../components/Card/CardBody.js";
+
+
 import GridItem from "../../../components/Grid/GridItem.js";
 import GridContainer from "../../../components/Grid/GridContainer.js";
+
 
 const useStyles = makeStyles(theme => ({
   cardCategoryWhite: {
@@ -77,6 +80,7 @@ export default function NewStoreForm(props) {
                   marginTop: "0",
                   marginBottom: "0"
                 }}>Vamos lá, preencha aqui os dados sobre a nova loja a ser cadastrada.</p>
+
               <CardBody>
                 <GridContainer>
                   <GridItem xs={12} sm={12} md={12}>

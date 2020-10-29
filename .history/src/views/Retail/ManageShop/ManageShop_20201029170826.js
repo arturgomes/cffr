@@ -32,7 +32,7 @@ export default class ManageShop extends Component {
         manager: this.state.manager,
         phone: this.state.phone,
         retail_id: getId(),
-        // short_url: this.getrandom(),
+        short_url: this.getrandom(),
       })
       .then((response) => {
         if (response.status === 200) {
@@ -66,11 +66,21 @@ export default class ManageShop extends Component {
         }
       })
       .catch((error) => {
+        // Error 😨
         if (error.response) {
-          
+          /*
+           * The request was made and the server responded with a
+           * status code that falls out of the range of 2xx
+           */
+          // console.log(error.response.data);
           this.setState({ err: error.response.data });
         } else if (error.request) {
-        
+          /*
+           * The request was made but no response was received, `error.request`
+           * is an instance of XMLHttpRequest in the browser and an instance
+           * of http.ClientRequest in Node.js
+           */
+          // console.log(error.request);
         }
       });
   };
@@ -91,21 +101,22 @@ export default class ManageShop extends Component {
       manager: event.target.value,
     });
   };
+  ß;
   handleLogout = (e) => {
     e.preventDefault();
     // console.log('apeertou')
     logout();
     this.props.history.push("/");
   };
-  // getrandom = () => {
-  //   let text = "";
-  //   const possible =
-  //     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  getrandom = () => {
+    let text = "";
+    const possible =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-  //   for (let i = 0; i < 5; i++)
-  //     text += possible.charAt(Math.floor(Math.random() * possible.length));
-  //   return text;
-  // };
+    for (let i = 0; i < 5; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    return text;
+  };
   
   
   render() {

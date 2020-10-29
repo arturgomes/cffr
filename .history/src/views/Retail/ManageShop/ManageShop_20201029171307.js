@@ -91,21 +91,22 @@ export default class ManageShop extends Component {
       manager: event.target.value,
     });
   };
+  ß;
   handleLogout = (e) => {
     e.preventDefault();
     // console.log('apeertou')
     logout();
     this.props.history.push("/");
   };
-  // getrandom = () => {
-  //   let text = "";
-  //   const possible =
-  //     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  getrandom = () => {
+    let text = "";
+    const possible =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-  //   for (let i = 0; i < 5; i++)
-  //     text += possible.charAt(Math.floor(Math.random() * possible.length));
-  //   return text;
-  // };
+    for (let i = 0; i < 5; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    return text;
+  };
   
   
   render() {
