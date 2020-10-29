@@ -26,7 +26,7 @@ export default function FeedbackTable({ data }) {
         {data.map(row =>
           <tr>
             <td>
-              {/* {formatDate(row.date)} */}
+              {formatDate(row.date)}
 
             </td>
             <td>row.nps</td>
