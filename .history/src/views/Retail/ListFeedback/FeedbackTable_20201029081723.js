@@ -39,8 +39,7 @@ export default function FeedbackTable({ data }) {
           //   }
 
           // </tr>
-        {})
-        }
+        )}
       </tbody>
     </table>
   );
