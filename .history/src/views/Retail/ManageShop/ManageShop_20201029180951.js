@@ -57,23 +57,23 @@ export default class ManageShop extends Component {
     //     // console.log(error);
     //     this.setState({ error: error });
     //   });
-    // await api
-    //   .post("/qr", { retail_id: getId() })
-    //   .then((response) => {
-    //     if (this._isMounted) {
-    //       console.log(response);
-    //       this.setState({ qr: response.data, isLoading: false });
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     // Error 😨
-    //     if (error.response) {
+    await api
+      .post("/qr", { retail_id: getId() })
+      .then((response) => {
+        if (this._isMounted) {
+          console.log(response);
+          this.setState({ qr: response.data, isLoading: false });
+        }
+      })
+      .catch((error) => {
+        // Error 😨
+        if (error.response) {
 
-    //       this.setState({ err: error.response.data });
-    //     } else if (error.request) {
+          this.setState({ err: error.response.data });
+        } else if (error.request) {
 
-    //     }
-    //   });
+        }
+      });
   };
   handleNameInput = (event) => {
     this.setState({

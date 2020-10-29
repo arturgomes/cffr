@@ -29,7 +29,6 @@ export default function ListStores() {
   useEffect(() => {
     const fetchData = async () => {
       const s = await api.post(`/shops/l`, { retail_id: getId() })
-      console.log(s)
       // const q = await api.post("/qr", { retail_id: getId() })
       s.status === 200 && setShops(s.data);
       // q.status === 200 && setQrlist(s.data);
