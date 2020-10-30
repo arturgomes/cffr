@@ -1,7 +1,5 @@
 import React from 'react';
 import { format, parseISO } from "date-fns";
-import { DataGrid } from '@material-ui/data-grid';
-
 // import pt from 'date-fns/locale/pt';
 import './styles.css';
 const columns = [
