@@ -24,12 +24,7 @@ export default function FeedbackTable({ data }) {
 
   return (
     <div style={{ height: 400, width: '100%' }}>
-      <DataGrid
-        rows={data}
-        columns={columns}
-        pageSize={10}
-      // checkboxSelection
-      />
+      <DataGrid rows={data} columns={columns} pageSize={5} checkboxSelection />
     </div>
   );
 }

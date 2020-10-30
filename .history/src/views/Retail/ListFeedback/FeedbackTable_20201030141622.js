@@ -27,8 +27,7 @@ export default function FeedbackTable({ data }) {
       <DataGrid
         rows={data}
         columns={columns}
-        pageSize={10}
-      // checkboxSelection
+        pageSize={10} checkboxSelection
       />
     </div>
   );

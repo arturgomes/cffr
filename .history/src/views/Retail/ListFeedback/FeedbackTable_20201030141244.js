@@ -3,16 +3,27 @@ import { format, parseISO } from "date-fns";
 // import pt from 'date-fns/locale/pt';
 import './styles.css';
 
-id: "dfcd78b4-5055-4094-abe5-0acb1ddc591a"
-manager: "Artur"
-name: "Loja Centro"
-phone: "67993021141"
-const columns = [
-  // { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'name', headerName: 'Loja', width: 130 },
-  { field: 'phone', headerName: 'Telefone', width: 130 },
-  { field: 'manager', headerName: 'Gerente', width: 130 },
 
+const columns = [
+  { field: 'id', headerName: 'ID', width: 70 },
+  { field: 'firstName', headerName: 'First name', width: 130 },
+  { field: 'lastName', headerName: 'Last name', width: 130 },
+  {
+    field: 'age',
+    headerName: 'Age',
+    type: 'number',
+    width: 90,
+  },
+  {
+    field: 'fullName',
+    headerName: 'Full name',
+    description: 'This column has a value getter and is not sortable.',
+    sortable: false,
+    width: 160,
+    valueGetter: (params) =>
+      `${params.getValue('firstName') || ''} ${params.getValue('lastName') || ''
+      }`,
+  },
 ];
 
 export default function FeedbackTable({ data }) {
@@ -24,12 +35,7 @@ export default function FeedbackTable({ data }) {
 
   return (
     <div style={{ height: 400, width: '100%' }}>
-      <DataGrid
-        rows={data}
-        columns={columns}
-        pageSize={10}
-      // checkboxSelection
-      />
+      <DataGrid rows={data} columns={columns} pageSize={5} checkboxSelection />
     </div>
   );
 }
