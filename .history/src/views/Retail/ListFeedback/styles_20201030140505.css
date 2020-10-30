@@ -1,0 +1,14 @@
+.table_container {
+}
+
+.table_container {
+  padding: 16px;
+}
+
+.table_container th {
+  min-height: 56px;
+}
+
+.table_container tr {
+  min-height: 52px;
+}

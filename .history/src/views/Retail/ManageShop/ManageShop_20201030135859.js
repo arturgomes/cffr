@@ -40,7 +40,7 @@ export default class ManageShop extends Component {
         }
       })
       .catch((error) => {
-        // console.log(error);
+        console.log(error);
         this.setState({ error: error });
       });
 

@@ -12,7 +12,7 @@ export default function FeedbackTable({ data }) {
   }
 
   return (
-    <table className="table_container">
+    <table cellPadding={0} cellSpacing={0}>
       <thead>
         {/* <tr>{data[0] && columns.map((heading) => <th>{heading}</th>)}</tr> */}
         {/* <tr>{data[0] && columns.map((heading) => <th>{heading}</th>)}</tr> */}

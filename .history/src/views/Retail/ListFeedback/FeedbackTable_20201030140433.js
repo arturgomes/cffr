@@ -1,8 +1,7 @@
 import React from 'react';
 import { format, parseISO } from "date-fns";
 // import pt from 'date-fns/locale/pt';
-import './styles.css';
-
+import './styles.css'
 export default function FeedbackTable({ data }) {
   const columns = data[0] && Object.keys(data[0]);
   const formatDate = (date) => {
@@ -12,7 +11,7 @@ export default function FeedbackTable({ data }) {
   }
 
   return (
-    <table className="table_container">
+    <table cellPadding={0} cellSpacing={0}>
       <thead>
         {/* <tr>{data[0] && columns.map((heading) => <th>{heading}</th>)}</tr> */}
         {/* <tr>{data[0] && columns.map((heading) => <th>{heading}</th>)}</tr> */}
