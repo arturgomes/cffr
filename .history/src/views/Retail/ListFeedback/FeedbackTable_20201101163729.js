@@ -35,8 +35,6 @@ export default function FeedbackTable({ data }) {
       _id: d.id,
       nps_value: d.nps_value,
       date: formatDate(d.date),
-      comment_optional: d.comment_optional,
-      shop_name: d.shop_name
 
     }
   })
@@ -47,7 +45,7 @@ export default function FeedbackTable({ data }) {
         id="id"
         loading={true}
         rowHeight={75}
-        rows={newSet}
+        rows={data}
         columns={columns}
         pageSize={50}
         rowsPerPageOptions={10, 25, 50}

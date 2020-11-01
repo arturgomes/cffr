@@ -30,16 +30,7 @@ const columns = [
 
 export default function FeedbackTable({ data }) {
   // const rows = data[0] && Object.keys(data[0]);
-  const newSet = data.map(d => {
-    return {
-      _id: d.id,
-      nps_value: d.nps_value,
-      date: formatDate(d.date),
-      comment_optional: d.comment_optional,
-      shop_name: d.shop_name
 
-    }
-  })
 
   return (
     <div style={{ height: 400, width: '100%' }}>
@@ -47,7 +38,7 @@ export default function FeedbackTable({ data }) {
         id="id"
         loading={true}
         rowHeight={75}
-        rows={newSet}
+        rows={data}
         columns={columns}
         pageSize={50}
         rowsPerPageOptions={10, 25, 50}
