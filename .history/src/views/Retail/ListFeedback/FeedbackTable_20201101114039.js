@@ -22,7 +22,8 @@ export default function FeedbackTable({ data }) {
   return (
     <div style={{ height: 400, width: '100%' }}>
       <DataGrid
-        id="id"
+        id="_id"
+
         rows={data}
         columns={columns}
         pageSize={10}
