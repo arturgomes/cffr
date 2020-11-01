@@ -20,7 +20,7 @@ const columns = [
 export default function FeedbackTable({ data }) {
   // const rows = data[0] && Object.keys(data[0]);
 
-  const handleCellHover = (CellParams) => { console.log(CellParams) }
+
   return (
     <div style={{ height: 400, width: '100%' }}>
       <DataGrid
@@ -30,7 +30,6 @@ export default function FeedbackTable({ data }) {
         rows={data}
         columns={columns}
         pageSize={50}
-        onCellHover={() => handleCellHover()}
         rowsPerPageOptions={[10, 25, 50]}
         checkboxSelection={false} // TODO: selecting..
       // checkboxSelection
