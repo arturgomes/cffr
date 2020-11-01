@@ -21,13 +21,13 @@ export default function FeedbackTable({ data }) {
   // const rows = data[0] && Object.keys(data[0]);
   const newArr = data.map(f => {
     const newDate = {
-      _id: f._id,
-      nps_value: f.nps_value,
-      date: new Date(data.date),
-      comment_optional: f.comment_optional,
-      shop_name: f.shop_name
+      f._id,
+      f.nps_value,
+      f: new Date(data.date),
+      f.comment_optional,
+      f.shop_name
     }
-    return newDate;
+    return ()
   })
   return (
     <div style={{ height: 400, width: '100%' }}>
@@ -35,7 +35,7 @@ export default function FeedbackTable({ data }) {
         id="id"
         // loading={true}
         rowHeight={75}
-        rows={newArr}
+        rows={data}
         columns={columns}
         pageSize={50}
         // onCellHover={() => handleCellHover()}

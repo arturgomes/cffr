@@ -35,7 +35,7 @@ export default function FeedbackTable({ data }) {
         id="id"
         // loading={true}
         rowHeight={75}
-        rows={newArr}
+        rows={data}
         columns={columns}
         pageSize={50}
         // onCellHover={() => handleCellHover()}

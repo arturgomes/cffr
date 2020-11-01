@@ -24,8 +24,8 @@ export default function FeedbackTable({ data }) {
       _id: f._id,
       nps_value: f.nps_value,
       date: new Date(data.date),
-      comment_optional: f.comment_optional,
-      shop_name: f.shop_name
+      f.comment_optional,
+      f.shop_name
     }
     return newDate;
   })
@@ -35,7 +35,7 @@ export default function FeedbackTable({ data }) {
         id="id"
         // loading={true}
         rowHeight={75}
-        rows={newArr}
+        rows={data}
         columns={columns}
         pageSize={50}
         // onCellHover={() => handleCellHover()}
