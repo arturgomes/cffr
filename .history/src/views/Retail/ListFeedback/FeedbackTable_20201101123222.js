@@ -6,9 +6,9 @@ import { DataGrid } from '@material-ui/data-grid';
 import './styles.css';
 const columns = [
   { field: 'date', headerName: 'Data', width: 70 },
-  { field: 'nps_value', headerName: 'NPS', width: 30 },
-  { field: 'comment_optional', headerName: 'Comentário', width: 230 },
-  { field: 'shop_name', headerName: 'Loja', width: 70 },
+  { field: 'nps_value', headerName: 'NPS', width: 130 },
+  { field: 'comment_optional', headerName: 'Comentário', width: 130 },
+  { field: 'shop_name', headerName: 'Loja', width: 130 },
 
 ];
 
