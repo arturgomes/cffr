@@ -16,11 +16,7 @@ const columns = [
   { field: "_id", hide: true },
   { field: 'nps_value', headerName: 'NPS', width: 70 },
   { field: 'date', headerName: 'Data', width: 140 },
-  {
-    field: 'comment_optional', headerName: 'Comentário', width: 776,
-    valueGetter: (params) =>
-      `${formatDate(params.getValue('firstName'))}`,
-  },
+  { field: 'comment_optional', headerName: 'Comentário', width: 776 },
   { field: 'shop_name', headerName: 'Loja', width: 140 },
 
 ];

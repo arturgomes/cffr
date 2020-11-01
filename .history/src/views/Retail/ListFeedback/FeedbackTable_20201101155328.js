@@ -6,28 +6,28 @@ import descontente from "../../../assets/img/descontente@4x.png";
 import imparcial from "../../../assets/img/imparcial@4x.png";
 // import pt from 'date-fns/locale/pt';
 import './styles.css';
-
-const formatDate = (date) => {
-  const newYears = new Date(date);
-  return format(parseISO(newYears), 'DD/MM/YYYY');
-}
-
 const columns = [
   { field: "_id", hide: true },
-  { field: 'nps_value', headerName: 'NPS', width: 70 },
   { field: 'date', headerName: 'Data', width: 140 },
-  {
-    field: 'comment_optional', headerName: 'Comentário', width: 776,
-    valueGetter: (params) =>
-      `${formatDate(params.getValue('firstName'))}`,
-  },
+  { field: 'comment_optional', headerName: 'Comentário', width: 776 },
   { field: 'shop_name', headerName: 'Loja', width: 140 },
+    field: 'nps_value', 
+    headerName: 'NPS', 
+    width: 70,
+    valueGetter: (params) => {
+      if (params.getValue('nps_value') < 7) { return (<img src={descontente} alt="">)}
+        }
+        
+  },
 
 ];
 
 export default function FeedbackTable({ data }) {
   // const rows = data[0] && Object.keys(data[0]);
-
+  const formatDate = (date) => {
+    const newYears = new Date(date);
+    return format(parseISO(newYears), 'DD/MM/YYYY');
+  }
 
   return (
     <div style={{ height: 400, width: '100%' }}>
