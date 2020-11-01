@@ -23,7 +23,7 @@ export default function FeedbackTable({ data }) {
     const newDate = {
       _id: f._id,
       nps_value: f.nps_value,
-      date: format(data.date, 'dd/MM/yyyy'),
+      date: new Date(data.date),
       comment_optional: f.comment_optional,
       shop_name: f.shop_name
     }
