@@ -48,7 +48,7 @@ export default function FeedbackTable({ data }) {
         rows={data}
         columns={columns}
         pageSize={50}
-        // rowsPerPageOptions={10, 25, 50}
+        rowsPerPageOptions={10, 25, 50}
         checkboxSelection={false} // TODO: selecting..
       // checkboxSelection
       />
