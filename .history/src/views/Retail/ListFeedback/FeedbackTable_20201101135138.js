@@ -5,16 +5,16 @@ import { DataGrid } from '@material-ui/data-grid';
 // import pt from 'date-fns/locale/pt';
 import './styles.css';
 const columns = [
-  { field: "_id", hide: true },
-  { field: 'date', headerName: 'Data', width: 140 },
-  { field: 'nps_value', headerName: 'NPS', width: 70 },
-  { field: 'comment_optional', headerName: 'Comentário', width: 776 },
-  { field: 'shop_name', headerName: 'Loja', width: 140 },
+  { field: "_id", hide: true }
+  { field: 'date', headerName: 'Data', width: 70 },
+  { field: 'nps_value', headerName: 'NPS', width: 30 },
+  { field: 'comment_optional', headerName: 'Comentário', width: 230 },
+  { field: 'shop_name', headerName: 'Loja', width: 70 },
 
 ];
 
 export default function FeedbackTable({ data }) {
-  // const rows = data[0] && Object.keys(data[0]);
+  const rows = data[0] && Object.keys(data[0]);
   const formatDate = (date) => {
     const newYears = new Date(date);
     return format(parseISO(newYears), 'DD/MM/YYYY');
