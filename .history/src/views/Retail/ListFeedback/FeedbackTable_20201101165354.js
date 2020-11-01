@@ -13,7 +13,7 @@ const formatDate = (date) => {
 }
 
 const columns = [
-  { field: "id", hide: true },
+  { field: "_id", hide: true },
   { field: 'nps_value', headerName: 'NPS', width: 70 },
   {
     field: 'date', headerName: 'Data', width: 140,
