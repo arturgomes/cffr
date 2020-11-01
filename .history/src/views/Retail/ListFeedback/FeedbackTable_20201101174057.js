@@ -45,7 +45,7 @@ export default function FeedbackTable({ data }) {
         id="id"
         loading={true}
         rowHeight={75}
-        rows={data}
+        rows={newSet}
         columns={columns}
         pageSize={50}
         rowsPerPageOptions={10, 25, 50}
