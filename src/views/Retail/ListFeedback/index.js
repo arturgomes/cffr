@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-// import { List } from "@material-ui/core";
-// import { Feed, Icon, Item } from "semantic-ui-react";
 import LinearProgress from '@material-ui/core/LinearProgress';
 // import {format,parseISO} from "date-fns";
 // import pt from 'date-fns/locale/pt';
@@ -48,10 +46,10 @@ export default class ListFeedback extends Component {
       .catch(error => {
         // Error 😨
         if (error.response) {
-          
+
           this.setState({ err: error.response.data });
         } else if (error.request) {
-         
+
         }
       });
   }
@@ -98,35 +96,35 @@ export default class ListFeedback extends Component {
       return (
         <>
           <GridContainer>
-        <GridItem xs={12} sm={12} md={12}>
-            <Card plain>
-              <CardHeader color="success">
-                <h4 style={{
-                  color: "rgba(255,255,255,1)",
-                  margin: "0",
-                  fontSize: "18px",
-                  marginTop: "0",
-                  marginBottom: "10px"
-                }}>Listar QR Codes</h4>
-                <p style={{
-                  color: "rgba(255,255,255,.62)",
-                  margin: "0",
-                  fontSize: "14px",
-                  marginTop: "0",
-                  marginBottom: "0"
-                }}>Listando todos os feedbacks de {getName()}</p>
+            <GridItem xs={12} sm={12} md={12}>
+              <Card plain>
+                <CardHeader color="success">
+                  <h4 style={{
+                    color: "rgba(255,255,255,1)",
+                    margin: "0",
+                    fontSize: "18px",
+                    marginTop: "0",
+                    marginBottom: "10px"
+                  }}>Listar QR Codes</h4>
+                  <p style={{
+                    color: "rgba(255,255,255,.62)",
+                    margin: "0",
+                    fontSize: "14px",
+                    marginTop: "0",
+                    marginBottom: "0"
+                  }}>Listando todos os feedbacks de {getName()}</p>
 
-                {/* <p className={useStyles.cardCategoryWhite}>Complete seu perfil</p> */}
-              </CardHeader>
-              <CardBody>
-          {/* <List>{listItems}</List> */}
-                <FeedbackTable data={this.state.fb}/>
-          </CardBody>
-              {/* <CardFooter>
+                  {/* <p className={useStyles.cardCategoryWhite}>Complete seu perfil</p> */}
+                </CardHeader>
+                <CardBody>
+                  {/* <List>{listItems}</List> */}
+                  <FeedbackTable data={this.state.fb} />
+                </CardBody>
+                {/* <CardFooter>
               </CardFooter> */}
-            </Card>
-        </GridItem>
-      </GridContainer>
+              </Card>
+            </GridItem>
+          </GridContainer>
         </>
       );
     }

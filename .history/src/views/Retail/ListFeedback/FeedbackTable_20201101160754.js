@@ -9,20 +9,17 @@ import './styles.css';
 
 const formatDate = (date) => {
   const newYears = new Date(date);
-  return format(newYears, 'dd/MM/yyyy');
+  return format(parseISO(newYears), 'DD/MM/YYYY');
 }
 
 const columns = [
   { field: "_id", hide: true },
   { field: 'nps_value', headerName: 'NPS', width: 70 },
-  {
-    field: 'date', headerName: 'Data', width: 140,
-    valueGetter: (params) =>
-      `${formatDate(params.getValue('date'))}`,
-  },
+  { field: 'date', headerName: 'Data', width: 140 },
   {
     field: 'comment_optional', headerName: 'Comentário', width: 776,
-
+    // valueGetter: (params) =>
+    //   `${formatDate(params.getValue('firstName'))}`,
   },
   { field: 'shop_name', headerName: 'Loja', width: 140 },
 

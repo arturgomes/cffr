@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import { List } from "@material-ui/core";
-// import { Feed, Icon, Item } from "semantic-ui-react";
 import LinearProgress from '@material-ui/core/LinearProgress';
-import { format, parseISO } from "date-fns";
-import pt from 'date-fns/locale/pt';
+// import {format,parseISO} from "date-fns";
+// import pt from 'date-fns/locale/pt';
 
-import { FeedItem } from "./FeedbackItem";
+import FeedbackTable from "./FeedbackTable.js";
 // import '../../App.css';
 import contente from "../../../assets/img/contente@4x.png";
 import descontente from "../../../assets/img/descontente@4x.png";
@@ -17,10 +15,10 @@ import GridContainer from "../../../components/Grid/GridContainer.js";
 // import CustomInput from "../components/CustomInput/CustomInput.js";
 import Card from "../../../components/Card/Card.js";
 import CardHeader from "../../../components/Card/CardHeader.js";
-import CardFooter from "../../../components/Card/CardFooter.js";
+// import CardFooter from "../../../components/Card/CardFooter.js";
 import CardBody from "../../../components/Card/CardBody.js";
 import {
-  isAuthenticated,
+  // isAuthenticated,
   getId,
   getName
 } from "../../../services/auth";
@@ -33,52 +31,25 @@ export default class ListFeedback extends Component {
 
   state = {
     isLoading: true,
-    fb: [
-      {
-        name: null,
-        f: []
-      }
-    ]
+    fb: []
   };
 
   async componentDidMount() {
 
     await api
       .post("/list", { retail_id: getId() })
-      // await fetch(`https://api.couponfeed.co/list`, 
-      // {
-      //   method: "POST",
-      //   credentials: "include",
-      //   body: { retail_id: getId() },
-      //   // mode: 'no-cors',
-      //   headers: {
-      //     "Accept": "application/json",
-      //     "Content-Type": "application/json",
-      //     "Access-Control-Allow-Credentials": true,
-      //     "Access-Control-Allow-Origin": "https://www.couponfeed.co"
-      //   }
-      // }
-      // )
       .then(response => {
+        console.log(response.data);
         this.setState({ fb: response.data, isLoading: false });
         // console.log(response.data);
       })
       .catch(error => {
         // Error 😨
         if (error.response) {
-          /*
-           * The request was made and the server responded with a
-           * status code that falls out of the range of 2xx
-           */
-          // console.log(error.response.data);
+
           this.setState({ err: error.response.data });
         } else if (error.request) {
-          /*
-           * The request was made but no response was received, `error.request`
-           * is an instance of XMLHttpRequest in the browser and an instance
-           * of http.ClientRequest in Node.js
-           */
-          // console.log(error.request);
+
         }
       });
   }
@@ -92,39 +63,32 @@ export default class ListFeedback extends Component {
     else if (nps >= 7 && nps < 9) return imparcial;
     else return descontente;
   };
-  listFeedItem = (fb) => {
-    let listItems;
-    let listShops;
-    listItems = Object.keys(fb).map(key => {
-      const shop = fb[key];
-      const { f, shop_name } = shop;
-      listShops = Object.keys(f).map(g => {
-        const { nps_value, date, comment_optional } = f[g];
-        let avatar = this.getAssets(nps_value);
-        let date1 = format(parseISO(date), "dd ' de ' MMMM  ' de '  y", { locale: pt })
-        //new Date(date).toLocaleDateString("pt-BR");
-        // date1 = date1.toLocaleDateString()
-        return (
-          <FeedItem
-            key={f}
-            store={shop_name}
-            nps={nps_value}
-            comment={comment_optional}
-            avatar={avatar}
-            date={date1}
-          />
-        );
-      });
-      return listShops;
-    });
-  }
-  render() {
-    const fb = this.state;
-    if (isAuthenticated()) {
-      this.listFeedItem(fb);
-      // console.log(fb);
 
-    }
+  render() {
+    // let listItems;
+    // let listShops;
+    // if (isAuthenticated()) {
+    //   listItems = Object.keys(this.state.fb).map(key => {
+    //     const shop = this.state.fb[key];
+    //     const { f, shop_name } = shop;
+    //     listShops = Object.keys(f).map(g => {
+    //       const { nps_value, date, comment_optional } = f[g];
+    //       let avatar = this.getAssets(nps_value);
+    //       let date1 = format(parseISO(date), "dd ' de ' MMMM  ' de '  y", { locale: pt })
+    //       return (
+    //         <FeedItem
+    //           key={f}
+    //           store={shop_name}
+    //           nps={nps_value}
+    //           comment={comment_optional}
+    //           avatar={avatar}
+    //           date={date1}
+    //         />
+    //       );
+    //     });
+    //     return listShops;
+    //   });
+    // }
     if (this.state.isLoading) {
       return <LinearProgress />
     }
@@ -153,11 +117,11 @@ export default class ListFeedback extends Component {
                   {/* <p className={useStyles.cardCategoryWhite}>Complete seu perfil</p> */}
                 </CardHeader>
                 <CardBody>
-                  <List>{listItems}</List>
-
+                  {/* <List>{listItems}</List> */}
+                  <FeedbackTable data={this.state.fb} />
                 </CardBody>
-                <CardFooter>
-                </CardFooter>
+                {/* <CardFooter>
+              </CardFooter> */}
               </Card>
             </GridItem>
           </GridContainer>

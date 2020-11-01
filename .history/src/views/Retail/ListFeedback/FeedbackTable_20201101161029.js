@@ -18,7 +18,7 @@ const columns = [
   {
     field: 'date', headerName: 'Data', width: 140,
     valueGetter: (params) =>
-      `${formatDate(params.getValue('date'))}`,
+      `${formatDate(params.getValue('firstName'))}`,
   },
   {
     field: 'comment_optional', headerName: 'Comentário', width: 776,
