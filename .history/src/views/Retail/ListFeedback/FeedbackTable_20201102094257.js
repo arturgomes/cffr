@@ -25,11 +25,11 @@ export default function FeedbackTable({ data }) {
   // const rows = data[0] && Object.keys(data[0]);
   const newArr = data.map(d => {
     const newDate = {
-      _id: d._id,
-      nps_value: d.nps_value,
+      _id: f._id,
+      nps_value: f.nps_value,
       date: moment(d.date).format('DD/MM/YYYY HH:mm:ss'),
-      comment_optional: d.comment_optional,
-      shop_name: d.shop_name
+      comment_optional: f.comment_optional,
+      shop_name: f.shop_name
     }
     return newDate;
   })
