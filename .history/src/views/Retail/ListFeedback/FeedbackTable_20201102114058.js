@@ -13,15 +13,10 @@ import './styles.css';
 moment.locale('pt-br');
 
 const columns = [
-  // { field: "id", hide: true },
-  // { field: 'date', headerName: 'Data', width: 130 },
-  // { field: 'nps_value', headerName: 'NPS', width: 80 },
-  // { field: 'comment_optional', headerName: 'Comentário', width: 670 },
-  // { field: 'shop_name', headerName: 'Loja', width: 140 },
   { field: "id", hide: true },
   { field: 'date', headerName: 'Data', width: 130 },
   { field: 'nps_value', headerName: 'NPS', width: 80 },
-  { field: 'comment_optional', headerName: 'Comentário' },
+  { field: 'comment_optional', headerName: 'Comentário', width: 670 },
   { field: 'shop_name', headerName: 'Loja', width: 140 },
 
 ];
