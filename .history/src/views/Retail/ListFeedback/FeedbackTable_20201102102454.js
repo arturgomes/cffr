@@ -27,7 +27,7 @@ export default function FeedbackTable({ data }) {
     const newDate = {
       id: d.id,
       nps_value: d.nps_value,
-      date: moment(d.date).format('DD/MM/YY HH:mm'),
+      date: moment(d.date).format('DD/MM/YYYY HH:mm:ss'),
       comment_optional: d.comment_optional,
       shop_name: d.shop_name
     }
@@ -37,7 +37,7 @@ export default function FeedbackTable({ data }) {
     <div style={{ height: '100%', width: '100%' }}>
       <DataGrid
         id="id"
-        rowHeight={50}
+        // rowHeight={45}
         rows={newArr}
         columns={columns}
         pageSize={50}

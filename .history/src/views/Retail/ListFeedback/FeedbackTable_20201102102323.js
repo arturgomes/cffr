@@ -14,8 +14,8 @@ moment.locale('pt-br');
 
 const columns = [
   { field: "id", hide: true },
-  { field: 'date', headerName: 'Data', width: 200 },
   { field: 'nps_value', headerName: 'NPS', width: 80 },
+  { field: 'date', headerName: 'Data', width: 200 },
   { field: 'comment_optional', headerName: 'Comentário', width: 600 },
   { field: 'shop_name', headerName: 'Loja', width: 140 },
 
@@ -27,7 +27,7 @@ export default function FeedbackTable({ data }) {
     const newDate = {
       id: d.id,
       nps_value: d.nps_value,
-      date: moment(d.date).format('DD/MM/YY HH:mm'),
+      date: moment(d.date).format('DD/MM/YYYY HH:mm:ss'),
       comment_optional: d.comment_optional,
       shop_name: d.shop_name
     }
@@ -37,7 +37,7 @@ export default function FeedbackTable({ data }) {
     <div style={{ height: '100%', width: '100%' }}>
       <DataGrid
         id="id"
-        rowHeight={50}
+        // rowHeight={45}
         rows={newArr}
         columns={columns}
         pageSize={50}

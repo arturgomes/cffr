@@ -37,7 +37,7 @@ export default function FeedbackTable({ data }) {
     <div style={{ height: '100%', width: '100%' }}>
       <DataGrid
         id="id"
-        rowHeight={50}
+        // rowHeight={45}
         rows={newArr}
         columns={columns}
         pageSize={50}
