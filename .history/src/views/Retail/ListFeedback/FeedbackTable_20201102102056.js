@@ -34,7 +34,7 @@ export default function FeedbackTable({ data }) {
     return newDate;
   })
   return (
-    <div style={{ height: '100%', width: '100%' }}>
+    <div style={{ height: 400, width: '100%' }}>
       <DataGrid
         id="id"
         rowHeight={75}
