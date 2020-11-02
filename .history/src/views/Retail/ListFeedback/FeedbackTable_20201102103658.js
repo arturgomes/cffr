@@ -43,9 +43,9 @@ export default function FeedbackTable({ data }) {
         pageSize={50}
         rowsPerPageOptions={[10, 25, 50]}
         checkboxSelection={false} // TODO: selecting..
-        onRowHover={(RowParams) => {
-          console.log(RowParams);
-        }}
+      // onRowHover={(RowParams) => {
+      //   console.log(RowParams);
+      // }}
       // checkboxSelection
       />
     </div>
