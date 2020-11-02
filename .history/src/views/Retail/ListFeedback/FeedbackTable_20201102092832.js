@@ -4,13 +4,13 @@ import { DataGrid } from '@material-ui/data-grid';
 
 import moment from 'moment';
 
+moment.locale('pt-br');
 
 import contente from "../../../assets/img/contente@4x.png";
 import descontente from "../../../assets/img/descontente@4x.png";
 import imparcial from "../../../assets/img/imparcial@4x.png";
 import './styles.css';
 
-moment.locale('pt-br');
 
 const columns = [
   { field: "_id", hide: true },
