@@ -30,34 +30,7 @@ export default class SignUp extends Component {
   }
   handleSubmit = async event => {
     event.preventDefault();
-    // await fetch("https://api.couponfeed.com.br/users", 
-    // {
-    //   method: "POST",
-    //   credentials: "include",
-    //   body: {
-    //     name: this.state.name,
-    //     email: this.state.email,
-    //     phone: this.state.phone,
-    //     password: this.state.passw,
-    //     cpf: this.state.cpf,
-    //     address_street: this.state.address_street,
-    //     address_number: this.state.address_number,
-    //     address_city: this.state.address_city,
-    //     address_state: this.state.address_state,
-    //     address_zip: this.state.address_zip,
-    //     address_neighb: this.state.address_neighb,
-    //     address_comp: this.state.address_comp,
-    //     // address_country: this.state.address_country
-    //   },
-    //   // mode: 'no-cors',
-    //   headers: {
-    //     "Accept": "application/json",
-    //     "Content-Type": "application/json",
-    //     "Access-Control-Allow-Credentials": true,
-    //     "Access-Control-Allow-Origin": "https://www.couponfeed.com.br"
-    //   }
-    // }
-    // )
+
     await api.post(`/users`, {
       name: this.state.name,
       email: this.state.email,
@@ -140,33 +113,34 @@ export default class SignUp extends Component {
     });
   }
   render() {
-    const { error , done} = this.state;
+    const { error, done } = this.state;
 
     if (done && !error) {
       return (
         <BasicLayout>
-          <RenderConclusion  error={error}/>
+          <RenderConclusion error={error} />
         </BasicLayout>
       )
     }
-    else{
-    return (
-      <BasicLayout>
-        <RenderForm 
-        error={error}
-        state={this.state}
-        handleSubmit={this.handleSubmit}
-        handleAddressNumber ={this.handleAddressNumber}
-        handleAddressZip={this.handleAddressZip}
-        handleAddressCountry={this.handleAddressCountry}
-        handleNameInput={this.handleNameInput}
-        handlePhoneInput={this.handlePhoneInput}
-        handleCPFInput={this.handleCPFInput}
-        handleEmailInput={this.handleEmailInput}
-        handlePasswInput={this.handlePasswInput}
+    else {
+      return (
+        <BasicLayout>
+          <RenderForm
+            error={error}
+            state={this.state}
+            handleSubmit={this.handleSubmit}
+            handleAddressNumber={this.handleAddressNumber}
+            handleAddressZip={this.handleAddressZip}
+            handleAddressCountry={this.handleAddressCountry}
+            handleNameInput={this.handleNameInput}
+            handlePhoneInput={this.handlePhoneInput}
+            handleCPFInput={this.handleCPFInput}
+            handleEmailInput={this.handleEmailInput}
+            handlePasswInput={this.handlePasswInput}
 
-        />
-      </BasicLayout>
-    );}
+          />
+        </BasicLayout>
+      );
+    }
   }
 }

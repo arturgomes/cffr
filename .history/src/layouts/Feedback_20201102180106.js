@@ -6,9 +6,8 @@ import logo from "../assets/img/completa_fundo_claro@4x.png";
 import Grid from '@material-ui/core/Grid';
 import { FaSpinner } from 'react-icons/fa';
 
-import Copyright from '../components/Copyright';
-import Question from '../components/Feedback/question.js';
-import Conclusion from '../components/Feedback/conclusion.js';
+import Question from '../components/Feedback/question';
+import Conclusion from '../components/Feedback/conclusion';
 
 import api from "../services/api";
 
