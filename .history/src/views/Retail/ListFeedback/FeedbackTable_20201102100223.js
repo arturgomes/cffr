@@ -13,7 +13,7 @@ import './styles.css';
 moment.locale('pt-br');
 
 const columns = [
-  { field: "id", hide: true },
+  { field: "_id", hide: true },
   { field: 'nps_value', headerName: 'NPS', width: 140 },
   { field: 'date', headerName: 'Data', width: 140 },
   { field: 'comment_optional', headerName: 'Comentário', width: 600 },
@@ -25,7 +25,7 @@ export default function FeedbackTable({ data }) {
   // const rows = data[0] && Object.keys(data[0]);
   const newArr = data.map(d => {
     const newDate = {
-      id: d.id,
+      _id: d.id,
       nps_value: d.nps_value,
       date: moment(d.date).format('DD/MM/YYYY HH:mm:ss'),
       comment_optional: d.comment_optional,
@@ -33,14 +33,17 @@ export default function FeedbackTable({ data }) {
     }
     return newDate;
   })
+  // console.log(newArr);
   return (
     <div style={{ height: 400, width: '100%' }}>
       <DataGrid
-        id="id"
+        id="_id"
+        // loading={true}
         rowHeight={75}
         rows={newArr}
         columns={columns}
         pageSize={50}
+        // onCellHover={() => handleCellHover()}
         rowsPerPageOptions={[10, 25, 50]}
         checkboxSelection={false} // TODO: selecting..
         onRowHover={(RowParams) => {
