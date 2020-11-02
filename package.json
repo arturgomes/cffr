@@ -82,7 +82,7 @@
     "material-ui": "^0.20.2",
     "material-ui-dropzone": "^2.4.9",
     "mdbreact": "^4.25.1",
-    "moment": "2.26.0",
+    "moment": "^2.29.1",
     "namor": "^1.1.1",
     "node-sass": "4.14.1",
     "nouislider": "14.5.0",

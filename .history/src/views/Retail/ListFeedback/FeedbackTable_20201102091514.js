@@ -1,11 +1,5 @@
 import React from 'react';
 import { DataGrid } from '@material-ui/data-grid';
-
-
-import moment from 'moment'
-
-moment.locale('pt-br');
-
 import contente from "../../../assets/img/contente@4x.png";
 import descontente from "../../../assets/img/descontente@4x.png";
 import imparcial from "../../../assets/img/imparcial@4x.png";
@@ -33,8 +27,6 @@ export default function FeedbackTable({ data }) {
   //   }
   //   return newDate;
   // })
-  const newDates = data.map(d => moment(d.date).format('DD/MM/YYYY HH:mm:ss'))
-  console.log(newDates);
   return (
     <div style={{ height: 400, width: '100%' }}>
       <DataGrid
