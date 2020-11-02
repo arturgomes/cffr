@@ -1,7 +1,6 @@
 // import React from "react";
 
 // import { Redirect, BrowserRouter, Switch, Route } from "react-router-dom";
-import { ImExit } from "react-icons/im";
 import { MdLocationOn, MdPerson, MdDashboard } from "react-icons/md";
 import { FaRegCommentDots } from "react-icons/fa";
 import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber';
@@ -12,7 +11,6 @@ import ManageShop from "../views/Retail/ManageShop/ManageShop.js";
 import ManageCoupon from "../views/Retail/ManageCoupon/ManageCoupon.js";
 import RetailDashboardPage from "../views/Retail/Dashboard/Dashboard.js";
 import RetailProfile from "../views/Retail/RetailProfile/RetailProfile.js";
-import Logout from "../layouts/Logout.js";
 
 
 const dashboardRoutes = [
@@ -57,13 +55,6 @@ const dashboardRoutes = [
     icon: ConfirmationNumberIcon,
     component: ManageCoupon,
     layout: "/retail"
-  },
-  {
-    path: "/logout",
-    name: "Sair",
-    icon: ImExit,
-    component: Logout,
-    // layout: "/retail"
   }
 ];
 

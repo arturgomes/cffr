@@ -1,7 +1,6 @@
 // import React from "react";
 
 // import { Redirect, BrowserRouter, Switch, Route } from "react-router-dom";
-import { ImExit } from "react-icons/im";
 import { MdLocationOn, MdPerson, MdDashboard } from "react-icons/md";
 import { FaRegCommentDots } from "react-icons/fa";
 import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber';
@@ -61,8 +60,8 @@ const dashboardRoutes = [
   {
     path: "/logout",
     name: "Sair",
-    icon: ImExit,
-    component: Logout,
+    icon: ConfirmationNumberIcon,
+    component: ManageCoupon,
     // layout: "/retail"
   }
 ];
