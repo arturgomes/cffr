@@ -93,7 +93,7 @@ class Dashboard extends Component {
           // console.log(error.request);
         }
       });
-      this.setState({isLoading: false });
+    this.setState({ isLoading: false });
   }
   handleDataGraph = () => {
     // const data = {
@@ -124,7 +124,7 @@ class Dashboard extends Component {
 
   };
   handleNPS = () => {
-    return this.state.average;
+    return (((this.state.posFeedbacks - this.state.negFeedbacks) / this.state.totalFeedbacks) * 100);
   };
   render() {
     // this.genFeedbackPorDia();
@@ -206,7 +206,7 @@ class Dashboard extends Component {
             <GridItem xs={12} sm={3} md={3}>
               <Card chart>
                 <CardHeader color="info">
-                  
+
                 </CardHeader>
                 <CardBody>
                   <GaugeChart

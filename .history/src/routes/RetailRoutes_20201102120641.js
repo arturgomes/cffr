@@ -12,7 +12,7 @@ import ManageShop from "../views/Retail/ManageShop/ManageShop.js";
 import ManageCoupon from "../views/Retail/ManageCoupon/ManageCoupon.js";
 import RetailDashboardPage from "../views/Retail/Dashboard/Dashboard.js";
 import RetailProfile from "../views/Retail/RetailProfile/RetailProfile.js";
-// import Logout from "../views/Retail/Logout";
+import Logout from "../views/Retail/Logout";
 
 
 const dashboardRoutes = [
@@ -58,13 +58,13 @@ const dashboardRoutes = [
     component: ManageCoupon,
     layout: "/retail"
   },
-  // {
-  //   path: "/logout",
-  //   name: "Sair",
-  //   icon: ImExit,
-  //   component: Logout,
-  //   layout: "/retail"
-  // }
+  {
+    path: "/logout",
+    name: "Sair",
+    icon: ImExit,
+    component: Logout,
+    layout: "/retail"
+  }
 ];
 
 
