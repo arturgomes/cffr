@@ -68,6 +68,7 @@ export default class SignIn extends Component {
     }, () => { })
 
     const qs = decodeURIComponent(this.props.match.params.id);
+    // console.log(qs);
     await api.post(`/feed/${qs}/c`, {
       answers: {
         nps: this.state.nps,
@@ -78,12 +79,27 @@ export default class SignIn extends Component {
     }, () => { })).catch(error => {
       console.log(error.message);
     })
+    // const fid = response.data.fid;
+    // console.log(fid);
+    // return response;
 
   }
 
   async componentDidMount() {
     const qs = decodeURIComponent(this.props.match.params.id);
-
+    // const response = await fetch(`https://api.couponfeed.co/feed/${qs}/f`, 
+    // {
+    //   method: "POST",
+    //   credentials: "include",
+    //   // mode: 'no-cors',
+    //   headers: {
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Credentials": true,
+    //     "Access-Control-Allow-Origin": "https://www.couponfeed.com.br"
+    //   }
+    // }
+    // )
     const response = await api.post(`/feed/${qs}/f`);
     if (!response.error) {
       const quest = response.data.questions;
@@ -148,6 +164,11 @@ export default class SignIn extends Component {
     };
   }
   render() {
+    //
+
+
+    //
+
     return (
       <div
         style={{

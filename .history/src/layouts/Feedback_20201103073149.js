@@ -15,7 +15,6 @@ import logo from "../assets/img/completa_fundo_claro@4x.png";
 import Grid from '@material-ui/core/Grid';
 import { FaSpinner } from 'react-icons/fa';
 
-import Copyright from '../components/Copyright';
 import Question from '../components/Feedback/question';
 import Conclusion from '../components/Feedback/conclusion';
 
@@ -35,6 +34,18 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {"Copyright © "}
+      <Link color="inherit" href="https://couponfeed.com.br">
+        CouponFeed
+      </Link>{" "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
+  );
+}
 
 export default class SignIn extends Component {
   state = {
@@ -68,6 +79,7 @@ export default class SignIn extends Component {
     }, () => { })
 
     const qs = decodeURIComponent(this.props.match.params.id);
+    // console.log(qs);
     await api.post(`/feed/${qs}/c`, {
       answers: {
         nps: this.state.nps,
@@ -78,12 +90,27 @@ export default class SignIn extends Component {
     }, () => { })).catch(error => {
       console.log(error.message);
     })
+    // const fid = response.data.fid;
+    // console.log(fid);
+    // return response;
 
   }
 
   async componentDidMount() {
     const qs = decodeURIComponent(this.props.match.params.id);
-
+    // const response = await fetch(`https://api.couponfeed.co/feed/${qs}/f`, 
+    // {
+    //   method: "POST",
+    //   credentials: "include",
+    //   // mode: 'no-cors',
+    //   headers: {
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Credentials": true,
+    //     "Access-Control-Allow-Origin": "https://www.couponfeed.com.br"
+    //   }
+    // }
+    // )
     const response = await api.post(`/feed/${qs}/f`);
     if (!response.error) {
       const quest = response.data.questions;
@@ -148,6 +175,11 @@ export default class SignIn extends Component {
     };
   }
   render() {
+    //
+
+
+    //
+
     return (
       <div
         style={{
@@ -169,7 +201,9 @@ export default class SignIn extends Component {
             <img src={logo} style={{ width: '300px', paddingBottom: '70px' }} alt="" />
           </div>
           {this.display()}
-          <Copyright />
+          <Box mt={8}>
+            <Copyright />
+          </Box>
           {/* </Container> */}
         </Grid >
         {/* </Paper> */}
