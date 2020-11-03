@@ -18,7 +18,7 @@ import { FaSpinner } from 'react-icons/fa';
 import Copyright from '../components/Copyright';
 import Question from '../components/Feedback/question';
 import Conclusion from '../components/Feedback/conclusion';
-import { setFeedbackTmp } from '../services/auth';
+
 import api from "../services/api";
 
 const useStyles = makeStyles(theme => ({
@@ -83,7 +83,7 @@ export default class SignIn extends Component {
 
   async componentDidMount() {
     const qs = decodeURIComponent(this.props.match.params.id);
-    setFeedbackTmp(qs);
+
     const response = await api.post(`/feed/${qs}/f`);
     if (!response.error) {
       const quest = response.data.questions;
