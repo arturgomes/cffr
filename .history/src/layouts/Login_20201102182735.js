@@ -78,7 +78,7 @@ export default class Login extends Component {
       <BasicLayout title="Fazer Login">
 
         <div style={{ marginTop: '20px', marginBottom: '20px' }}>
-          <LoginSocial />
+          <LoginSocial caption="Fazer login com " />
         </div>
 
 

@@ -58,7 +58,6 @@ export default function RenderForm(props) {
                 <TextField
                   autoComplete="fname"
                   name="name"
-                  // variant="outlined"
                   value={props.state.name}
                   onChange={props.handleNameInput}
                   required
@@ -67,26 +66,16 @@ export default function RenderForm(props) {
                   label="Nome"
                   autoFocus
                 />
-                {/* <CustomInput
-                              labelText="Nome"
-                              id="first-name"
-                              value={props.state.name}
-                              onChange={props.handleNameInput}
-                              formControlProps={{
-                                fullWidth: true
-                              }}
-                            /> */}
+
               </GridItem>
 
             </GridContainer>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
                 <TextField
-                  // variant="outlined"
                   required
                   fullWidth
                   name="cpf"
-                  // style={{ marginBottom: 16 }}
                   label="CPF"
                   onChange={props.handleCPFInput}
                   value={props.state.tmp_cpf}
@@ -96,7 +85,6 @@ export default function RenderForm(props) {
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
                 <TextField
-                  // variant="outlined"
                   required
                   fullWidth
                   id="phone"
@@ -112,7 +100,6 @@ export default function RenderForm(props) {
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
                 <TextField
-                  // variant="outlined"
                   required
                   fullWidth
                   name="email"
@@ -120,128 +107,22 @@ export default function RenderForm(props) {
                   label="Endereço de Email"
                   onChange={props.handleEmailInput}
                   value={props.state.email}
-                // autoComplete="fname"
                 />
-                {/* <CustomInput
-                              labelText="Endereço de Email"
-                              id="email-address"
-                              onChange={props.handleEmailInput}
-                              value={props.state.email}
-                              formControlProps={{
-                                fullWidth: true
-                              }}
-                            /> */}
+
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
                 <TextField
                   required
                   fullWidth
                   name="passw"
-                  // style={{ marginBottom: 16 }}
                   label="Senha"
                   type="password"
                   onChange={props.handlePasswInput}
                   value={props.state.passw}
-                // autoComplete="fname"
                 />
               </GridItem>
             </GridContainer>
-            <GridContainer>
-              <GridItem xs={12} sm={12} md={6}>
-                <TextField
-                  // variant="outlined"
-                  required
-                  fullWidth
-                  name="address_zip"
-                  style={{ marginBottom: 16 }}
-                  label="CEP"
-                  onChange={props.handleAddressZip}
-                  value={props.state.address_zip}
-                  autoComplete="fname"
-                />
-              </GridItem>
-              <GridItem xs={12} sm={12} md={3}>
-                <TextField
-                  required
-                  // disabled
-                  fullWidth
-                  name="address_number"
-                  // style={{ marginBottom: 16 }}
-                  label="Número"
-                  onChange={props.handleAddressNumber}
-                  value={props.state.address_number}
-                  autoComplete="fname"
-                />
-              </GridItem>
-            </GridContainer>
-            <GridContainer>
-              <GridItem xs={12} sm={12} md={12}>
-                <TextField
-                  disabled
-                  // variant="outlined"
-                  // required
-                  fullWidth
-                  name="address_street"
-                  style={{ marginBottom: 16 }}
-                  label="Logradouro"
-                  // onChange={props.handleAddressStreet}
-                  value={props.state.address_street}
-                  autoComplete="fname"
-                />
-              </GridItem>
-            </GridContainer>
-            <GridContainer>
-              <GridItem xs={12} sm={12} md={12}>
-                <TextField
-                  // required
-                  fullWidth
-                  name="address_comp"
-                  style={{ marginBottom: 16 }}
-                  label="Complemento"
-                  onChange={props.handleAddressComp}
-                  value={props.state.address_comp}
-                  autoComplete="fname"
-                />
-              </GridItem>
-            </GridContainer>
-            <GridContainer>
-              <GridItem xs={12} sm={12} md={4}>
-                <TextField
-                  disabled
-                  fullWidth
-                  name="address_neighb"
-                  // style={{ marginBottom: 16 }}
-                  label="Bairro"
-                  // onChange={props.handleAddressNeighb}
-                  value={props.state.address_neighb}
-                  autoComplete="fname"
-                />
-              </GridItem>
-              <GridItem xs={12} sm={12} md={6}>
-                <TextField
-                  disabled
-                  fullWidth
-                  name="address_city"
-                  // style={{ marginBottom: 16 }}
-                  label="Cidade"
-                  // onChange={props.handleAddressNeighb}
-                  value={props.state.address_city}
-                  autoComplete="fname"
-                />
-              </GridItem>
-              <GridItem xs={12} sm={12} md={2}>
-                <TextField
-                  disabled
-                  fullWidth
-                  name="address_state"
-                  // style={{ marginBottom: 16 }}
-                  label="Estado"
-                  // onChange={props.handleAddressNeighb}
-                  value={props.state.address_state}
-                  autoComplete="fname"
-                />
-              </GridItem>
-            </GridContainer>
+
 
             <GridContainer>
 

@@ -39,6 +39,7 @@ export default class SignIn extends Component {
 
   handleNPS = async (answer) => {
     const { nps } = this.state;
+
     if (nps === null) {
       this.setState({
         nps: answer,
@@ -130,7 +131,8 @@ export default class SignIn extends Component {
       )
     }
     else {
-      return <Conclusion fid={decodeURIComponent(this.props.match.params.id)} />
+      const { fid } = this.state;
+      return <Conclusion fid={fid} />
     };
   }
   render() {

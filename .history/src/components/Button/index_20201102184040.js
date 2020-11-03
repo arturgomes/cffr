@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ButtonFB from './ButtonFB';
 import ButtonGG from './ButtonGG';
 // import '../../assets/css/login.css'
@@ -19,7 +19,6 @@ export default function LoginSocial(props) {
   const componentGoogleClicked = (fid) => {
     window.open(`https://api.couponfeed.com.br/auth/google/${fid}`, "_self");
   }
-  console.log(props.fid)
   const facebookData =
     (<>
       <ButtonFB

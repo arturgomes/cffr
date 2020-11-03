@@ -130,6 +130,7 @@ export default class SignIn extends Component {
       )
     }
     else {
+      const { fid } = this.state;
       return <Conclusion fid={decodeURIComponent(this.props.match.params.id)} />
     };
   }

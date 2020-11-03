@@ -19,7 +19,6 @@ export default function LoginSocial(props) {
   const componentGoogleClicked = (fid) => {
     window.open(`https://api.couponfeed.com.br/auth/google/${fid}`, "_self");
   }
-  console.log(props.fid)
   const facebookData =
     (<>
       <ButtonFB
