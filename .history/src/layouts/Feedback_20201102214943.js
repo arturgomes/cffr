@@ -163,12 +163,12 @@ export default class SignIn extends Component {
       )
     }
     else {
-      return <Conclusion feedbackId={this.state.feed} />
+      return <Conclusion feedbackId={fid} />
     };
   }
   render() {
     return (
-      <Layout>{this.display()}</Layout>
+      <Layout></Layout>
     );
   }
 }

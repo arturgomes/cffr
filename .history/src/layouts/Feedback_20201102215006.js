@@ -168,7 +168,7 @@ export default class SignIn extends Component {
   }
   render() {
     return (
-      <Layout>{this.display()}</Layout>
+      <Layout></Layout>
     );
   }
 }

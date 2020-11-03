@@ -14,7 +14,7 @@ import api from "../services/api";
 
 
 
-export default function Layout(props) {
+export default function componentName() {
   return (
     <>
       <div
@@ -34,7 +34,7 @@ export default function Layout(props) {
           <div className={useStyles.content}>
             <img src={logo} style={{ width: '300px', paddingBottom: '70px' }} alt="" />
           </div>
-          {props.children}
+          {this.display()}
           <Copyright />
         </Grid >
 
@@ -61,7 +61,6 @@ export default class SignIn extends Component {
   state = {
     opening: null,
     questions: [],
-    feed: null,
     nps: null,
     comment: null,
     finished: false,
@@ -104,7 +103,7 @@ export default class SignIn extends Component {
 
   async componentDidMount() {
     const qs = decodeURIComponent(this.props.match.params.id);
-    this.setState({ feed: qs });
+
     const response = await api.post(`/feed/${qs}/f`);
     if (!response.error) {
       const quest = response.data.questions;
@@ -121,7 +120,7 @@ export default class SignIn extends Component {
     }
   }
   display() {
-
+    const fid = decodeURIComponent(this.props.match.params.id);
     if (!this.state.opening && !this.state.error) {
       return <FaSpinner color="#888" size={14} />
 
@@ -163,12 +162,12 @@ export default class SignIn extends Component {
       )
     }
     else {
-      return <Conclusion feedbackId={this.state.feed} />
+      return <Conclusion feedbackId={fid} />
     };
   }
   render() {
     return (
-      <Layout>{this.display()}</Layout>
+      
     );
   }
 }

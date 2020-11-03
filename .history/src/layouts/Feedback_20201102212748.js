@@ -12,37 +12,6 @@ import Conclusion from '../components/Feedback/conclusion.js';
 
 import api from "../services/api";
 
-
-
-export default function Layout(props) {
-  return (
-    <>
-      <div
-        style={{
-          position: 'absolute',
-          left: '50%',
-          top: '50%',
-          transform: 'translate(-50%, -50%)',
-        }}
-      >
-        <Grid container
-          spacing={0}
-          align="center"
-          justify="center"
-          direction="column"
-        >
-          <div className={useStyles.content}>
-            <img src={logo} style={{ width: '300px', paddingBottom: '70px' }} alt="" />
-          </div>
-          {props.children}
-          <Copyright />
-        </Grid >
-
-      </div >
-    </>
-  );
-}
-
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -61,7 +30,6 @@ export default class SignIn extends Component {
   state = {
     opening: null,
     questions: [],
-    feed: null,
     nps: null,
     comment: null,
     finished: false,
@@ -104,7 +72,7 @@ export default class SignIn extends Component {
 
   async componentDidMount() {
     const qs = decodeURIComponent(this.props.match.params.id);
-    this.setState({ feed: qs });
+
     const response = await api.post(`/feed/${qs}/f`);
     if (!response.error) {
       const quest = response.data.questions;
@@ -121,7 +89,7 @@ export default class SignIn extends Component {
     }
   }
   display() {
-
+    const fid = decodeURIComponent(this.props.match.params.id);
     if (!this.state.opening && !this.state.error) {
       return <FaSpinner color="#888" size={14} />
 
@@ -163,12 +131,33 @@ export default class SignIn extends Component {
       )
     }
     else {
-      return <Conclusion feedbackId={this.state.feed} />
+      return <Conclusion fid={fid} />
     };
   }
   render() {
     return (
-      <Layout>{this.display()}</Layout>
+      <div
+        style={{
+          position: 'absolute',
+          left: '50%',
+          top: '50%',
+          transform: 'translate(-50%, -50%)',
+        }}
+      >
+        <Grid container
+          spacing={0}
+          align="center"
+          justify="center"
+          direction="column"
+        >
+          <div className={useStyles.content}>
+            <img src={logo} style={{ width: '300px', paddingBottom: '70px' }} alt="" />
+          </div>
+          {this.display()}
+          <Copyright />
+        </Grid >
+
+      </div >
     );
   }
 }
