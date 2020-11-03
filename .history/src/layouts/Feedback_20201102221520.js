@@ -9,7 +9,7 @@ import { FaSpinner } from 'react-icons/fa';
 import Copyright from '../components/Copyright';
 import Question from '../components/Feedback/question.js';
 import Conclusion from '../components/Feedback/conclusion.js';
-import { setFeedbackTmp } from "../services/auth";
+import { setFeedbackTmp, } from "../services/auth";
 import api from "../services/api";
 
 
@@ -86,7 +86,7 @@ export default class SignIn extends Component {
       comment: comm
 
     }, () => { })
-    setFeedbackTmp(decodeURIComponent(this.props.match.params.id))
+
     const qs = decodeURIComponent(this.props.match.params.id);
     await api.post(`/feed/${qs}/c`, {
       answers: {
@@ -163,7 +163,7 @@ export default class SignIn extends Component {
       )
     }
     else {
-      return <Conclusion />
+      return <Conclusion feedbackId={this.state.feed} />
     };
   }
   render() {
