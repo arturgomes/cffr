@@ -1,6 +1,5 @@
-export const TOKEN_KEY = "tk";
 export const isAuthenticated = () => localStorage.getItem("ui") !== null;
-export const getToken = () => localStorage.getItem(TOKEN_KEY);
+export const getToken = () => localStorage.getItem("tk");
 export const getName = () => localStorage.getItem("usr");
 export const getId = () => localStorage.getItem("ui");
 export const getTu = () => localStorage.getItem("tu");
@@ -11,9 +10,11 @@ export const login = (token, name, id, tu) => {
   localStorage.setItem("ui", id);
   localStorage.setItem("tu", tu);
 };
-
+export const setFeedbackTmp = (fb) => {
+  localStorage.setItem("fb", token);
+};
 export const logout = () => {
-  localStorage.removeItem(TOKEN_KEY);
+  localStorage.removeItem("tk");
   localStorage.removeItem("usr");
   localStorage.removeItem("ui");
   localStorage.removeItem("tu");

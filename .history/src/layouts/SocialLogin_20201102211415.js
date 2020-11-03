@@ -50,7 +50,7 @@ class Validate extends Component {
             isLoading: success,
           });
           const { name, id, tu } = login;
-          api.post('/users/add/feedback', { user_id: id, tmp_feedback: getFeedbackTmp() })
+          api.post('/user/add/feedback', { user_id: id, tmp_feedback: getFeedbackTmp() })
           localStorage.setItem("tk", token);
           localStorage.setItem("usr", name);
           localStorage.setItem("ui", id);

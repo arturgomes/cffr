@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ButtonFB from './ButtonFB';
 import ButtonGG from './ButtonGG';
 // import '../../assets/css/login.css'

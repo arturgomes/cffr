@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Redirect } from "react-router-dom";
-import api from '../services/api'
+
 // @material-ui/core components
 import LinearProgress from '@material-ui/core/LinearProgress';
 
@@ -50,7 +50,6 @@ class Validate extends Component {
             isLoading: success,
           });
           const { name, id, tu } = login;
-          api.post('/users/add/feedback', { user_id: id, tmp_feedback: getFeedbackTmp() })
           localStorage.setItem("tk", token);
           localStorage.setItem("usr", name);
           localStorage.setItem("ui", id);

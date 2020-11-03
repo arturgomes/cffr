@@ -8,9 +8,9 @@ import {
   setFeedbackTmp,
   // login, 
   getUser, isAuthenticated
-} from "../../services/auth";
+} from "../services/auth";
 export default function Conclusion(props) {
-  setFeedbackTmp(props.fid)
+
   return (<>
     <Typography variant="body1" component="body1" style={{ marginBottom: 16 }}>
       Obrigado! Pela sua participação, você acumulou 1 FeedCoin.
@@ -21,18 +21,15 @@ export default function Conclusion(props) {
 
 
       <div style={{ marginTop: '20px', marginBottom: '20px' }}>
-        <Link to={`/signup/`}>
-          {/* <Link to={`/signup/${props.fid}`}> */}
+        <Link to={`/signup/${props.fid}`}>
           <Button type="submit"
             style={{ marginBottom: 16 }}
             fullWidth
             variant="contained"
             color="primary">Cadastre-se e acumule FeedCoins!</Button>
         </Link>
-        {/* <LoginSocial caption="Entre rápido com " fid={props.fid} /> */}
-        <LoginSocial caption="Entre rápido com " />
-        {/* <Link to={`/login/${props.fid}`}> */}
-        <Link to={`/login/`}>
+        <LoginSocial caption="Entre rápido com " fid={props.fid} />
+        <Link to={`/login/${props.fid}`}>
           <Button type="submit"
             style={{ marginBottom: 16 }}
             fullWidth
