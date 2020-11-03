@@ -9,7 +9,7 @@ import {
   // login, 
   getUser, isAuthenticated
 } from "../../services/auth";
-export default function Conclusion() {
+export default function Conclusion(props) {
   return (<>
     <Typography variant="body1" component="body1" style={{ marginBottom: 16 }}>
       Obrigado! Pela sua participação, você acumulou 1 FeedCoin.
