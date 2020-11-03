@@ -82,7 +82,7 @@ export default class SignIn extends Component {
   }
 
   async componentDidMount() {
-    const qs = decodeURIComponent(this.props.match.params.id);
+    // const qs = decodeURIComponent(this.props.match.params.id);
     // setFeedbackTmp(qs);
     const response = await api.post(`/feed/${qs}/f`);
     if (!response.error) {
@@ -142,6 +142,7 @@ export default class SignIn extends Component {
       )
     }
     else {
+
       return <Conclusion />
     };
   }
