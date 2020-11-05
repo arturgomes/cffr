@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles';
@@ -48,17 +49,16 @@ export default function FeedbackBlock(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
-  const [nps_value, setnps_value] = useState(null);
-  const [questions, setquestions] = useState(null);
-  const [comment, setcomment] = useState(null);
-  const [opening, setopening] = useState(null);
-  const [finished, setfinished] = useState(null);
-  const [error, seterror] = useState(null);
-  const [feedid, setFeedid] = useState(null);
+  const [nps_value, setnps_value] = useState(null)
+  const [questions, setquestions] = useState(null)
+  const [opening, setopening] = useState(null)
+  const [finished, setfinished] = useState(null)
+  const [error, seterror] = useState(null)
+  const params = useParams();
 
   // useEffect(() => {
-  //   setprops.fid(params.id);
-  //   console.log(props.fid);
+  //   setfeedback_id(params.id);
+  //   console.log(feedback_id);
   //   
   //   getFromAPI();
   // }, [])
@@ -89,20 +89,29 @@ export default function FeedbackBlock(props) {
 
   const handleComment = async (answer) => {
     const comm = answer;
-    setfinished(true);
-    setcomment(comm);
+    this.setState({
+      finished: true,
+      comment: comm
 
-    await api.post(`/feed/${props.fid}/c`, {
+    }, () => { })
+
+    console.log(feedback_id);
+
+    await api.post(`/feed/${feedback_id}/c`, {
       answers: {
-        nps: nps_value,
-        com: comment
+        nps: this.state.nps,
+        com: answer
       }
     })
-      .then(response =>
-        setFeedid(response.data.fid)
-      ).catch(error => {
+      .then(response => this.setState({
+        fid: response.data.fid
+      }, () => { })).catch(error => {
         console.log(error.message);
       })
+    // const fid = response.data.fid;
+    // console.log(fid);
+    // return response;
+
   }
 
 

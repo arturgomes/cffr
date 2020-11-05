@@ -94,15 +94,19 @@ export default function FeedbackBlock(props) {
 
     await api.post(`/feed/${props.fid}/c`, {
       answers: {
-        nps: nps_value,
-        com: comment
+        nps: this.state.nps,
+        com: answer
       }
     })
-      .then(response =>
-        setFeedid(response.data.fid)
-      ).catch(error => {
+      .then(response => this.setState({
+        fid: response.data.fid
+      }, () => { })).catch(error => {
         console.log(error.message);
       })
+    // const fid = response.data.fid;
+    // console.log(fid);
+    // return response;
+
   }
 
 

@@ -50,7 +50,6 @@ export default function FeedbackBlock(props) {
   const [skipped, setSkipped] = useState(new Set());
   const [nps_value, setnps_value] = useState(null);
   const [questions, setquestions] = useState(null);
-  const [comment, setcomment] = useState(null);
   const [opening, setopening] = useState(null);
   const [finished, setfinished] = useState(null);
   const [error, seterror] = useState(null);
@@ -89,20 +88,28 @@ export default function FeedbackBlock(props) {
 
   const handleComment = async (answer) => {
     const comm = answer;
-    setfinished(true);
-    setcomment(comm);
+    this.setState({
+      finished: true,
+      comment: comm
+
+    }, () => { })
+
 
     await api.post(`/feed/${props.fid}/c`, {
       answers: {
-        nps: nps_value,
-        com: comment
+        nps: this.state.nps,
+        com: answer
       }
     })
-      .then(response =>
-        setFeedid(response.data.fid)
-      ).catch(error => {
+      .then(response => this.setState({
+        fid: response.data.fid
+      }, () => { })).catch(error => {
         console.log(error.message);
       })
+    // const fid = response.data.fid;
+    // console.log(fid);
+    // return response;
+
   }
 
 

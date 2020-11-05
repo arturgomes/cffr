@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import FeedbackBlock from "../components/FeedbackBlock"
 
 import { useParams } from "react-router";
-
+function feedId() {
+  let { id } = useParams();
+  return id;
+}
 
 export default function Feedback() {
-  const { fid } = useParams();
-
   return (
-    <FeedbackBlock fid={fid} />
+    <FeedbackBlock fid={feedId()} />
 
   )
 }

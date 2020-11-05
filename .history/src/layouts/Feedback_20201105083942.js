@@ -5,10 +5,10 @@ import { useParams } from "react-router";
 
 
 export default function Feedback() {
-  const { fid } = useParams();
+  const { id } = useParams();
 
   return (
-    <FeedbackBlock fid={fid} />
+    <FeedbackBlock fid={feedId()} />
 
   )
 }

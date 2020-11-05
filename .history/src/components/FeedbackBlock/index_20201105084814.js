@@ -103,6 +103,10 @@ export default function FeedbackBlock(props) {
       ).catch(error => {
         console.log(error.message);
       })
+    // const fid = response.data.fid;
+    // console.log(fid);
+    // return response;
+
   }
 
 
