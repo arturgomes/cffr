@@ -1,16 +1,17 @@
-import Button from '@material-ui/core/Button';
+import React, { useState, useEffect } from 'react'
+
+import PropTypes from 'prop-types'
+import { makeStyles } from '@material-ui/core/styles';
+import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
-import Stepper from '@material-ui/core/Stepper';
-import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import React, { useEffect, useState } from 'react';
+
+import QuantitativeQuestion from "./QuantitativeQuestion.js"
+import QualitativeQuestion from "./QualitativeQuestion.js"
+import Conclusion from "./Conclusion.js"
 import BasicLayout from '../../components/CouponFeed/BasicLayout';
-import Conclusion from "./Conclusion.js";
-import QualitativeQuestion from "./QualitativeQuestion.js";
-import QuantitativeQuestion from "./QuantitativeQuestion.js";
-
-
 
 import api from '../../services/api';
 
@@ -56,15 +57,24 @@ export default function FeedbackBlock(props) {
   const [feedid, setFeedid] = useState(null);
 
 
+  const getFromAPI = async () => {
+    console.log("fid: ", props.fid)
+    const response = await api.post(`/feed/${props.fid}/f`);
+    return response
+  }
 
   useEffect(() => {
-    api.post(`/feed/${props.fid}/f`).then(response => {
-      console.log(response.data)
-      const quest = response.data.questions;
-      const ope = response.data.opening;
-      setquestions(quest)
-      setopening(ope)
-    })
+    let mounted = true;
+    getFromAPI()
+      .then(response => {
+        if (mounted) {
+          const quest = response.data.questions;
+          const ope = response.data.opening;
+          setquestions(quest)
+          setopening(ope)
+        }
+      })
+    return () => mounted = false;
   }, [])
   const handleNPS = async (answer) => {
     if (nps_value === null) {

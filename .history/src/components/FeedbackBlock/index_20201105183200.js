@@ -56,15 +56,19 @@ export default function FeedbackBlock(props) {
   const [feedid, setFeedid] = useState(null);
 
 
-
-  useEffect(() => {
-    api.post(`/feed/${props.fid}/f`).then(response => {
+  const getFromAPI = async () => {
+    console.log("fid: ", props.fid)
+    await api.post(`/feed/${props.fid}/f`).then(response => {
       console.log(response.data)
       const quest = response.data.questions;
       const ope = response.data.opening;
       setquestions(quest)
       setopening(ope)
     })
+  }
+
+  useEffect(() => {
+    getFromAPI()
   }, [])
   const handleNPS = async (answer) => {
     if (nps_value === null) {

@@ -6,6 +6,7 @@ import { useParams } from "react-router";
 
 export default function Feedback() {
   const { id } = useParams();
+  console.log(fid);
 
   return (
     <FeedbackBlock fid={id} />
