@@ -84,7 +84,7 @@ export default function FeedbackBlock(props) {
     }
     if (initial === false) {
       initialState();
-      setinitial(true);
+      setinitial(true)
     }
   }, [qualitative, quantitative, opening])
 
