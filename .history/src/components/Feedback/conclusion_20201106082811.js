@@ -20,7 +20,6 @@ export default function Conclusion() {
 
 
       <div style={{ marginTop: '20px', marginBottom: '20px' }}>
-        <LoginSocial caption="Entre rápido com " />
         <Link to={`/signup/`}>
           <Button type="submit"
             style={{ marginBottom: 16 }}
@@ -31,6 +30,8 @@ export default function Conclusion() {
           </Button>
         </Link>
         {/* <LoginSocial caption="Entre rápido com " fid={props.fid} /> */}
+        <LoginSocial caption="Entre rápido com " />
+        {/* <Link to={`/login/${props.fid}`}> */}
         <Link to={`/login/`}>
           <Button type="submit"
             style={{ marginBottom: 16 }}

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Typography from '@material-ui/core/Typography';
 import { Button, ButtonGroup, } from "@material-ui/core";
 
-function QuantitativeQuestion(props) {
+function QualitativeQuestion(props) {
 
   const { opening, quest } = props;
   const fields = quest.options.map(option =>
@@ -33,5 +33,5 @@ function QuantitativeQuestion(props) {
 }
 
 
-export default QuantitativeQuestion;
+export default QualitativeQuestion
 

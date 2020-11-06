@@ -41,5 +41,5 @@ function QualitativeQuestion(props) {
 }
 
 
-export default QualitativeQuestion;
+export default QualitativeQuestion
 

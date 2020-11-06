@@ -148,13 +148,13 @@ export default function FeedbackBlock(props) {
               { activeStep !== steps.length - 1 ? (
                 <QualitativeQuestion
                   quest={questions[1]}
-                  onChange={handleComment}
+                  onChange={this.handleComment}
                 />
               ) : (
                   <QuantitativeQuestion
                     opening={opening}
                     quest={questions[0]}
-                    onChange={handleNPS}
+                    onChange={this.handleNPS}
                   />
                 )}
 

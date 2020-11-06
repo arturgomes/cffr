@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Grid, Button, Typography, TextField } from "@material-ui/core";
 
-function QualitativeQuestion(props) {
+function QuantitativeQuestion(props) {
   const [text, settext] = useState('');
   const { quest } = props;
   const { question } = quest
@@ -17,7 +17,7 @@ function QualitativeQuestion(props) {
 
     <Button
       // className='btn'
-      onClick={() => props.onChange(text)}
+      onClick={() => this.props.onChange(this.state.text)}
       style={{ marginTop: 16, marginBottom: 16 }}
       fullWidth
       variant="contained"
@@ -41,5 +41,5 @@ function QualitativeQuestion(props) {
 }
 
 
-export default QualitativeQuestion;
+export default QuantitativeQuestion
 

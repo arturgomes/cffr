@@ -33,5 +33,5 @@ function QuantitativeQuestion(props) {
 }
 
 
-export default QuantitativeQuestion;
+export default QualitativeQuestion
 

@@ -55,6 +55,8 @@ export default function FeedbackBlock(props) {
   const [error, seterror] = useState(null);
   const [feedid, setFeedid] = useState(null);
 
+
+
   useEffect(() => {
     api.post(`/feed/${props.fid}/f`)
       .then(response => {
@@ -66,9 +68,10 @@ export default function FeedbackBlock(props) {
       })
   }, [])
 
+
   const handleNPS = async (answer) => {
     if (nps_value === null) {
-      setnps_value(answer);
+      this.setnps_value(answer);
     }
   }
 
@@ -89,6 +92,9 @@ export default function FeedbackBlock(props) {
         console.log(error.message);
       })
   }
+
+
+
 
   const isStepOptional = (step) => {
     return step === 1;
@@ -145,18 +151,7 @@ export default function FeedbackBlock(props) {
           ) :
           (
             <React.Fragment>
-              { activeStep !== steps.length - 1 ? (
-                <QualitativeQuestion
-                  quest={questions[1]}
-                  onChange={handleComment}
-                />
-              ) : (
-                  <QuantitativeQuestion
-                    opening={opening}
-                    quest={questions[0]}
-                    onChange={handleNPS}
-                  />
-                )}
+              { activeStep !== steps.length - 1 ? (<QualitativeQuestion />) : (<QuantitativeQuestion />)}
 
               <div className="">
                 <div className={classes.spacer} />

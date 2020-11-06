@@ -66,6 +66,7 @@ export default function FeedbackBlock(props) {
       })
   }, [])
 
+
   const handleNPS = async (answer) => {
     if (nps_value === null) {
       setnps_value(answer);
@@ -148,13 +149,13 @@ export default function FeedbackBlock(props) {
               { activeStep !== steps.length - 1 ? (
                 <QualitativeQuestion
                   quest={questions[1]}
-                  onChange={handleComment}
+                  onChange={this.handleComment}
                 />
               ) : (
                   <QuantitativeQuestion
                     opening={opening}
                     quest={questions[0]}
-                    onChange={handleNPS}
+                    onChange={this.handleNPS}
                   />
                 )}
 

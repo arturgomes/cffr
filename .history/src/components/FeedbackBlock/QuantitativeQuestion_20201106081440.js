@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Grid, Button, Typography, TextField } from "@material-ui/core";
 
-function QualitativeQuestion(props) {
+function QuantitativeQuestion(props) {
   const [text, settext] = useState('');
   const { quest } = props;
   const { question } = quest
@@ -41,5 +41,5 @@ function QualitativeQuestion(props) {
 }
 
 
-export default QualitativeQuestion;
+export default QuantitativeQuestion
 

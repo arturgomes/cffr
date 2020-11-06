@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Typography from '@material-ui/core/Typography';
-import { Button, ButtonGroup, } from "@material-ui/core";
 
-function QuantitativeQuestion(props) {
+function QualitativeQuestion(props) {
 
-  const { opening, quest } = props;
+  const { opening, quest, title } = this.props;
   const fields = quest.options.map(option =>
     <>
       <Button
@@ -30,8 +29,15 @@ function QuantitativeQuestion(props) {
     </ButtonGroup>
 
   </ >)
+  return (
+    <div>
+      <Typography className="">
+        pergunta qualitativa
+              </Typography>
+    </div>
+  )
 }
 
 
-export default QuantitativeQuestion;
+export default QualitativeQuestion
 

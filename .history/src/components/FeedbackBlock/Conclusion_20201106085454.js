@@ -1,15 +1,9 @@
-import React from 'react';
+import React from 'react'
 import { Link } from 'react-router-dom';
 // import { PHigh, PSmall } from './styles'
 import { Button, Typography } from "@material-ui/core";
-import LoginSocial from '../Button'
 
-import {
-  setFeedbackTmp,
-  // login, 
-  getUser, isAuthenticated
-} from "../../services/auth";
-export default function Conclusion() {
+function Conclusion(props) {
   return (<>
     <Typography variant="body1" component="body1" style={{ marginBottom: 16 }}>
       Obrigado! Pela sua participação, você acumulou 1 FeedCoin.
@@ -54,6 +48,7 @@ export default function Conclusion() {
           </button> */}
     </form>
   </>)
-
-
 }
+
+export default Conclusion
+
