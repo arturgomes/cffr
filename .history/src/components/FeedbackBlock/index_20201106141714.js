@@ -59,7 +59,6 @@ export default function FeedbackBlock(props) {
   useEffect(() => {
     api.post(`/feed/${props.fid}/f`)
       .then(response => {
-        console.log(response)
         const ope = response.data.opening;
         setQualitative(response.data.questions[1])
         setQuantitative(response.data.questions[0])
@@ -134,79 +133,79 @@ export default function FeedbackBlock(props) {
   const handleReset = () => {
     setActiveStep(0);
   };
-  return (<></>)
-  // return (
-  //   <BasicLayout noavatar>
-  //     <div className={classes.root}>
 
-  //       {activeStep === steps.length ?
-  //         (
-  //           <React.Fragment>
-  //             <Conclusion />
+  return (
+    <BasicLayout noavatar>
+      <div className={classes.root}>
 
-  //           </React.Fragment>
-  //         ) :
-  //         (
-  //           <React.Fragment>
-  //             { activeStep === steps.length - 1 ? (
-  //               <QualitativeQuestion
-  //                 quest={qualitative}
-  //                 onChange={handleComment}
-  //               />
-  //             ) : (
-  //                 <QuantitativeQuestion
-  //                   opening={opening}
-  //                   // quest={{}}
-  //                   quest={quantitative}
-  //                   onChange={handleNPS}
-  //                 />
-  //               )}
+        {activeStep === steps.length ?
+          (
+            <React.Fragment>
+              <Conclusion />
 
-  //             <div className="">
-  //               <div className={classes.spacer} />
-  //               <Button
-  //                 color="inherit"
-  //                 disabled={activeStep === 0}
-  //                 onClick={handleBack}
-  //                 className=""
-  //               > Voltar </Button>
-  //               {isStepOptional(activeStep) && (
-  //                 <Button
-  //                   color="inherit"
-  //                   onClick={handleSkip}
-  //                   className=""
-  //                 >
-  //                   Pular
-  //                 </Button>
-  //               )}
+            </React.Fragment>
+          ) :
+          (
+            <React.Fragment>
+              { activeStep === steps.length - 1 ? (
+                <QualitativeQuestion
+                  quest={qualitative}
+                  onChange={handleComment}
+                />
+              ) : (
+                  <QuantitativeQuestion
+                    opening={opening}
+                    // quest={{}}
+                    quest={quantitative}
+                    onChange={handleNPS}
+                  />
+                )}
 
-  //               <Button onClick={handleNext}>
-  //                 {activeStep === steps.length - 1 ? 'Concluir' : 'Próximo'}
-  //               </Button>
-  //             </div>
-  //           </React.Fragment>
-  //         )
-  //       }
-  //       <Stepper activeStep={activeStep}>
-  //         {steps.map((label, index) => {
-  //           const stepProps = {};
-  //           const labelProps = {};
-  //           if (isStepOptional(index)) {
-  //             labelProps.optional = (
-  //               <Typography variant="caption"></Typography>
-  //             );
-  //           }
-  //           if (isStepSkipped(index)) {
-  //             stepProps.completed = false;
-  //           }
-  //           return (
-  //             <Step key={index} {...stepProps}>
-  //               <StepLabel {...labelProps}>{label}</StepLabel>
-  //             </Step>
-  //           );
-  //         })}
-  //       </Stepper>
-  //     </div>
-  //   </BasicLayout>
-  // );
+              <div className="">
+                <div className={classes.spacer} />
+                <Button
+                  color="inherit"
+                  disabled={activeStep === 0}
+                  onClick={handleBack}
+                  className=""
+                > Voltar </Button>
+                {isStepOptional(activeStep) && (
+                  <Button
+                    color="inherit"
+                    onClick={handleSkip}
+                    className=""
+                  >
+                    Pular
+                  </Button>
+                )}
+
+                <Button onClick={handleNext}>
+                  {activeStep === steps.length - 1 ? 'Concluir' : 'Próximo'}
+                </Button>
+              </div>
+            </React.Fragment>
+          )
+        }
+        <Stepper activeStep={activeStep}>
+          {steps.map((label, index) => {
+            const stepProps = {};
+            const labelProps = {};
+            if (isStepOptional(index)) {
+              labelProps.optional = (
+                <Typography variant="caption"></Typography>
+              );
+            }
+            if (isStepSkipped(index)) {
+              stepProps.completed = false;
+            }
+            return (
+              <Step key={index} {...stepProps}>
+                <StepLabel {...labelProps}>{label}</StepLabel>
+              </Step>
+            );
+          })}
+        </Stepper>
+      </div>
+    </BasicLayout>
+  );
 }

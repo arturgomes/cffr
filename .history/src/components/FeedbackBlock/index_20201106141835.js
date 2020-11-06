@@ -59,7 +59,6 @@ export default function FeedbackBlock(props) {
   useEffect(() => {
     api.post(`/feed/${props.fid}/f`)
       .then(response => {
-        console.log(response)
         const ope = response.data.opening;
         setQualitative(response.data.questions[1])
         setQuantitative(response.data.questions[0])
@@ -134,7 +133,7 @@ export default function FeedbackBlock(props) {
   const handleReset = () => {
     setActiveStep(0);
   };
-  return (<></>)
+
   // return (
   //   <BasicLayout noavatar>
   //     <div className={classes.root}>
