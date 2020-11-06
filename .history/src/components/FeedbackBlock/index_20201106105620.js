@@ -39,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
 
 const steps = [
   // '',
-  '',
-  '',
+  '1',
+  '2',
 ];
 
 export default function FeedbackBlock(props) {
@@ -200,7 +200,7 @@ export default function FeedbackBlock(props) {
               stepProps.completed = false;
             }
             return (
-              <Step key={index} {...stepProps}>
+              <Step key={label} {...stepProps}>
                 <StepLabel {...labelProps}>{label}</StepLabel>
               </Step>
             );
