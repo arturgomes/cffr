@@ -62,16 +62,20 @@ export default function FeedbackBlock(props) {
 
   useEffect(() => {
     const initialState = async () => {
-      const response = await api.post(`/feed/${props.fid}/f`)
+      const response = backFromAPI//await api.post(`/feed/${props.fid}/f`)
+      // console.log(response)
+
       setQualitative(response.data.questions[1])
       setQuantitative(response.data.questions[0])
       setOpening(response.data.opening)
+      // console.log(questions[1])
     }
+    // if (initial === false) {
     initialState();
-  }, [opening, quantitative, qualitative])
-
+    // setinitial(true);
+    // }
+  }, [])
   console.log(qualitative, quantitative, opening);
-
   const handleNPS = async (answer) => {
     if (nps_value === null) {
       setNPS_value(answer);
@@ -151,20 +155,17 @@ export default function FeedbackBlock(props) {
             <React.Fragment>
               { activeStep === steps.length - 1 ? (
                 <QualitativeQuestion
-                  question={qualitative}
-                  options={qualitative.options}
+                  quest={qualitative}
                   onChange={handleComment}
                 />
               ) : (
                   <QuantitativeQuestion
                     opening={opening}
                     // quest={{}}
-                    question={quantitative}
-                    options={quantitative.options}
+                    quest={quantitative}
                     onChange={handleNPS}
                   />
-                )
-              }
+                )}
 
               <div className="">
                 <div className={classes.spacer} />

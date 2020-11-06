@@ -3,7 +3,7 @@ import { Button, ButtonGroup, } from "@material-ui/core";
 
 function QuantitativeQuestion(props) {
 
-  const { options, opening, question } = props;
+  const { options, opening, quest } = props;
   const fields = options.map(option =>
     <>
       <Button
@@ -25,7 +25,7 @@ function QuantitativeQuestion(props) {
     </>
   )
   return (<>{opening}
-    <p>{question}</p>
+    <p>{quest.question}</p>
     <ButtonGroup orientation="horizontal" color="primary" aria-label="outlined primary button group" style={{
       display: 'flex',
       flexDirection: 'row',

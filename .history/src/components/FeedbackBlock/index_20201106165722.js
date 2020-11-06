@@ -61,8 +61,8 @@ export default function FeedbackBlock(props) {
 
 
   useEffect(() => {
-    const initialState = async () => {
-      const response = await api.post(`/feed/${props.fid}/f`)
+    const initialState = () => {
+      const response = backFromAPI//await api.post(`/feed/${props.fid}/f`)
       setQualitative(response.data.questions[1])
       setQuantitative(response.data.questions[0])
       setOpening(response.data.opening)
@@ -151,15 +151,14 @@ export default function FeedbackBlock(props) {
             <React.Fragment>
               { activeStep === steps.length - 1 ? (
                 <QualitativeQuestion
-                  question={qualitative}
-                  options={qualitative.options}
+                  quest={qualitative}
                   onChange={handleComment}
                 />
               ) : (
                   <QuantitativeQuestion
                     opening={opening}
                     // quest={{}}
-                    question={quantitative}
+                    quest={quantitative}
                     options={quantitative.options}
                     onChange={handleNPS}
                   />
