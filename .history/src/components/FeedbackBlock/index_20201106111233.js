@@ -137,7 +137,7 @@ export default function FeedbackBlock(props) {
     <BasicLayout noavatar>
       <div className={classes.root}>
 
-        {activeStep === steps.length ?
+        {/* {activeStep === steps.length ?
           (
             <React.Fragment>
               <Conclusion />
@@ -148,16 +148,16 @@ export default function FeedbackBlock(props) {
             <React.Fragment>
               { activeStep === steps.length - 1 ? (
                 <QualitativeQuestion
-                  quest={questions[1]}
-                  // quest={{ question: "", fields: [] }}
+                  // quest={questions[1].question}
+                  quest={{ question: "", fields: [] }}
 
                   onChange={handleComment}
                 />
               ) : (
                   <QuantitativeQuestion
                     opening={opening}
-                    // quest={{}}
-                    quest={questions[0]}
+                    quest={{}}
+                    // quest={questions[0]}
                     onChange={handleNPS}
                   />
                 )}
@@ -186,7 +186,7 @@ export default function FeedbackBlock(props) {
               </div>
             </React.Fragment>
           )
-        }
+        } */}
         <Stepper activeStep={activeStep}>
           {steps.map((label, index) => {
             const stepProps = {};
