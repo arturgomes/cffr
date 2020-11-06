@@ -3,11 +3,11 @@ import { Grid, Button, Typography, TextField } from "@material-ui/core";
 
 function QualitativeQuestion(props) {
   const [text, settext] = useState('');
-  const question = props.quest;
+  const { question } = props.quest;
   const fields = (<>
     <br />
     <TextField id="filled-basic"
-      value={text}
+      value={this.state.text}
       multiline
       rowsMin={3}
       fullWidth

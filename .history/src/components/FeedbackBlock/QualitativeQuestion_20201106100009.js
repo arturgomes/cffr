@@ -7,7 +7,7 @@ function QualitativeQuestion(props) {
   const fields = (<>
     <br />
     <TextField id="filled-basic"
-      value={text}
+      value={this.state.text}
       multiline
       rowsMin={3}
       fullWidth

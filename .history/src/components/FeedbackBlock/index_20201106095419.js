@@ -146,10 +146,10 @@ export default function FeedbackBlock(props) {
           ) :
           (
             <React.Fragment>
-              { activeStep === steps.length - 1 ? (
+              { activeStep !== steps.length - 1 ? (
                 <QualitativeQuestion
-                  quest={questions[1].question}
-                  onChange={handleComment}
+                // quest={questions[1]}
+                // onChange={handleComment}
                 />
               ) : (
                   <QuantitativeQuestion
