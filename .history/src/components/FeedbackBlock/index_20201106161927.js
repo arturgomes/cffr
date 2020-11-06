@@ -86,7 +86,7 @@ export default function FeedbackBlock(props) {
       initialState();
       setinitial(true);
     }
-  }, [opening, qualitative, quantitative])
+  }, [])
 
   const handleNPS = async (answer) => {
     if (nps_value === null) {
