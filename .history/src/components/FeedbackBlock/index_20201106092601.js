@@ -58,12 +58,11 @@ export default function FeedbackBlock(props) {
   useEffect(() => {
     api.post(`/feed/${props.fid}/f`)
       .then(response => {
+        console.log(response.data)
         const quest = response.data.questions;
         const ope = response.data.opening;
         setquestions(quest)
         setopening(ope)
-        console.log(questions)
-        console.log(questions[1])
       })
   }, [])
 
@@ -148,8 +147,8 @@ export default function FeedbackBlock(props) {
             <React.Fragment>
               { activeStep !== steps.length - 1 ? (
                 <QualitativeQuestion
-                // quest={questions[1]}
-                // onChange={handleComment}
+                  quest={questions[1]}
+                  onChange={handleComment}
                 />
               ) : (
                   <QuantitativeQuestion

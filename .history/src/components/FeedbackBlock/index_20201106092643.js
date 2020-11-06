@@ -58,12 +58,11 @@ export default function FeedbackBlock(props) {
   useEffect(() => {
     api.post(`/feed/${props.fid}/f`)
       .then(response => {
+        console.log(response.data)
         const quest = response.data.questions;
         const ope = response.data.opening;
         setquestions(quest)
         setopening(ope)
-        console.log(questions)
-        console.log(questions[1])
       })
   }, [])
 
