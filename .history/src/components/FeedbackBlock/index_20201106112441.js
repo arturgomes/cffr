@@ -59,11 +59,11 @@ export default function FeedbackBlock(props) {
   useEffect(() => {
     api.post(`/feed/${props.fid}/f`)
       .then(response => {
+        const quest = response.data.questions;
         const ope = response.data.opening;
-        setQualitative(response.data.questions[1])
-        setQuantitative(response.data.questions[0])
+        setQualitative(quest)
         setopening(ope)
-        console.log(qualitative, quantitative)
+        console.log(questions)
         // console.log(questions[1])
       })
   }, [])
@@ -149,7 +149,7 @@ export default function FeedbackBlock(props) {
             <React.Fragment>
               { activeStep === steps.length - 1 ? (
                 <QualitativeQuestion
-                  quest={qualitative}
+                  quest={questions[1]}
                   // quest={{ question: "", fields: [] }}
 
                   onChange={handleComment}
@@ -158,7 +158,7 @@ export default function FeedbackBlock(props) {
                   <QuantitativeQuestion
                     opening={opening}
                     // quest={{}}
-                    quest={quantitative}
+                    quest={questions[0]}
                     onChange={handleNPS}
                   />
                 )}
