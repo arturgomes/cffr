@@ -78,7 +78,7 @@ export default function FeedbackBlock(props) {
 
       setQualitative(response.data.questions[1])
       setQuantitative(response.data.questions[0])
-      setOpening(response.data.opening)
+      setopening(response.data.opening)
       console.log(opening, qualitative, quantitative)
       // console.log(questions[1])
     }
