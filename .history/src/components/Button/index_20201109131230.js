@@ -13,10 +13,10 @@ export default function LoginSocial(props) {
   const componentGoogleRetailClicked = () => {
     window.open("https://api.couponfeed.com.br/auth/google/retail", "_self");
   };
-  const componentFacebookClicked = () => {
+  const componentFacebookClicked = (fid) => {
     window.open("https://api.couponfeed.com.br/auth/facebook", "_self");
   };
-  const componentGoogleClicked = () => {
+  const componentGoogleClicked = (fid) => {
     window.open("https://api.couponfeed.com.br/auth/google", "_self");
   };
   const socialLogin =

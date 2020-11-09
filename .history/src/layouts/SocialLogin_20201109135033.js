@@ -25,7 +25,7 @@ class Validate extends Component {
     }
     else if (getFeedbackTmp() !== null) {
       // await api.get('/auth/success')
-      fetch(`https://api.couponfeed.com.br/auth/success/${getFeedbackTmp()}`,
+      fetch("https://api.couponfeed.com.br/auth/success",
         {
           method: "GET",
           credentials: "include",

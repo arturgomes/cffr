@@ -11,7 +11,7 @@ import BasicLayout from "../components/CouponFeed/BasicLayout";
 import LoginSocial from '../components/Button'
 import api from "../services/api";
 
-import { login, getUser, setFeedbackTmp } from "../services/auth";
+import { login, getUser } from "../services/auth";
 
 export default class Login extends Component {
 
@@ -70,7 +70,7 @@ export default class Login extends Component {
 
   render() {
     const fid = decodeURIComponent(this.props.match.params.fid);
-    setFeedbackTmp(fid);
+
     return (
 
       <BasicLayout title="Fazer Login">

@@ -70,7 +70,7 @@ export default class Login extends Component {
 
   render() {
     const fid = decodeURIComponent(this.props.match.params.fid);
-    setFeedbackTmp(fid);
+    setFeedbackTmp(fid)
     return (
 
       <BasicLayout title="Fazer Login">
