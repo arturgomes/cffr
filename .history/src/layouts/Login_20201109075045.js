@@ -31,7 +31,7 @@ export default class Login extends Component {
       this.setState({ error: "Preencha e-mail e senha para continuar!" });
     } else {
       await api
-        .post("/sessions", { email, password, fid })
+        .post("/sessions", { email, password })
         .then(response => {
           // console.log(response.data);
           if (response.data.login !== null) {

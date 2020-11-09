@@ -36,7 +36,7 @@ function Conclusion(props) {
         </Link>
       </div> */}
 
-      <Link to={`/login/${props.fid}`}>
+      <Link to={`/signup/${props.fid}`}>
         {/* <Link to={`/login/${props.fid}`}> */}
         <Button type="submit"
           style={{
