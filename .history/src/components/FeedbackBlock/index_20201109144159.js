@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, } from "@material-ui/core";
+import { Button, ButtonGroup, } from "@material-ui/core";
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import { Grid, TextField } from "@material-ui/core";
@@ -75,7 +75,7 @@ export default function FeedbackBlock(props) {
   const [skipped, setSkipped] = useState(new Set());
   const [nps_value, setNPS_value] = useState(null);
   const [comment, setComment] = useState("");
-  const [setFinished] = useState(null);
+  const [finished, setFinished] = useState(null);
   const [feedid, setFeedid] = useState(null);
   const [text, settext] = useState('');
 
@@ -147,28 +147,28 @@ export default function FeedbackBlock(props) {
     setSkipped(newSkipped);
   };
 
-  // const handleBack = () => {
-  //   setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  // };
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
 
-  // const handleSkip = () => {
-  //   if (!isStepOptional(activeStep)) {
-  //     // You probably want to guard against something like this,
-  //     // it should never occur unless someone's actively trying to break something.
-  //     throw new Error("You can't skip a step that isn't optional.");
-  //   }
+  const handleSkip = () => {
+    if (!isStepOptional(activeStep)) {
+      // You probably want to guard against something like this,
+      // it should never occur unless someone's actively trying to break something.
+      throw new Error("You can't skip a step that isn't optional.");
+    }
 
-  //   setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  //   setSkipped((prevSkipped) => {
-  //     const newSkipped = new Set(prevSkipped.values());
-  //     newSkipped.add(activeStep);
-  //     return newSkipped;
-  //   });
-  // };
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setSkipped((prevSkipped) => {
+      const newSkipped = new Set(prevSkipped.values());
+      newSkipped.add(activeStep);
+      return newSkipped;
+    });
+  };
 
-  // const handleReset = () => {
-  //   setActiveStep(0);
-  // };
+  const handleReset = () => {
+    setActiveStep(0);
+  };
 
   return (
     <BasicLayout noavatar>

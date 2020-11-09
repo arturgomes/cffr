@@ -75,7 +75,7 @@ export default function FeedbackBlock(props) {
   const [skipped, setSkipped] = useState(new Set());
   const [nps_value, setNPS_value] = useState(null);
   const [comment, setComment] = useState("");
-  const [setFinished] = useState(null);
+  const [finished, setFinished] = useState(null);
   const [feedid, setFeedid] = useState(null);
   const [text, settext] = useState('');
 
