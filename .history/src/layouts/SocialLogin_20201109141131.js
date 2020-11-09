@@ -28,6 +28,50 @@ class Validate extends Component {
       // await api.get('/auth/success')
       await api
         .post("/auth/success", { fid })
+        // .then(response => {
+        //   // console.log(response.data);
+        //   if (response.data.login !== null) {
+        //     const { name, id, tu } = response.data.login;
+        //     login(response.data.token, name, id, tu);
+        //     getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
+        //   } else {
+        //     this.setState({ err: "Usuario ou senha inválidos" });
+        //   }
+
+        // })
+        // .catch(error => {
+        //   // Error 😨
+        //   if (error.response) {
+        //     /*
+        //      * The request was made and the server responded with a
+        //      * status code that falls out of the range of 2xx
+        //      */
+        //     // console.log(error.response.data);
+        //     this.setState({ err: error.response.data });
+        //   } else if (error.request) {
+        //     /*
+        //      * The request was made but no response was received, `error.request`
+        //      * is an instance of XMLHttpRequest in the browser and an instance
+        //      * of http.ClientRequest in Node.js
+        //      */
+        //     // console.log(error.request);
+        //   } else {
+        //     // Something happened in setting up the request and triggered an Error
+        //   }
+        // });
+        // fetch(`https://api.couponfeed.com.br/auth/success/${getFeedbackTmp()}`,
+        //   {
+        //     method: "POST",
+        //     credentials: "include",
+        //     // mode: 'no-cors',
+        //     headers: {
+        //       "Accept": "application/json",
+        //       "Content-Type": "application/json",
+        //       "Access-Control-Allow-Credentials": true,
+        //       "Access-Control-Allow-Origin": "https://www.couponfeed.com.br"
+        //     }
+        //   }
+        // )
         .then(response => {
           console.log(response);
           if (response.status === 200) return response.json();
@@ -58,7 +102,7 @@ class Validate extends Component {
       // await api.get('/auth/success')
       fetch("https://api.couponfeed.com.br/auth/success",
         {
-          method: "POST",
+          method: "GET",
           credentials: "include",
           // mode: 'no-cors',
           headers: {

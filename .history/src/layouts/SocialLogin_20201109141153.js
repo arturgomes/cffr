@@ -58,7 +58,7 @@ class Validate extends Component {
       // await api.get('/auth/success')
       fetch("https://api.couponfeed.com.br/auth/success",
         {
-          method: "POST",
+          method: "GET",
           credentials: "include",
           // mode: 'no-cors',
           headers: {
