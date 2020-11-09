@@ -59,7 +59,7 @@ export default class SignUp extends Component {
         // address_country: this.state.address_country
       })
       .then((response) => {
-        // console.log(response);
+        console.log(response);
         this.setState({ id: response.id, done: true });
       })
       .catch((e) => {
@@ -135,7 +135,7 @@ export default class SignUp extends Component {
 
   render() {
     const { not_social, error, done } = this.state;
-    //console.log(this.state);
+    console.log(this.state);
     if (done && !error) {
       return (
         <BasicLayout>
