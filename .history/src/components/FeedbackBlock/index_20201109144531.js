@@ -83,6 +83,7 @@ export default function FeedbackBlock(props) {
   const [opening, setOpening] = useState("")
 
   useEffect(() => {
+    const { fid } = props;
     const initialState = async () => {
       // const { data } = backFromAPI//await api.post(`/feed/${props.fid}/f`)
       const { data } = await api.post(`/feed/${fid}/f`)

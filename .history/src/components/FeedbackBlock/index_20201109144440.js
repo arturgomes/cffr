@@ -76,13 +76,14 @@ export default function FeedbackBlock(props) {
   const [nps_value, setNPS_value] = useState(null);
   const [comment, setComment] = useState("");
   const [setFinished] = useState(null);
-  const [feedid, setFeedid] = useState(null);
+  const [feedid, setFeedid] = useState(props.fid);
   const [text, settext] = useState('');
-  const [fid, setFid] = useState(props.fid);
+
   const [questions, setQuestions] = useState(backFromAPI.data.questions)
   const [opening, setOpening] = useState("")
 
   useEffect(() => {
+    const { fid } = props;
     const initialState = async () => {
       // const { data } = backFromAPI//await api.post(`/feed/${props.fid}/f`)
       const { data } = await api.post(`/feed/${fid}/f`)
