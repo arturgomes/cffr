@@ -213,10 +213,10 @@ export default function FeedbackBlock(props) {
                 </>
               ) : (
                   <>
-                    <Typography style={{ marginBottom: '30px' }}>
+                    <Typography >
                       {opening}
                     </Typography >
-                    <Typography style={{ marginBottom: '30px' }}>
+                    <Typography style={{ marginTop: '30px', marginBottom: '30px' }}>
                       {questions[0].question}
                     </Typography >
                     <div

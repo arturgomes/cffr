@@ -1,13 +1,11 @@
 .button_group {
-  display: flex;
-  justify-content: center;
+  /* margin: 0 10%; */
 }
 
 .button_nps {
   width: 28px;
   justify-content: space-between;
-  font-size: 10px;
-  font-weight: 500;
+  font-size: 12px;
   height: 28px;
   /* margin: 5px; */
   border-radius: 3px;

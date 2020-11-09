@@ -1,14 +1,6 @@
-.button_group {
-  display: flex;
-  justify-content: center;
-}
-
 .button_nps {
   width: 28px;
   justify-content: space-between;
-  font-size: 10px;
-  font-weight: 500;
-  height: 28px;
   /* margin: 5px; */
   border-radius: 3px;
   border: 1px #fff solid;

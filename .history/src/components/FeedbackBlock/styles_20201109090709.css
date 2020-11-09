@@ -1,0 +1,8 @@
+.button_nps {
+  width: 25px;
+
+  /* margin: 5px; */
+  border-radius: 3px;
+  border: 1px #fff solid;
+  color: #fff;
+}

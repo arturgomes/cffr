@@ -213,24 +213,22 @@ export default function FeedbackBlock(props) {
                 </>
               ) : (
                   <>
-                    <Typography style={{ marginBottom: '30px' }}>
+                    <Typography >
                       {opening}
                     </Typography >
-                    <Typography style={{ marginBottom: '30px' }}>
-                      {questions[0].question}
+                    <Typography style={{ marginTop: '30px', marginBottom: '30px' }}>
+                      <p>{questions[0].question}</p>
                     </Typography >
-                    <div
-                      className='button_group'
-                    // orientation="horizontal"
-                    // color="primary"
-                    // aria-label="outlined primary button group"
-                    // style={{
-                    //   display: 'flex',
-                    //   flexDirection: 'row',
-                    //   alignItems: 'stretch',
-                    //   justifyContent: 'center',
-                    // }}
-                    >
+                    <ButtonGroup
+                      orientation="horizontal"
+                      color="primary"
+                      aria-label="outlined primary button group"
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignItems: 'stretch',
+                        justifyContent: 'center',
+                      }}>
                       {questions[0].options.map((option, index) =>
                         <button
                           size="small"
@@ -255,7 +253,7 @@ export default function FeedbackBlock(props) {
                         </button>
                       )}
                       {/* <Button></Button> */}
-                    </div>
+                    </ButtonGroup>
 
                   </ >
                 )

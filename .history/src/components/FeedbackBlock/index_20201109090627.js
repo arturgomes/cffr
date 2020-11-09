@@ -213,14 +213,13 @@ export default function FeedbackBlock(props) {
                 </>
               ) : (
                   <>
-                    <Typography style={{ marginBottom: '30px' }}>
+                    <Typography >
                       {opening}
                     </Typography >
-                    <Typography style={{ marginBottom: '30px' }}>
+                    <Typography style={{ marginTop: '30px', marginBottom: '30px' }}>
                       {questions[0].question}
                     </Typography >
                     <div
-                      className='button_group'
                     // orientation="horizontal"
                     // color="primary"
                     // aria-label="outlined primary button group"

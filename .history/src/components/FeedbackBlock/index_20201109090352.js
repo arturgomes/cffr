@@ -213,28 +213,25 @@ export default function FeedbackBlock(props) {
                 </>
               ) : (
                   <>
-                    <Typography style={{ marginBottom: '30px' }}>
+                    <Typography >
                       {opening}
                     </Typography >
-                    <Typography style={{ marginBottom: '30px' }}>
-                      {questions[0].question}
+                    <Typography style={{ marginTop: '30px', marginBottom: '30px' }}>
+                      <p>{questions[0].question}</p>
                     </Typography >
-                    <div
-                      className='button_group'
-                    // orientation="horizontal"
-                    // color="primary"
-                    // aria-label="outlined primary button group"
-                    // style={{
-                    //   display: 'flex',
-                    //   flexDirection: 'row',
-                    //   alignItems: 'stretch',
-                    //   justifyContent: 'center',
-                    // }}
-                    >
+                    <ButtonGroup
+                      orientation="horizontal"
+                      color="primary"
+                      aria-label="outlined primary button group"
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignItems: 'stretch',
+                        justifyContent: 'center',
+                      }}>
                       {questions[0].options.map((option, index) =>
-                        <button
+                        <Button
                           size="small"
-                          className="button_nps"
                           style={{
                             // display: 'flex',
                             backgroundColor: option.color,
@@ -252,10 +249,10 @@ export default function FeedbackBlock(props) {
                           onClick={() => handleNPS(option.value)}
                           type="button"
                         >{option.value}
-                        </button>
+                        </Button>
                       )}
                       {/* <Button></Button> */}
-                    </div>
+                    </ButtonGroup>
 
                   </ >
                 )
