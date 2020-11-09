@@ -18,9 +18,7 @@ export default function LoginSocial(props) {
       window.open(`https://api.couponfeed.com.br/auth/facebook/${fid}`, "_self");
 
     }
-    else {
-      window.open("https://api.couponfeed.com.br/auth/facebook", "_self");
-    }
+    window.open("https://api.couponfeed.com.br/auth/facebook", "_self");
   };
   const componentGoogleClicked = (fid) => {
     if (fid) {

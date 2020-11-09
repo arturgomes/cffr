@@ -13,22 +13,11 @@ export default function LoginSocial(props) {
   const componentGoogleRetailClicked = () => {
     window.open("https://api.couponfeed.com.br/auth/google/retail", "_self");
   };
-  const componentFacebookClicked = (fid) => {
-    if (fid) {
-      window.open(`https://api.couponfeed.com.br/auth/facebook/${fid}`, "_self");
-
-    }
-    else {
-      window.open("https://api.couponfeed.com.br/auth/facebook", "_self");
-    }
+  const componentFacebookClicked = () => {
+    window.open("https://api.couponfeed.com.br/auth/facebook", "_self");
   };
-  const componentGoogleClicked = (fid) => {
-    if (fid) {
-      window.open(`https://api.couponfeed.com.br/auth/google/${fid}`, "_self");
-    }
-    else {
-      window.open("https://api.couponfeed.com.br/auth/google", "_self");
-    }
+  const componentGoogleClicked = () => {
+    window.open("https://api.couponfeed.com.br/auth/google", "_self");
   };
   const socialLogin =
     (<>

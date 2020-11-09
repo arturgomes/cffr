@@ -121,7 +121,7 @@ export default class Login extends Component {
           <Grid container>
             <Grid item>
               <Link
-                href={`/signup/${fid}`} variant="body2">
+                href="/signup" variant="body2">
                 {"Ainda não se cadastrou? Faça já o seu!"}
               </Link>
             </Grid>
