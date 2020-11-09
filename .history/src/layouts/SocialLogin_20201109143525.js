@@ -26,7 +26,8 @@ class Validate extends Component {
     else if (getFeedbackTmp() !== null) {
       const fid = getFeedbackTmp();
       // await api.get('/auth/success')
-      await api.post("/auth/success", { fid })
+      await api
+        .post("/auth/success", { fid })
         .then(response => {
           // console.log(response);
           if (response.status === 200) return response.json();

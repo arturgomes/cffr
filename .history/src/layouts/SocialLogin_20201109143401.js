@@ -26,7 +26,8 @@ class Validate extends Component {
     else if (getFeedbackTmp() !== null) {
       const fid = getFeedbackTmp();
       // await api.get('/auth/success')
-      await api.post("/auth/success", { fid })
+      await api
+        .post("/auth/success", { fid })
         .then(response => {
           // console.log(response);
           if (response.status === 200) return response.json();
@@ -55,20 +56,19 @@ class Validate extends Component {
     }
     else {
       // await api.get('/auth/success')
-      await api.post("/auth/success")
-        // fetch("https://api.couponfeed.com.br/auth/success",
-        //   {
-        //     method: "POST",
-        //     credentials: "include",
-        //     // mode: 'no-cors',
-        //     headers: {
-        //       "Accept": "application/json",
-        //       "Content-Type": "application/json",
-        //       "Access-Control-Allow-Credentials": true,
-        //       "Access-Control-Allow-Origin": "https://www.couponfeed.com.br"
-        //     }
-        //   }
-        // )
+      fetch("https://api.couponfeed.com.br/auth/success",
+        {
+          method: "POST",
+          credentials: "include",
+          // mode: 'no-cors',
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Credentials": true,
+            "Access-Control-Allow-Origin": "https://www.couponfeed.com.br"
+          }
+        }
+      )
         .then(response => {
           console.log(response);
           if (response.status === 200) return response.json();
