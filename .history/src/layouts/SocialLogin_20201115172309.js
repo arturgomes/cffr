@@ -55,6 +55,33 @@ class Validate extends Component {
           });
         });
     }
+    else {
+      await api.post("/auth/success")
+        .then(response => {
+          console.log(response);
+          if (response.status === 200) return response.json();
+          throw new Error("failed to authenticate user");
+        })
+        .then(responseJson => {
+          const { success, login, token } = responseJson;
+          this.setState({
+            authenticated: success,
+            isLoading: success,
+          });
+          const { name, id, tu } = login;
+          localStorage.setItem("tk", token);
+          localStorage.setItem("usr", name);
+          localStorage.setItem("ui", id);
+          localStorage.setItem("tu", tu);
+          getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
+
+        })
+        .catch(error => {
+          this.setState({
+            error: "Failed to authenticate user"
+          });
+        });
+    }
   }
 
   render() {
