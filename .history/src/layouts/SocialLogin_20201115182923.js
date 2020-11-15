@@ -32,20 +32,15 @@ class Validate extends Component {
           throw new Error("failed to authenticate user");
         })
         .then(responseJson => {
-          console.log("passou na autenticação")
           const { success, login, token } = responseJson;
           this.setState({
             authenticated: success,
             isLoading: success,
           });
-          console.log("set state ok")
-
           const { name, id, tu } = login;
           if (getFeedbackTmp() !== null) {
             api.post('/users/add/feedback', { user_id: id, tmp_feedback: getFeedbackTmp() })
           }
-          console.log("nao entrou no feedback temp")
-
           localStorage.setItem("tk", token);
           localStorage.setItem("usr", name);
           localStorage.setItem("ui", id);
