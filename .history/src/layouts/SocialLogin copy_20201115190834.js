@@ -10,7 +10,6 @@ import {
   // login, 
   getUser, isAuthenticated
 } from "../services/auth";
-
 export default function SocialLogin() {
   const [success, setsuccess] = useState(false)
   useEffect(() => {
@@ -20,7 +19,7 @@ export default function SocialLogin() {
     else {
       const fid = getFeedbackTmp();
       // await api.get('/auth/success')
-      api.post("/auth/success", { fid })
+      await api.post("/auth/success", { fid })
         .then(response => {
           if (response.status === 200) return response.json();
           throw new Error("failed to authenticate user");
@@ -50,7 +49,7 @@ export default function SocialLogin() {
         });
     }
   }, [])
-  if (!success) {
+  if (!isAuthenticated()) {
     return <LinearProgress />
   }
   else {

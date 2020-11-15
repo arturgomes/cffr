@@ -50,7 +50,7 @@ export default function SocialLogin() {
         });
     }
   }, [])
-  if (!success) {
+  if (!isAuthenticated()) {
     return <LinearProgress />
   }
   else {

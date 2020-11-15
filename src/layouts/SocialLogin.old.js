@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 
 import { Redirect } from "react-router-dom";
 import api from '../services/api'
@@ -11,16 +11,21 @@ import {
   getUser, isAuthenticated
 } from "../services/auth";
 
-export default function SocialLogin() {
-  const [success, setsuccess] = useState(false)
-  useEffect(() => {
+// import api from "../services/api";
+
+class Validate extends Component {
+  state = {
+    success: false,
+  }
+
+  async componentDidMount() {
     if (isAuthenticated()) {
       getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
     }
     else {
       const fid = getFeedbackTmp();
       // await api.get('/auth/success')
-      api.post("/auth/success", { fid })
+      await api.post("/auth/success", { fid })
         .then(response => {
           if (response.status === 200) return response.json();
           throw new Error("failed to authenticate user");
@@ -28,8 +33,12 @@ export default function SocialLogin() {
         .then(responseJson => {
           console.log("passou na autenticação")
           const { success, login, token } = responseJson;
+          this.setState({
+            authenticated: success,
+            isLoading: success,
+          });
           console.log("set state ok")
-          setsuccess(success);
+
           const { name, id, tu } = login;
           if (getFeedbackTmp() !== null) {
             api.post('/users/add/feedback', { user_id: id, tmp_feedback: getFeedbackTmp() })
@@ -40,7 +49,7 @@ export default function SocialLogin() {
           localStorage.setItem("usr", name);
           localStorage.setItem("ui", id);
           localStorage.setItem("tu", tu);
-          // getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
+          getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
 
         })
         .catch(error => {
@@ -49,13 +58,18 @@ export default function SocialLogin() {
           });
         });
     }
-  }, [])
-  if (!success) {
-    return <LinearProgress />
-  }
-  else {
-    const next = getUser() === 'customer' ? "/customer" : "/retail";
-    return <Redirect to={next} />;
   }
 
+  render() {
+    if (!this.state.authenticated) {
+      return <LinearProgress />
+    }
+    else {
+      const next = getUser() === 'customer' ? "/customer" : "/retail";
+      return <Redirect to={next} />;
+    }
+
+  }
 }
+
+export default Validate;
