@@ -27,6 +27,7 @@ export default function SocialLogin() {
           const { success, login, token } = responseJson;
           const { name, id, tu } = login;
           console.log(getFeedbackTmp())
+          console.log("set state ok")
           console.log("nao entrou no feedback temp")
 
           localStorage.setItem("tk", token);
@@ -34,8 +35,6 @@ export default function SocialLogin() {
           localStorage.setItem("ui", id);
           localStorage.setItem("tu", tu);
           setsuccess(success);
-          console.log("set state ok")
-
 
           // getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
 
