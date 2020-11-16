@@ -25,10 +25,10 @@ export default function SocialLogin() {
         .then(responseJson => {
           console.log("passou na autenticação")
           const { success, login, token } = responseJson;
+          console.log("set state ok")
           setsuccess(success);
           const { name, id, tu } = login;
           console.log(getFeedbackTmp())
-          console.log("set state ok")
 
           console.log("nao entrou no feedback temp")
 
