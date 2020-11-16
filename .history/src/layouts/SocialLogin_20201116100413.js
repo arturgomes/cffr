@@ -12,7 +12,7 @@ import {
 } from "../services/auth";
 
 export default function SocialLogin() {
-  const [succ, setSucc] = useState(false)
+  const [success, setSuccess] = useState(false)
   useEffect(() => {
     console.log("entrou no useeffect")
 
@@ -33,10 +33,8 @@ export default function SocialLogin() {
         window.localStorage.setItem("usr", name);
         window.localStorage.setItem("ui", id);
         window.localStorage.setItem("tu", tu);
-        // login(token, name, id, tu);
-        setSucc(success);
-        console.log(localStorage.getId())
-        console.log(localStorage.getId())
+        login(token, name, id, tu);
+        setSuccess(success);
         console.log("set state ok")
       })
       .catch(error => {
@@ -49,11 +47,11 @@ export default function SocialLogin() {
           console.log(response);
         })
     }
-  }, [succ])
+  }, [success])
   if (isAuthenticated()) {
     getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
   }
-  if (!succ) {
+  if (!success) {
     return <LinearProgress />
   }
   else {

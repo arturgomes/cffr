@@ -49,11 +49,11 @@ export default function SocialLogin() {
           console.log(response);
         })
     }
-  }, [succ])
+  }, [success])
   if (isAuthenticated()) {
     getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
   }
-  if (!succ) {
+  if (!success) {
     return <LinearProgress />
   }
   else {
