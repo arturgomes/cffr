@@ -26,13 +26,13 @@ class Validate extends Component {
       const fid = getFeedbackTmp();
       // await api.get('/auth/success')
       await api.post("/auth/success", { fid })
-        .then(response => {
-          if (response.status === 200) return response.json();
-          throw new Error("failed to authenticate user");
-        })
+        // .then(response => {
+        //   if (response.status === 200) return response.json();
+        //   throw new Error("failed to authenticate user");
+        // })
         .then(responseJson => {
           console.log("passou na autenticação")
-          const { success, login, token } = responseJson;
+          const { success, login, token } = responseJson.data;
           this.setState({
             authenticated: success,
             isLoading: success,
