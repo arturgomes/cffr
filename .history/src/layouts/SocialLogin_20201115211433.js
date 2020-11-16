@@ -7,7 +7,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 
 import {
   getFeedbackTmp,
-  getId,
+  // login, 
   getUser, isAuthenticated
 } from "../services/auth";
 
@@ -15,8 +15,10 @@ export default function SocialLogin() {
   const [success, setsuccess] = useState(false)
   useEffect(() => {
     console.log("entrou no useeffect")
-
-    {
+    if (isAuthenticated()) {
+      getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
+    }
+    else {
       api.post("/auth/success")
         // .then(response => {
         //   if (response.status === 200) return response.json();
@@ -46,17 +48,7 @@ export default function SocialLogin() {
         });
     }
   }, [])
-  useEffect(() => {
-    if (getFeedbackTmp() !== null) {
-      api.post('/users/add/feedback', { user_id: getId(), tmp_feedback: getFeedbackTmp() })
-        .then(response => {
-          console.log(response);
-        })
-    }
-  }, [success])
-  if (isAuthenticated()) {
-    getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
-  }
+
   if (!success) {
     return <LinearProgress />
   }

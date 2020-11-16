@@ -15,8 +15,10 @@ export default function SocialLogin() {
   const [success, setsuccess] = useState(false)
   useEffect(() => {
     console.log("entrou no useeffect")
-
-    {
+    if (isAuthenticated()) {
+      getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
+    }
+    else {
       api.post("/auth/success")
         // .then(response => {
         //   if (response.status === 200) return response.json();
@@ -54,9 +56,6 @@ export default function SocialLogin() {
         })
     }
   }, [success])
-  if (isAuthenticated()) {
-    getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
-  }
   if (!success) {
     return <LinearProgress />
   }

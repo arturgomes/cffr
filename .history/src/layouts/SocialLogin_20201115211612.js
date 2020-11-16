@@ -54,9 +54,6 @@ export default function SocialLogin() {
         })
     }
   }, [success])
-  if (isAuthenticated()) {
-    getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
-  }
   if (!success) {
     return <LinearProgress />
   }
