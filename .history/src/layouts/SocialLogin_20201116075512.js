@@ -16,25 +16,34 @@ export default function SocialLogin() {
   useEffect(() => {
     console.log("entrou no useeffect")
 
-    api.post("/auth/success")
-      .then(response => {
-        if (response.status === 200) return response.json();
-        throw new Error("failed to authenticate user");
-      })
-      .then(responseJson => {
-        console.log("passou na autenticação")
-        const { success, login, token } = responseJson;
-        console.log(responseJson)
+    {
+      api.post("/auth/success")
+        // .then(response => {
+        //   if (response.status === 200) return response.json();
+        //   throw new Error("failed to authenticate user");
+        // })
+        .then(responseJson => {
+          console.log("passou na autenticação")
+          const { success, login, token } = responseJson;
+          console.log(responseJson)
 
-        const { name, id, tu } = login;
-        console.log(getFeedbackTmp())
-        console.log("nao entrou no feedback temp")
-        login(token, name, id, tu);
-        setsuccess(success);
-        console.log("set state ok")
-      })
-      .catch(error => {
-      });
+          const { name, id, tu } = login;
+          console.log(getFeedbackTmp())
+          console.log("nao entrou no feedback temp")
+          login(token, name, id, tu)
+          setsuccess(success);
+          console.log("set state ok")
+
+
+          // getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
+
+        })
+        .catch(error => {
+          // this.setState({
+          //   error: "Failed to authenticate user"
+          // });
+        });
+    }
   }, [])
   useEffect(() => {
     if (getFeedbackTmp() !== null) {

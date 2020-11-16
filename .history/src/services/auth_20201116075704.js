@@ -1,8 +1,8 @@
 export const isAuthenticated = () => localStorage.getItem("ui") !== null;
-export const getToken = () => localStorage.getItem("tk");
-export const getName = () => localStorage.getItem("usr");
-export const getId = () => localStorage.getItem("ui");
-export const getTu = () => localStorage.getItem("tu");
+export const setId = (i) => { }
+export const setName = (i) => { }
+export const setUser = (i) => { }
+export const setTu = (i) => { }
 export const getUser = () => localStorage.getItem("tu") === '897316929176464ebc9ad085f31e7284' ? "customer" : "retail"
 export const login = (token, name, id, tu) => {
   localStorage.setItem("tk", token);

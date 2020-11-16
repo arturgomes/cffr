@@ -17,10 +17,10 @@ export default function SocialLogin() {
     console.log("entrou no useeffect")
 
     api.post("/auth/success")
-      .then(response => {
-        if (response.status === 200) return response.json();
-        throw new Error("failed to authenticate user");
-      })
+      // .then(response => {
+      //   if (response.status === 200) return response.json();
+      //   throw new Error("failed to authenticate user");
+      // })
       .then(responseJson => {
         console.log("passou na autenticação")
         const { success, login, token } = responseJson;
@@ -32,8 +32,12 @@ export default function SocialLogin() {
         login(token, name, id, tu);
         setsuccess(success);
         console.log("set state ok")
+
+
+
       })
       .catch(error => {
+
       });
   }, [])
   useEffect(() => {
