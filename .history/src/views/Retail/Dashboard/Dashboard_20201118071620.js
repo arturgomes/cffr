@@ -128,7 +128,7 @@ class Dashboard extends Component {
     const percNegative = this.state.negFeedbacks / this.state.totalFeedbacks;
     const avrg = percPositive - percNegative;
     const percAvrg = (avrg * 100) / this.state.totalFeedbacks;
-    return percAvrg;
+    return avrg;
   };
   render() {
     // this.genFeedbackPorDia();
