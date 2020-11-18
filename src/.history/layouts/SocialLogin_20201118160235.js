@@ -20,9 +20,9 @@ class SocialLogin extends Component {
     // await api.get('/auth/success')
     await api.post("/auth/success", { fid })
       .then(responseJson => {
-        const { success, loginUser, token } = responseJson.data;
+        const { success, log as login, token } = responseJson.data;
         if (success) {
-          const { name, id, tu } = loginUser;
+          const { name, id, tu } = log;
           if (getFeedbackTmp() !== null) {
             console.log("Aqui entrou um feedback: ", getFeedbackTmp());
             api.post('/users/add/feedback', { user_id: id, tmp_feedback: getFeedbackTmp() })

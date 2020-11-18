@@ -7,7 +7,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 
 import {
   getFeedbackTmp, unsetFeedbackTmp,
-  login,
+  login, getId,
   getUser, isAuthenticated
 } from "../services/auth";
 
@@ -20,14 +20,9 @@ class SocialLogin extends Component {
     // await api.get('/auth/success')
     await api.post("/auth/success", { fid })
       .then(responseJson => {
-        const { success, loginUser, token } = responseJson.data;
+        const { success, login, token } = responseJson.data;
         if (success) {
-          const { name, id, tu } = loginUser;
-          if (getFeedbackTmp() !== null) {
-            console.log("Aqui entrou um feedback: ", getFeedbackTmp());
-            api.post('/users/add/feedback', { user_id: id, tmp_feedback: getFeedbackTmp() })
-            unsetFeedbackTmp();
-          }
+          const { name, id, tu } = login;
           login(token, name, id, tu);
         }
         else {
@@ -39,6 +34,11 @@ class SocialLogin extends Component {
         //   error: "Failed to authenticate user"
         // });
       });
+    if (getFeedbackTmp() !== null) {
+      console.log("Aqui entrou um feedback: ", getFeedbackTmp());
+      await api.post('/users/add/feedback', { user_id: getId(), tmp_feedback: getFeedbackTmp() })
+      unsetFeedbackTmp();
+    }
   }
 
   render() {

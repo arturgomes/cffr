@@ -22,7 +22,7 @@ class SocialLogin extends Component {
       .then(responseJson => {
         const { success, loginUser, token } = responseJson.data;
         if (success) {
-          const { name, id, tu } = loginUser;
+          const { name, id, tu } = log;
           if (getFeedbackTmp() !== null) {
             console.log("Aqui entrou um feedback: ", getFeedbackTmp());
             api.post('/users/add/feedback', { user_id: id, tmp_feedback: getFeedbackTmp() })
