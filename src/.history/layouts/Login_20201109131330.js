@@ -2,8 +2,7 @@ import React, { Component } from "react";
 // creates a beautiful scrollbar
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 
-import { getUser } from '../services/auth'
-import RedirectLogin from "../components/RedirectLogin";
+
 import Button from "../components/CustomButtons/Button.js";
 import TextField from "@material-ui/core/TextField";
 import Grid from '@material-ui/core/Grid';
@@ -12,7 +11,7 @@ import BasicLayout from "../components/CouponFeed/BasicLayout";
 import LoginSocial from '../components/Button'
 import api from "../services/api";
 
-import { login } from "../services/auth";
+import { login, getUser, setFeedbackTmp } from "../services/auth";
 
 export default class Login extends Component {
 
@@ -26,19 +25,19 @@ export default class Login extends Component {
 
   handleSignIn = async e => {
     e.preventDefault();
-
+    const fid = decodeURIComponent(this.props.match.params.fid);
     const { email, password } = this.state;
     if (!email || !password) {
       this.setState({ error: "Preencha e-mail e senha para continuar!" });
     } else {
       await api
-        .post("/rsessions", { email, password })
+        .post("/sessions", { email, password, fid })
         .then(response => {
           // console.log(response.data);
           if (response.data.login !== null) {
             const { name, id, tu } = response.data.login;
             login(response.data.token, name, id, tu);
-            this.props.history.push("/retail");
+            getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
           } else {
             this.setState({ err: "Usuario ou senha inválidos" });
           }
@@ -69,39 +68,26 @@ export default class Login extends Component {
   };
 
 
-
   render() {
-    if (getUser() !== null) return <RedirectLogin user={getUser()} />
-
+    const fid = decodeURIComponent(this.props.match.params.fid);
+    setFeedbackTmp(fid);
     return (
 
-      <BasicLayout avatar title="Fazer Login">
-        {/* <Avatar className={useStyles.avatar}>
-          <LockOutlinedIcon />
-        </Avatar> */}
-        {/* <Typography component="h1" variant="h5">
-          Fazer Login
-        </Typography> */}
-        <div style={{ marginTop: '20px', marginBottom: '20px' }}>
-          {/* <LoginSocial /> */}
-          <LoginSocial caption="Fazer login com " />
+      <BasicLayout title="Fazer Login">
 
+        <div style={{ marginTop: '20px', marginBottom: '20px' }}>
+          <LoginSocial caption="Fazer login com " />
         </div>
 
-        {/* <Divider horizontal className={useStyles.divider}> */}
-        {/* ou */}
-        {/* </Divider> */}
 
         <form
           style={{ marginLeft: "50px", marginRight: "50px" }}
-          // className={useStyles.form}
           noValidate
           onSubmit={this.handleSignIn}
         >
           <hr style={{ width: "100%", borderTop: "3px rounded #bbb" }} />
 
           <TextField
-            // variant="outlined"
             margin="normal"
             required
             fullWidth
@@ -113,7 +99,6 @@ export default class Login extends Component {
             onChange={e => this.setState({ email: e.target.value })}
           />
           <TextField
-            // variant="outlined"
             style={{ marginBottom: '30px' }}
             margin="normal"
             required
@@ -125,34 +110,23 @@ export default class Login extends Component {
             autoComplete="current-password"
             onChange={e => this.setState({ password: e.target.value })}
           />
-          {/* <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              /> */}
           <Button
             type="submit"
             fullWidth
             variant="contained"
             color="success"
-          // className={useStyles.submit}
           >
             Faça login
             </Button>
           <Grid container>
-            {/* <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                </Link>
-                </Grid> */}
             <Grid item>
               <Link
-                href="/rsignup" variant="body2">
+                href={`/signup/${fid}`} variant="body2">
                 {"Ainda não se cadastrou? Faça já o seu!"}
               </Link>
             </Grid>
           </Grid>
         </form>
-
       </BasicLayout>
     );
   }

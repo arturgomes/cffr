@@ -18,13 +18,12 @@ class SocialLogin extends Component {
   async componentDidMount() {
     const fid = getFeedbackTmp();
     // await api.get('/auth/success')
-    await api.post("/auth/success")
+    await api.post("/auth/success", { fid })
       .then(responseJson => {
+        console.log("Sucesso no login!");
 
         const { success, loginUser, token } = responseJson.data;
         if (success) {
-          console.log("Sucesso no login!", success);
-
           const { name, id, tu } = loginUser;
           if (getFeedbackTmp() !== null) {
             console.log("Aqui entrou um feedback: ", getFeedbackTmp());

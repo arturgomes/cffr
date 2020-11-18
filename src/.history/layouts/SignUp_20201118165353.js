@@ -116,7 +116,7 @@ export default class SignUp extends Component {
     });
   }
   render() {
-    if (getUser() !== null) return <RedirectLogin user={getUser()} />
+    if (getUser() !== null) <RedirectLogin user={getUser()} />
     const { error, done } = this.state;
 
     if (done && !error) {

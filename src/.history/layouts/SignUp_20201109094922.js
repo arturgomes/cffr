@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import { getUser } from '../services/auth'
-
 import cep from 'cep-promise';
 import { isCEP, formatToCEP, isCPF, formatToCPF } from 'brazilian-values';
 
-import RedirectLogin from "../components/RedirectLogin";
 import BasicLayout from "../components/CouponFeed/BasicLayout";
 import RenderConclusion from "../components/CouponFeed/SignUpForm/Customer/RenderConclusion";
 import RenderForm from "../components/CouponFeed/SignUpForm/Customer/RenderForm";
+
 import api from "../services/api"
 
 
@@ -116,7 +114,6 @@ export default class SignUp extends Component {
     });
   }
   render() {
-    if (getUser() !== null) return <RedirectLogin user={getUser()} />
     const { error, done } = this.state;
 
     if (done && !error) {

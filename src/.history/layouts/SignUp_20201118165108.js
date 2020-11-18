@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { getUser } from '../services/auth'
 
 import cep from 'cep-promise';
 import { isCEP, formatToCEP, isCPF, formatToCPF } from 'brazilian-values';
@@ -116,9 +115,9 @@ export default class SignUp extends Component {
     });
   }
   render() {
-    if (getUser() !== null) return <RedirectLogin user={getUser()} />
-    const { error, done } = this.state;
 
+    const { error, done } = this.state;
+    <RedirectLogin />
     if (done && !error) {
       return (
         <BasicLayout>

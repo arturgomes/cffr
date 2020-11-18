@@ -2,8 +2,7 @@ import React, { Component } from "react";
 // creates a beautiful scrollbar
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 
-import { getUser } from '../services/auth'
-import RedirectLogin from "../components/RedirectLogin";
+
 import Button from "../components/CustomButtons/Button.js";
 import TextField from "@material-ui/core/TextField";
 import Grid from '@material-ui/core/Grid';
@@ -71,7 +70,6 @@ export default class Login extends Component {
 
 
   render() {
-    if (getUser() !== null) return <RedirectLogin user={getUser()} />
 
     return (
 

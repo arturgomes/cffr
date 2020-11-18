@@ -3,8 +3,6 @@ import cep from "cep-promise";
 import { formatToCEP, isCNPJ, formatToCNPJ, isCEP } from "brazilian-values";
 
 import { BiLogIn } from "react-icons/bi";
-import { getUser } from '../services/auth'
-import RedirectLogin from "../components/RedirectLogin";
 
 // import Button from "../components/CustomButtons/Button.js";
 // import TextField from "@material-ui/core/TextField";
@@ -136,8 +134,6 @@ export default class SignUp extends Component {
   };
 
   render() {
-    if (getUser() !== null) return <RedirectLogin user={getUser()} />
-
     const { not_social, error, done } = this.state;
     //console.log(this.state);
     if (done && !error) {
