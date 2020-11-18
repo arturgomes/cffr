@@ -193,15 +193,15 @@ export default function FeedbackBlock(props) {
                       {(<>
                         <br />
                         <TextField id="filled-basic"
-                          value={comment}
+                          value={text}
                           multiline
                           // rowsMin={3}
                           fullWidth
-                          onChange={(e) => setComment(e.target.value)} label="descreva aqui em poucas palavras" />
+                          onChange={(e) => setText(e.target.value)} label="descreva aqui em poucas palavras" />
                         <br />
 
                         <Button
-                          onClick={() => handleComment(comment)}
+                          onClick={() => handleComment(text)}
                           style={{ marginTop: 16, marginBottom: 16 }}
                           fullWidth
                           variant="contained"

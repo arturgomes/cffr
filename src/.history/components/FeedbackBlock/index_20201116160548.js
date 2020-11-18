@@ -77,7 +77,7 @@ export default function FeedbackBlock(props) {
   const [comment, setComment] = useState("");
   const [finished, setFinished] = useState(null);
   const [feedid, setFeedid] = useState(null);
-  const [text, setText] = useState('');
+  const [text, settext] = useState('');
   const [fid, setFid] = useState(props.fid);
   const [questions, setQuestions] = useState(backFromAPI.data.questions)
   const [opening, setOpening] = useState("")
@@ -193,15 +193,15 @@ export default function FeedbackBlock(props) {
                       {(<>
                         <br />
                         <TextField id="filled-basic"
-                          value={comment}
+                          value={text}
                           multiline
                           // rowsMin={3}
                           fullWidth
-                          onChange={(e) => setComment(e.target.value)} label="descreva aqui em poucas palavras" />
+                          onChange={(e) => settext(e.target.value)} label="descreva aqui em poucas palavras" />
                         <br />
 
                         <Button
-                          onClick={() => handleComment(comment)}
+                          onClick={() => handleComment(text)}
                           style={{ marginTop: 16, marginBottom: 16 }}
                           fullWidth
                           variant="contained"

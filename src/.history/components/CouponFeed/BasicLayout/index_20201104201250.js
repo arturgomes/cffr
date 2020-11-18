@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 
 import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
-import logo from "../../../assets/completa_fundo_claro@4x.png";
+import logo from "../../../assets/img/completa_fundo_claro@4x.png";
 import Copyright from "../Copyright";
 
 
