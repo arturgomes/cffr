@@ -21,22 +21,18 @@ class SocialLogin extends Component {
     await api.post("/auth/success", { fid })
       .then(responseJson => {
         const { success, login, token } = responseJson.data;
-        if (success) {
-          const { name, id, tu } = login;
-          if (getFeedbackTmp() !== null) {
-            api.post('/users/add/feedback', { user_id: id, tmp_feedback: getFeedbackTmp() })
-            unsetFeedbackTmp();
-          }
-          login(token, name, id, tu);
+
+        const { name, id, tu } = login;
+        if (getFeedbackTmp() !== null) {
+          api.post('/users/add/feedback', { user_id: id, tmp_feedback: getFeedbackTmp() })
+          unsetFeedbackTmp();
         }
-        else {
-          this.props.history.push("/login");
-        }
+        login(token, name, id, tu);
       })
       .catch(error => {
-        // this.setState({
-        //   error: "Failed to authenticate user"
-        // });
+        this.setState({
+          error: "Failed to authenticate user"
+        });
       });
   }
 

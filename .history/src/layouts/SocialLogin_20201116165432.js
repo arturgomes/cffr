@@ -30,7 +30,7 @@ class SocialLogin extends Component {
           login(token, name, id, tu);
         }
         else {
-          this.props.history.push("/login");
+          this.props.history.push("/login")
         }
       })
       .catch(error => {

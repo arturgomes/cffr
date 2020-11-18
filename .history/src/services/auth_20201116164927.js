@@ -11,7 +11,6 @@ export const login = (token, name, id, tu) => {
   localStorage.setItem("tu", tu);
 };
 export const getFeedbackTmp = () => localStorage.getItem("fb");
-export const unsetFeedbackTmp = () => localStorage.removeItem("fb");
 export const setFeedbackTmp = (fb) => {
   localStorage.setItem("fb", fb);
 };

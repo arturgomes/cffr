@@ -20,23 +20,26 @@ class SocialLogin extends Component {
     // await api.get('/auth/success')
     await api.post("/auth/success", { fid })
       .then(responseJson => {
+        console.log("passou na autenticação")
         const { success, login, token } = responseJson.data;
-        if (success) {
-          const { name, id, tu } = login;
-          if (getFeedbackTmp() !== null) {
-            api.post('/users/add/feedback', { user_id: id, tmp_feedback: getFeedbackTmp() })
-            unsetFeedbackTmp();
-          }
-          login(token, name, id, tu);
+
+        console.log("set state ok")
+
+        const { name, id, tu } = login;
+        if (getFeedbackTmp() !== null) {
+          api.post('/users/add/feedback', { user_id: id, tmp_feedback: getFeedbackTmp() })
+          unsetFeedbackTmp();
         }
-        else {
-          this.props.history.push("/login");
-        }
+        console.log("nao entrou no feedback temp")
+        login(token, name, id, tu);
+
+        // getUser() === 'customer' ? this.props.history.push("/customer") : this.props.history.push("/retail");
+
       })
       .catch(error => {
-        // this.setState({
-        //   error: "Failed to authenticate user"
-        // });
+        this.setState({
+          error: "Failed to authenticate user"
+        });
       });
   }
 

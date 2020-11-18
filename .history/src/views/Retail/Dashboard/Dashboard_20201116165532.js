@@ -124,10 +124,7 @@ class Dashboard extends Component {
 
   };
   handleNPS = () => {
-    const percPositive = this.state.posFeedbacks / this.state.totalFeedbacks;
-    const percNegative = this.state.negFeedbacks / this.state.totalFeedbacks;
-    const avrg = percPositive - percNegative;
-    return avrg;
+    return this.state.average;
   };
   render() {
     // this.genFeedbackPorDia();
