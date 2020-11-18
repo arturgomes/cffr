@@ -9,7 +9,7 @@ import React, { Component } from "react";
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
 import HeaderLinks from "../../Header/HeaderLinks.js";
 
-import slogan from "../../../assets/completa_fundo_claro@4x.png"
+import slogan from "../../../assets/images/sem_slogan_fundo_claro@4x.png"
 
 import Header from "../../../components/Header/Header.js";
 // import Button from "../../../components/CustomButtons/Button.js";
@@ -42,7 +42,7 @@ export default class Menu extends Component {
             color: "white"
           }}
         />
-      </>
+       </>
     );
   }
 }
