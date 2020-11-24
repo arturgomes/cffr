@@ -78,7 +78,7 @@ export default function FeedbackBlock(props) {
   // const [finished, setFinished] = useState(null);
   const [feedid, setFeedid] = useState(null);
   // const [text, setText] = useState('');
-  const [fid] = useState(props.fid);
+  const [fid, setFid] = useState(props.fid);
   const [questions, setQuestions] = useState(backFromAPI.data.questions)
   const [opening, setOpening] = useState("")
 
