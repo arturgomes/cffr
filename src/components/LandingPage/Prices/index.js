@@ -96,7 +96,8 @@ export default class Prices extends Component {
                   <PriceContainer
                     plan="Plano Básico"
                     features={<PriceFeatures nfeedbacks={50} nqr={1} contact={false}/>}
-                    url="rsignup/bronze"
+                    url="rsignup"
+                    // url="rsignup/bronze"
                     purpose="Para começar a introduzir a cultura de customer experience na empresa"
                   />
                   <PriceContainer
@@ -111,7 +112,8 @@ export default class Prices extends Component {
                         dashboard={true}
                       />
                     }
-                    url="rsignup/silver"
+                    url="rsignup"
+                    // url="rsignup/silver"
                     purpose="Para lojas únicas ou franquias poderem aumentar a retenção dos clientes"
                   />
                   <PriceContainer
@@ -125,14 +127,16 @@ export default class Prices extends Component {
                         dashboard={true}
                       />
                     }
-                    url="rsignup/gold"
+                    // url="rsignup/gold"
+                    url="rsignup"
                     purpose="Para estabelecimentos com filiais próximas, permitindo avaliar a qualidade do atendimento em cada um dos estabelecimentos."
                   />
                   <PriceContainer
                     plan="Plano Plus"
                     moreinfo
                     features={<PriceFeatures dashboard={true} pers={true} contact={true}/>}
-                    url="rsignup/diamond"
+                    url="rsignup"
+                    // url="rsignup/diamond"
                     purpose="Para Shoppings, Lojas ou Supermercados que desejam avaliar diferentes aspectos do negócio."
                   />
                 </div>

@@ -1,16 +1,11 @@
 import React, { Component } from "react";
-import { AiFillCheckCircle } from "react-icons/ai";
-import { FaTimesCircle } from "react-icons/fa";
 import "./styles.css";
 import PriceFeatures from "./PriceFeatures";
 
-{
-  /* <PriceContainer plan="Plano Bronze" recommend={true} price={99} features={<PriceFeatures/>}/> */
-}
 //
 function PriceContainer(props) {
   return (
-    <div className="price_container_wrapper">
+    <div className="price_container_r">
       <div className="price_block border_top">
         {props.recommend === true ? (
           <div className="recommend bg_green">Recomendado</div>
@@ -26,17 +21,32 @@ function PriceContainer(props) {
               <h4>{`R$ ${props.price}`}</h4>
               <span className="montly">por mês</span>
             </>
-          ) : (
+          ) : (props.moreinfo ? (
+            <>
+              <h4>Sob Consulta</h4>
+              <span className="montly hidden">por mês</span>
+            </>
+          ):(
             <>
               <h4>GRATIS</h4>
               <span className="montly hidden">por mês</span>
             </>
-          )}
+          ))}
         </div>
         <div className="price_button_wrapper">
-          <a href={props.url} className="price_button pb_green">
+        {props.moreinfo ? (
+            <>
+            <a href="/contact" className="price_button pb_green">
+            Solicite uma proposta
+          </a>
+            </>
+          ):(
+            <>
+            <a href={props.url} className="price_button pb_green">
             Assine Já
           </a>
+            </>
+          )}         
         </div>
         {props.features}
         <div className="price_desc bg_abnb">{props.purpose}</div>
@@ -84,42 +94,47 @@ export default class Prices extends Component {
               <>
                 <div className="price_container wrap">
                   <PriceContainer
-                    plan="Plano Bronze"
-                    features={<PriceFeatures nfeedbacks={50} nqr={1} />}
-                    url="rsignup/bronze"
+                    plan="Plano Básico"
+                    features={<PriceFeatures nfeedbacks={50} nqr={1} contact={false}/>}
+                    url="rsignup"
+                    // url="rsignup/bronze"
                     purpose="Para começar a introduzir a cultura de customer experience na empresa"
                   />
                   <PriceContainer
-                    plan="Plano Prata"
+                    plan="Plano Intermediário"
                     price={99}
                     recommend={true}
                     features={
                       <PriceFeatures
+                        contact={true}
                         nfeedbacks={200}
-                        nqr={1}
-                        dashboard={true}
-                      />
-                    }
-                    url="rsignup/silver"
-                    purpose="Para lojas únicas ou franquias poderem aumentar a retenção dos clientes"
-                  />
-                  <PriceContainer
-                    plan="Plano Ouro"
-                    price={249}
-                    features={
-                      <PriceFeatures
-                        nfeedbacks={1000}
                         nqr={3}
                         dashboard={true}
                       />
                     }
-                    url="rsignup/gold"
-                    purpose="Para estabelecimentos com filiais próximas, permitindo avaliar a opinião dos clientes em cada um dos estabelecimentos."
+                    url="rsignup"
+                    // url="rsignup/silver"
+                    purpose="Para lojas únicas ou franquias poderem aumentar a retenção dos clientes"
                   />
                   <PriceContainer
-                    plan="Plano Diamante"
-                    price={399}
-                    features={<PriceFeatures dashboard={true} pers={true} />}
+                    plan="Plano Top"
+                    price={249}
+                    features={
+                      <PriceFeatures
+                        nfeedbacks={1000}
+                        contact={true}
+                        nqr={5}
+                        dashboard={true}
+                      />
+                    }
+                    // url="rsignup/gold"
+                    url="rsignup"
+                    purpose="Para estabelecimentos com filiais próximas, permitindo avaliar a qualidade do atendimento em cada um dos estabelecimentos."
+                  />
+                  <PriceContainer
+                    plan="Plano Plus"
+                    moreinfo
+                    features={<PriceFeatures dashboard={true} pers={true} contact={true}/>}
                     url="rsignup/diamond"
                     purpose="Para Shoppings, Lojas ou Supermercados que desejam avaliar diferentes aspectos do negócio."
                   />
