@@ -70,10 +70,10 @@ export default class Login extends Component {
 
 
   render() {
-    if (getUser() !== null) return <RedirectLogin user={getUser()} />
+    // if (getUser() !== null) return <RedirectLogin user={getUser()} />
 
-    const fid = decodeURIComponent(this.props.match.params.fid);
-    setFeedbackTmp(fid);
+    // const fid = decodeURIComponent(this.props.match.params.fid);
+    // setFeedbackTmp(fid);
     return (
 
       <BasicLayout title="Fazer Login">

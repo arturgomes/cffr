@@ -58,10 +58,8 @@ export default class SignUp extends Component {
         address_zip: this.state.address_zip,
         address_neighb: this.state.address_neighb,
         address_comp: this.state.address_comp,
-        // address_country: this.state.address_country
       })
       .then((response) => {
-        // console.log(response);
         this.setState({ id: response.id, done: true });
       })
       .catch((e) => {
@@ -137,9 +135,7 @@ export default class SignUp extends Component {
 
   render() {
     if (getUser() !== null) return <RedirectLogin user={getUser()} />
-
     const { not_social, error, done } = this.state;
-    //console.log(this.state);
     if (done && !error) {
       return (
         <BasicLayout>
@@ -150,12 +146,7 @@ export default class SignUp extends Component {
     if (not_social) {
       return (
         <BasicLayout title="Fazer cadastro">
-          {/* <Avatar className={useStyles.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Fazer Login
-        </Typography> */}
+         
           <RenderForm
             error={error}
             state={this.state}

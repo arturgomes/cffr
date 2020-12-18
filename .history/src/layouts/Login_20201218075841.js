@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 
 
+import RedirectLogin from "../components/RedirectLogin";
 import Button from "../components/CustomButtons/Button.js";
 import TextField from "@material-ui/core/TextField";
 import Grid from '@material-ui/core/Grid';
@@ -69,8 +70,10 @@ export default class Login extends Component {
 
 
   render() {
-    const fid = decodeURIComponent(this.props.match.params.fid);
-    setFeedbackTmp(fid)
+    // if (getUser() !== null) return <RedirectLogin user={getUser()} />
+
+    // const fid = decodeURIComponent(this.props.match.params.fid);
+    // setFeedbackTmp(fid);
     return (
 
       <BasicLayout title="Fazer Login">

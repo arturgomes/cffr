@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 
 
+import RedirectLogin from "../components/RedirectLogin";
 import Button from "../components/CustomButtons/Button.js";
 import TextField from "@material-ui/core/TextField";
 import Grid from '@material-ui/core/Grid';
@@ -11,7 +12,7 @@ import BasicLayout from "../components/CouponFeed/BasicLayout";
 import LoginSocial from '../components/Button'
 import api from "../services/api";
 
-import { login, getUser } from "../services/auth";
+import { login, getUser, setFeedbackTmp } from "../services/auth";
 
 export default class Login extends Component {
 
@@ -25,13 +26,13 @@ export default class Login extends Component {
 
   handleSignIn = async e => {
     e.preventDefault();
-
+    const fid = decodeURIComponent(this.props.match.params.fid);
     const { email, password } = this.state;
     if (!email || !password) {
       this.setState({ error: "Preencha e-mail e senha para continuar!" });
     } else {
       await api
-        .post("/sessions", { email, password })
+        .post("/sessions", { email, password, fid })
         .then(response => {
           // console.log(response.data);
           if (response.data.login !== null) {
@@ -69,7 +70,10 @@ export default class Login extends Component {
 
 
   render() {
+    // if (getUser() !== null) return <RedirectLogin user={getUser()} />
 
+    const fid = decodeURIComponent(this.props.match.params.fid);
+    setFeedbackTmp(fid);
     return (
 
       <BasicLayout title="Fazer Login">
@@ -120,7 +124,7 @@ export default class Login extends Component {
           <Grid container>
             <Grid item>
               <Link
-                href="/signup" variant="body2">
+                href={`/signup/${fid}`} variant="body2">
                 {"Ainda não se cadastrou? Faça já o seu!"}
               </Link>
             </Grid>
