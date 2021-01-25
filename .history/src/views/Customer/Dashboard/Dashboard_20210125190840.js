@@ -180,7 +180,7 @@ class Dashboard extends Component {
     return (
       <div>
         <GridContainer>
-          <GridItem xs={12} sm={3} md={3}>
+          <GridItem xs={12} sm={3} md={6}>
             <Card>
               <CardHeader color="primary" stats icon>
                 <CardIcon color="primary">
@@ -214,7 +214,7 @@ class Dashboard extends Component {
               </CardBody>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={3} md={9}>
+          <GridItem xs={12} sm={3} md={6}>
             <Card >
               <CardHeader color="success" stats>
                 <h4 style={{
