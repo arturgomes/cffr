@@ -181,7 +181,7 @@ export default function AdminNavbarLinks(props) {
           onClick={handleClickProfile}
           className={classes.buttonLink}
         >
-          <MenuRounded className={classes.icons} />
+          <Menu className={classes.icons} />
           <Hidden mdUp implementation="css">
             <p className={classes.linkText}>Profile</p>
           </Hidden>

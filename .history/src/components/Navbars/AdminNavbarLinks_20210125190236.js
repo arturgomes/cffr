@@ -14,7 +14,7 @@ import Hidden from "@material-ui/core/Hidden";
 import Poppers from "@material-ui/core/Popper";
 import Divider from "@material-ui/core/Divider";
 // @material-ui/icons
-import MenuRounded from "@material-ui/icons/MenuRounded";
+import Menu from "@material-ui/icons/Menu";
 // import Notifications from "@material-ui/icons/Notifications";
 // import Dashboard from "@material-ui/icons/Dashboard";
 // import Search from "@material-ui/icons/Search";
@@ -181,7 +181,7 @@ export default function AdminNavbarLinks(props) {
           onClick={handleClickProfile}
           className={classes.buttonLink}
         >
-          <MenuRounded className={classes.icons} />
+          <Menu className={classes.icons} />
           <Hidden mdUp implementation="css">
             <p className={classes.linkText}>Profile</p>
           </Hidden>
