@@ -120,7 +120,7 @@ export default class Login extends Component {
         <form
           style={{ marginLeft: "50px", marginRight: "50px" }}
           noValidate
-          // onSubmit={this.handleSignIn}
+          onSubmit={this.handleSignIn}
         >
           <hr style={{ width: "100%", borderTop: "3px rounded #bbb" }} />
           <TextField
