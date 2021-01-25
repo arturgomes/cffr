@@ -70,6 +70,7 @@ export default class Login extends Component {
 
 
   render() {
+    console.log("fazendo login", this.state)
     // if (getUser() !== null) return <RedirectLogin user={getUser()} />
 
     // const fid = decodeURIComponent(this.props.match.params.fid);
@@ -77,19 +78,15 @@ export default class Login extends Component {
     return (
 
       <BasicLayout title="Fazer Login">
-
         <div style={{ marginTop: '20px', marginBottom: '20px' }}>
           <LoginSocial caption="Fazer login com " />
         </div>
-
-
         <form
           style={{ marginLeft: "50px", marginRight: "50px" }}
           noValidate
           onSubmit={this.handleSignIn}
         >
           <hr style={{ width: "100%", borderTop: "3px rounded #bbb" }} />
-
           <TextField
             margin="normal"
             required
