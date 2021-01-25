@@ -59,13 +59,10 @@ export default function BasicLayout(props) {
               style={{ width: '250px', paddingBottom: '30px' }} />
           </a>
           {props.noavatar ? (<></>) : (<Avatar className={classes.avatar} />)}
-
           <Typography component="h1" variant="h5">
             {props.title}
           </Typography>
           {props.children}
-
-
           <Box mt={5}>
             <Copyright />
           </Box>

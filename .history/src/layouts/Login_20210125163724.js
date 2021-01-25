@@ -105,66 +105,65 @@ export default class Login extends Component {
   };
 
 
-  // render() {
-  //   console.log("fazendo login", this.state)
-  //   // if (getUser() !== null) return <RedirectLogin user={getUser()} />
+  render() {
+    console.log("fazendo login", this.state)
+    // if (getUser() !== null) return <RedirectLogin user={getUser()} />
 
-  //   // const fid = decodeURIComponent(this.props.match.params.fid);
-  //   // setFeedbackTmp(fid);
-  //   return (
+    // const fid = decodeURIComponent(this.props.match.params.fid);
+    // setFeedbackTmp(fid);
+    return (
 
-  //     <BasicLayout title="Fazer Login">
-  //       <div style={{ marginTop: '20px', marginBottom: '20px' }}>
-  //         <LoginSocial caption="Fazer login com " />
-  //       </div>
-  //       <form
-  //         style={{ marginLeft: "50px", marginRight: "50px" }}
-  //         noValidate
-  //         onSubmit={this.handleSignIn}
-  //       >
-  //         <hr style={{ width: "100%", borderTop: "3px rounded #bbb" }} />
-  //         <TextField
-  //           margin="normal"
-  //           required
-  //           fullWidth
-  //           id="email"
-  //           label="Endereço de e-mail"
-  //           name="email"
-  //           autoComplete="email"
-  //           autoFocus
-  //           onChange={e => this.setState({ email: e.target.value })}
-  //         />
-  //         <TextField
-  //           style={{ marginBottom: '30px' }}
-  //           margin="normal"
-  //           required
-  //           fullWidth
-  //           name="password"
-  //           label="Senha"
-  //           type="password"
-  //           id="password"
-  //           autoComplete="current-password"
-  //           onChange={e => this.setState({ password: e.target.value })}
-  //         />
-  //         <Button
-  //           type="submit"
-  //           fullWidth
-  //           variant="contained"
-  //           color="success"
-  //         >
-  //           Faça login
-  //           </Button>
-  //         <Grid container>
-  //           <Grid item>
-  //             <Link
-  //               href={`/signup/${fid}`} variant="body2">
-  //               {"Ainda não se cadastrou? Faça já o seu!"}
-  //             </Link>
-  //           </Grid>
-  //         </Grid>
-  //       </form>
-  //     </BasicLayout>
-  //   );
-  // }
-  render(){return (<>chegou</>)}
+      <BasicLayout title="Fazer Login">
+        <div style={{ marginTop: '20px', marginBottom: '20px' }}>
+          <LoginSocial caption="Fazer login com " />
+        </div>
+        <form
+          style={{ marginLeft: "50px", marginRight: "50px" }}
+          noValidate
+          onSubmit={this.handleSignIn}
+        >
+          <hr style={{ width: "100%", borderTop: "3px rounded #bbb" }} />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Endereço de e-mail"
+            name="email"
+            autoComplete="email"
+            autoFocus
+            onChange={e => this.setState({ email: e.target.value })}
+          />
+          <TextField
+            style={{ marginBottom: '30px' }}
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Senha"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            onChange={e => this.setState({ password: e.target.value })}
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="success"
+          >
+            Faça login
+            </Button>
+          <Grid container>
+            <Grid item>
+              <Link
+                href={`/signup/${fid}`} variant="body2">
+                {"Ainda não se cadastrou? Faça já o seu!"}
+              </Link>
+            </Grid>
+          </Grid>
+        </form>
+      </BasicLayout>
+    );
+  }
 }
