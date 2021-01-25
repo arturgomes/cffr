@@ -17,7 +17,7 @@ import { login, getUser } from "../services/auth";
 export default class Login extends Component {
 
   state = {
-    // user: {},
+    user: {},
     error: null,
     authenticated: false,
     isLoading: true

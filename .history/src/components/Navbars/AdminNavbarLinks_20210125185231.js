@@ -168,13 +168,13 @@ export default function AdminNavbarLinks(props) {
               //   </ClickAwayListener>
               // </Paper>
             // </Grow>
-          // 
-          )}
+          // )
+        }
         </Poppers>
       </div>
       <div className={classes.manager}>
         <Button
-          color="grey" //{window.innerWidth > 959 ? "transparent" : "white"}
+          color={window.innerWidth > 959 ? "transparent" : "white"}
           justIcon={window.innerWidth > 959}
           simple={!(window.innerWidth > 959)}
           aria-owns={openProfile ? "profile-menu-list-grow" : null}

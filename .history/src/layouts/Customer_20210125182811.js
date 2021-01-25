@@ -35,7 +35,7 @@ const switchRoutes = (
       }
       return null;
     })}
-        <Redirect to="/customer/dashboard" />
+    <Redirect to="/customer/dashboard" />
 
     {/* <Redirect from="/customer/" to="/customer/dashboard" /> */}
   </Switch>
@@ -108,7 +108,6 @@ export default function Customer({ ...rest }) {
             <div className={classes.map}>{switchRoutes}</div>
           )}
         {getRoute() ? <Footer /> : null}
-
       </div>
     </div>
   );

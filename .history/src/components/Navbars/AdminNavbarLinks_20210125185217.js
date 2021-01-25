@@ -122,7 +122,7 @@ export default function AdminNavbarLinks(props) {
             classes.popperNav
           }
         >
-          {({ TransitionProps, placement }) => (
+          {/* {({ TransitionProps, placement }) => ( */}
             // <Grow
             //   {...TransitionProps}
             //   id="notification-menu-list-grow"
@@ -168,13 +168,12 @@ export default function AdminNavbarLinks(props) {
               //   </ClickAwayListener>
               // </Paper>
             // </Grow>
-          // 
-          )}
+          // )}
         </Poppers>
       </div>
       <div className={classes.manager}>
         <Button
-          color="grey" //{window.innerWidth > 959 ? "transparent" : "white"}
+          color={window.innerWidth > 959 ? "transparent" : "white"}
           justIcon={window.innerWidth > 959}
           simple={!(window.innerWidth > 959)}
           aria-owns={openProfile ? "profile-menu-list-grow" : null}

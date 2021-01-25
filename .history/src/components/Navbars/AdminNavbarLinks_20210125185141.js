@@ -111,7 +111,7 @@ export default function AdminNavbarLinks(props) {
             </p>
           </Hidden>
         </Button> */}
-        <Poppers
+        {/* <Poppers
           open={Boolean(openNotification)}
           anchorEl={openNotification}
           transition
@@ -121,60 +121,59 @@ export default function AdminNavbarLinks(props) {
             " " +
             classes.popperNav
           }
-        >
-          {({ TransitionProps, placement }) => (
-            // <Grow
-            //   {...TransitionProps}
-            //   id="notification-menu-list-grow"
-            //   style={{
-            //     transformOrigin:
-            //       placement === "bottom" ? "center top" : "center bottom"
-            //   }}
-            // >
-              // <Paper>
-              //   <ClickAwayListener onClickAway={handleCloseNotification}>
-              //     <MenuList role="menu">
-              //       {/* <MenuItem
-              //         onClick={handleCloseNotification}
-              //         className={classes.dropdownItem}
-              //       >
-              //         Mike John responded to your email
-              //       </MenuItem>
-              //       <MenuItem
-              //         onClick={handleCloseNotification}
-              //         className={classes.dropdownItem}
-              //       >
-              //         You have 5 new tasks
-              //       </MenuItem>
-              //       <MenuItem
-              //         onClick={handleCloseNotification}
-              //         className={classes.dropdownItem}
-              //       >
-              //         You{"'"}re now friend with Andrew
-              //       </MenuItem> */}
-              //       <MenuItem
-              //         onClick={handleCloseNotification}
-              //         className={classes.dropdownItem}
-              //       >
-              //         Another Notification
-              //       </MenuItem>
-              //       <MenuItem
-              //         onClick={handleCloseNotification}
-              //         className={classes.dropdownItem}
-              //       >
-              //         Another One
-              //       </MenuItem>
-              //     </MenuList>
-              //   </ClickAwayListener>
-              // </Paper>
-            // </Grow>
-          // 
-          )}
-        </Poppers>
+        > */}
+          {/* {({ TransitionProps, placement }) => (
+            <Grow
+              {...TransitionProps}
+              id="notification-menu-list-grow"
+              style={{
+                transformOrigin:
+                  placement === "bottom" ? "center top" : "center bottom"
+              }}
+            >
+              <Paper>
+                <ClickAwayListener onClickAway={handleCloseNotification}>
+                  <MenuList role="menu">
+                    {/* <MenuItem
+                      onClick={handleCloseNotification}
+                      className={classes.dropdownItem}
+                    >
+                      Mike John responded to your email
+                    </MenuItem>
+                    <MenuItem
+                      onClick={handleCloseNotification}
+                      className={classes.dropdownItem}
+                    >
+                      You have 5 new tasks
+                    </MenuItem>
+                    <MenuItem
+                      onClick={handleCloseNotification}
+                      className={classes.dropdownItem}
+                    >
+                      You{"'"}re now friend with Andrew
+                    </MenuItem> */}
+                    <MenuItem
+                      onClick={handleCloseNotification}
+                      className={classes.dropdownItem}
+                    >
+                      Another Notification
+                    </MenuItem>
+                    <MenuItem
+                      onClick={handleCloseNotification}
+                      className={classes.dropdownItem}
+                    >
+                      Another One
+                    </MenuItem>
+                  </MenuList>
+                </ClickAwayListener>
+              </Paper>
+            </Grow>
+          )} */}
+        {/* </Poppers> */}
       </div>
       <div className={classes.manager}>
         <Button
-          color="grey" //{window.innerWidth > 959 ? "transparent" : "white"}
+          color={window.innerWidth > 959 ? "transparent" : "white"}
           justIcon={window.innerWidth > 959}
           simple={!(window.innerWidth > 959)}
           aria-owns={openProfile ? "profile-menu-list-grow" : null}

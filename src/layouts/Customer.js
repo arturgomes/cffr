@@ -108,7 +108,6 @@ export default function Customer({ ...rest }) {
             <div className={classes.map}>{switchRoutes}</div>
           )}
         {getRoute() ? <Footer /> : null}
-
       </div>
     </div>
   );
